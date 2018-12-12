@@ -1,13 +1,18 @@
 import React from 'react';
+import { withRouter } from "react-router-dom";
 
-class SessionForm extends React.component {
+
+class SessionForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      email: '',
-      password: ''
-    };
+    this.state = this.props.formFields;
     this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  update(field) {
+    return e => this.setState({
+      [field]: e.currentTarget.value,
+    });
   }
 
   handleSubmit(e) {
@@ -27,30 +32,86 @@ class SessionForm extends React.component {
   }
 
   render() {
+    let displayForm;
+
+    if (this.props.formType === 'login') {
+      displayForm = (
+        <div>
+          <form onSubmit={this.handleSubmit}>
+            Welcome back
+
+            <br/>
+
+            <label>
+              Email
+              <input type="text" value={this.state.email} placeholder='Email' onChange={this.update('email')}/>
+            </label>
+
+            <br/>
+
+            <label>
+              Password
+              <input type="password" value={this.state.password} placeholder='Password' onChange={this.update('password')}/>
+            </label>
+
+            <input type="submit" value="Log in"/>
+
+            <br/>
+
+            or
+
+            <br/>
+
+            Don't have an account? 
+            {this.renderErrors()}
+          </form>
+        </div>
+      );
+    } else {
+      displayForm = (
+        <div>
+          <form onSubmit={this.handleSubmit}>
+            Welcome to Turo
+
+            <br/>
+
+            <label>
+              First name
+              <input type="text" value={this.state.firstName} onChange={this.update('firstName')}/>
+            </label>
+            
+            <br/>
+
+            <label>
+              Last name
+              <input type="text" value={this.state.lastName} onChange={this.update('lastName')}/>
+            </label>
+
+            <br/>
+
+            <label>
+              Email
+              <input type="email" value={this.state.email} onChange={this.update('email')}/>
+            </label>
+
+            <br/>
+
+            <label>
+              Password
+              <input type="password" value={this.state.password} onChange={this.update('password')}/>
+            </label>
+            {this.renderErrors()}
+          </form>
+        </div>
+      )
+    }
+
     return (
       <div>
-        <form onSubmit={this.handleSubmit}>
-          Welcome to FLEXO!
-          {this.props.formType}
-          {this.props.navLink}
-
-          <ul>
-            {this.renderErrors()}
-          </ul>
-
-          <label>Email
-            <input type="email" value={this.state.email}/>
-          </label>
-
-          <label>Password
-            <input type="password" value={this.state.password}/>
-          </label>
-
-          <input type="submit" value={this.state.formType}/>
-        </form>
-
-
+        {displayForm}
       </div>
     )
   }
 }
+
+export default withRouter(SessionForm);
