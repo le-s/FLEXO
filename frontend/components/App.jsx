@@ -11,9 +11,11 @@ const App = () => (
   <div>
     <Modal/>
     <header>
-      <Link to='/'>
-        <h1>FLEXO</h1>
-      </Link>
+      <div>
+        <Link to='/' className='header-link'>
+          <h1>FLEXO</h1>
+        </Link>
+      </div>
       <NavBar/>
     </header>
 

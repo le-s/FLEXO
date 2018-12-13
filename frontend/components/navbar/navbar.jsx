@@ -2,6 +2,7 @@ import React from 'react';
 import {withRouter, Route, Link} from 'react-router-dom';
 import LoginFormContainer from '../session_form/login_form_container';
 import SignupFormContainer from '../session_form/login_form_container';
+import openModal from '../../actions/modal_actions';
 
 class NavBar extends React.Component {
   
@@ -13,8 +14,8 @@ class NavBar extends React.Component {
       </div>
     ) : (
       <div>
-        {<Link to='/signup'>Sign up</Link>}
-        {<Link to='/login'>Login</Link>}
+        <button onClick={() => this.props.openModal('login')}>Login</button>
+        <button onClick={() => this.props.openModal('signup')}>Signup</button>
       </div>
     );
 

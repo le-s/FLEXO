@@ -18,7 +18,6 @@ class SessionForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
-    this.props.processForm(user);
     this.props.processForm(user).then(this.props.closeModal);
   }
   
@@ -82,14 +81,14 @@ class SessionForm extends React.Component {
 
             <label>
               First name
-              <input type="text" value={this.state.first_name} onChange={this.update('first_name')}/>
+              <input type="text" value={this.state.firstName} onChange={this.update('firstName')}/>
             </label>
             
             <br/>
 
             <label>
               Last name
-              <input type="text" value={this.state.last_name} onChange={this.update('last_name')}/>
+              <input type="text" value={this.state.lastName} onChange={this.update('lastName')}/>
             </label>
 
             <br/>

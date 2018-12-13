@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-
+  before_action :underscore_params!
   helper_method :current_user, :logged_in?
 
   def current_user
@@ -25,6 +25,13 @@ class ApplicationController < ActionController::Base
   def require_login
     unless current_user
       render json: { base: ['invalid credentials'] }, status: 401
+    end
+  end
+
+  private
+  def underscore_params!
+    if params[:user]
+      params[:user] = params[:user].transform_keys!(&:underscore)
     end
   end
 end
