@@ -1,19 +1,27 @@
 import React from "react";
-import {Route} from 'react-router-dom';
+import {Route, Link} from 'react-router-dom';
 import SignupFormContainer from './session_form/signup_form_container';
 import LoginFormContainer from './session_form/login_form_container';
 import NavBar from './navbar/navbar_container';
-import {AuthRoute} from '../util/route_util'
+import {AuthRoute} from '../util/route_util';
+import Modal from './modal/modal';
+
 
 const App = () => (
   <div>
+    <Modal/>
     <header>
-      <h1>FLEXO</h1>
+      <Link to='/'>
+        <h1>FLEXO</h1>
+      </Link>
       <NavBar/>
     </header>
-    <AuthRoute path='/signup' component={SignupFormContainer}/>
-    <AuthRoute path='/login' component={LoginFormContainer}/>
+
   </div>
 );
 
 export default App;
+
+
+// {/* <AuthRoute path='/signup' component={SignupFormContainer} />
+//   <AuthRoute path='/login' component={LoginFormContainer} /> */}

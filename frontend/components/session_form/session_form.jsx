@@ -19,6 +19,7 @@ class SessionForm extends React.Component {
     e.preventDefault();
     const user = Object.assign({}, this.state);
     this.props.processForm(user);
+    this.props.processForm(user).then(this.props.closeModal);
   }
   
   renderErrors() {
@@ -38,6 +39,8 @@ class SessionForm extends React.Component {
       displayForm = (
         <div>
           <form onSubmit={this.handleSubmit}>
+            <div onClick={this.props.closeModal} className="close-x">X</div>
+
             Welcome back
 
             <br/>
@@ -71,6 +74,8 @@ class SessionForm extends React.Component {
       displayForm = (
         <div>
           <form onSubmit={this.handleSubmit}>
+            <div onClick={this.props.closeModal} className="close-x">X</div>
+
             Welcome to Turo
 
             <br/>
