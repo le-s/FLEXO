@@ -9,21 +9,16 @@ import Modal from './modal/modal';
 
 const App = () => (
   <div>
-    <Modal/>
-    <header>
-      <div>
-        <Link to='/' className='header-link'>
-          <h1>FLEXO</h1>
+    <Modal />
+    <header className="navbar">
+      <div className='container'>
+        <Link to="/">
+          <div className="navbar-logo"/>
         </Link>
+        <NavBar /> 
       </div>
-      <NavBar/>
     </header>
-
   </div>
 );
 
 export default App;
-
-
-// {/* <AuthRoute path='/signup' component={SignupFormContainer} />
-//   <AuthRoute path='/login' component={LoginFormContainer} /> */}

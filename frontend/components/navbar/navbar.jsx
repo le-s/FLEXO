@@ -10,12 +10,15 @@ class NavBar extends React.Component {
     let userDisplay = this.props.currentUser ? (
       <div>
         Welcome, {this.props.currentUser.firstName}
-        <button onClick={this.props.logout}>Logout</button>
+        <button className='nav-button' onClick={this.props.logout}>Logout</button>
       </div>
     ) : (
       <div>
-        <button onClick={() => this.props.openModal('login')}>Login</button>
-        <button onClick={() => this.props.openModal('signup')}>Signup</button>
+        <ul className='right-nav'>
+          <button className='nav-item'>List your car</button>
+          <button className='nav-button' onClick={() => this.props.openModal('login')}>Login</button>
+          <button className='nav-button' onClick={() => this.props.openModal('signup')}>Signup</button>
+        </ul>
       </div>
     );
 

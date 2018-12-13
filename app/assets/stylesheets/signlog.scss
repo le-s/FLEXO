@@ -1,0 +1,25 @@
+.signlog-form {
+  background-image: url("login.jpg");
+  background-repeat: no-repeat;
+  position: relative;
+  overflow: hidden;
+  width: 289px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  padding: 32px;
+  font-size: 20px;
+  overflow: hidden;
+  border-radius: 25px;
+}
+
+.signlog-modal-form input {
+  border: 1px solid #EBEBEB;
+  border-radius: 4px;
+  height: 24px;
+  padding: 12px 24px;
+  margin-bottom: 15px;
+  font-size: 16px;
+  font-weight: 100;
+  width: 450px;
+}

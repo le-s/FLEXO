@@ -206,14 +206,18 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var App = function App() {
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_modal_modal__WEBPACK_IMPORTED_MODULE_6__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-    to: "/",
-    className: "header-link"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "FLEXO"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_navbar_navbar_container__WEBPACK_IMPORTED_MODULE_4__["default"], null)));
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_modal_modal__WEBPACK_IMPORTED_MODULE_6__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", {
+    className: "navbar"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "container"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+    to: "/"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "navbar-logo"
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_navbar_navbar_container__WEBPACK_IMPORTED_MODULE_4__["default"], null))));
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (App); // {/* <AuthRoute path='/signup' component={SignupFormContainer} />
-//   <AuthRoute path='/login' component={LoginFormContainer} /> */}
+/* harmony default export */ __webpack_exports__["default"] = (App);
 
 /***/ }),
 
@@ -345,16 +349,23 @@ function (_React$Component) {
       var _this = this;
 
       var userDisplay = this.props.currentUser ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Welcome, ", this.props.currentUser.firstName, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "nav-button",
         onClick: this.props.logout
-      }, "Logout")) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      }, "Logout")) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+        className: "right-nav"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "nav-item"
+      }, "List your car"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "nav-button",
         onClick: function onClick() {
           return _this.props.openModal('login');
         }
       }, "Login"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "nav-button",
         onClick: function onClick() {
           return _this.props.openModal('signup');
         }
-      }, "Signup"));
+      }, "Signup")));
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, userDisplay));
     }
   }]);
@@ -587,46 +598,48 @@ function (_React$Component) {
 
       if (this.props.formType === 'login') {
         displayForm = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+          className: "signlog-form",
           onSubmit: this.handleSubmit
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          onClick: this.props.closeModal,
-          className: "close-x"
-        }, "X"), "Welcome back", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Email", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+          className: "close",
+          onClick: this.props.closeModal
+        }, "\xD7"), "Welcome back", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Email", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
           type: "text",
           value: this.state.email,
           placeholder: "Email",
-          onChange: this.update('email')
+          onChange: this.update("email")
         })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Password", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
           type: "password",
           value: this.state.password,
           placeholder: "Password",
-          onChange: this.update('password')
+          onChange: this.update("password")
         })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
           type: "submit",
           value: "Log in"
         }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "or", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "Don't have an account?", this.renderErrors()));
       } else {
         displayForm = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+          className: "signlog-form",
           onSubmit: this.handleSubmit
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          onClick: this.props.closeModal,
-          className: "close-x"
-        }, "X"), "Welcome to Turo", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "First name", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+          className: "close",
+          onClick: this.props.closeModal
+        }, "\xD7"), "Welcome to Turo", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "First name", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
           type: "text",
           value: this.state.firstName,
-          onChange: this.update('firstName')
+          onChange: this.update("firstName")
         })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Last name", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
           type: "text",
           value: this.state.lastName,
-          onChange: this.update('lastName')
+          onChange: this.update("lastName")
         })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Email", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
           type: "email",
           value: this.state.email,
-          onChange: this.update('email')
+          onChange: this.update("email")
         })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Password", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
           type: "password",
           value: this.state.password,
-          onChange: this.update('password')
+          onChange: this.update("password")
         })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
           type: "submit",
           value: "Sign up"

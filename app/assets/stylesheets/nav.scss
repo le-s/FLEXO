@@ -2,3 +2,64 @@
    text-decoration: none;
    color: black;
  }
+
+ .navbar-search-links {
+  display: flex;
+  justify-content: space-between;
+  height: 80px;
+}
+
+.navbar {
+
+  height: 48px;
+  background-color: #221F1F;
+  color: #FEFFFE;
+}
+
+.navbar > ul {
+  display: inline;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  margin-right: 393px;
+  margin-left: 393px;
+}
+
+.right-nav {
+  display: flex;
+  justify-content: space-between;
+  min-width: 205px;
+  position: relative;
+  top: 13px;
+}
+.nav-button {
+  border: none;
+  color: #FEFFFE;
+  background: #221F1F;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.nav-item {
+  background: #221F1F;
+  color: #FEFFFE;
+  border: 1px solid #FEFFFE;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.navbar-logo {
+  background-image: url("Turo_Logo.png");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  width: 34px;
+  height: 42px;
+  padding-left: 24px;
+  padding-right: 24px;
+  position: relative;
+  top: 10px;
+}

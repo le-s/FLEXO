@@ -35,84 +35,62 @@ class SessionForm extends React.Component {
     let displayForm;
 
     if (this.props.formType === 'login') {
-      displayForm = (
-        <div>
-          <form onSubmit={this.handleSubmit}>
-            <div onClick={this.props.closeModal} className="close-x">X</div>
-
+      displayForm = <div>
+          <form className="signlog-form" onSubmit={this.handleSubmit}>
+            <div className="close" onClick={this.props.closeModal}>
+              &times;
+            </div>
             Welcome back
-
-            <br/>
-
+            <br />
             <label>
               Email
-              <input type="text" value={this.state.email} placeholder='Email' onChange={this.update('email')}/>
+              <input type="text" value={this.state.email} placeholder="Email" onChange={this.update("email")} />
             </label>
-
-            <br/>
-
+            <br />
             <label>
               Password
-              <input type="password" value={this.state.password} placeholder='Password' onChange={this.update('password')}/>
+              <input type="password" value={this.state.password} placeholder="Password" onChange={this.update("password")} />
             </label>
-
-            <input type="submit" value="Log in"/>
-
-            <br/>
-
+            <input type="submit" value="Log in" />
+            <br />
             or
-
-            <br/>
-
-            Don't have an account? 
+            <br />
+            Don't have an account?
             {this.renderErrors()}
           </form>
-        </div>
-      );
+        </div>;
     } else {
-      displayForm = (
-        <div>
-          <form onSubmit={this.handleSubmit}>
-            <div onClick={this.props.closeModal} className="close-x">X</div>
-
+      displayForm = <div>
+          <form className="signlog-form" onSubmit={this.handleSubmit}>
+            <div className="close" onClick={this.props.closeModal}>
+              &times;
+            </div>
             Welcome to Turo
-
-            <br/>
-
+            <br />
             <label>
               First name
-              <input type="text" value={this.state.firstName} onChange={this.update('firstName')}/>
+              <input type="text" value={this.state.firstName} onChange={this.update("firstName")} />
             </label>
-            
-            <br/>
-
+            <br />
             <label>
               Last name
-              <input type="text" value={this.state.lastName} onChange={this.update('lastName')}/>
+              <input type="text" value={this.state.lastName} onChange={this.update("lastName")} />
             </label>
-
-            <br/>
-
+            <br />
             <label>
               Email
-              <input type="email" value={this.state.email} onChange={this.update('email')}/>
+              <input type="email" value={this.state.email} onChange={this.update("email")} />
             </label>
-
-            <br/>
-
+            <br />
             <label>
               Password
-              <input type="password" value={this.state.password} onChange={this.update('password')}/>
+              <input type="password" value={this.state.password} onChange={this.update("password")} />
             </label>
-
-            <br/>
-
+            <br />
             <input type="submit" value="Sign up" />
-
             {this.renderErrors()}
           </form>
-        </div>
-      )
+        </div>;
     }
 
     return (
