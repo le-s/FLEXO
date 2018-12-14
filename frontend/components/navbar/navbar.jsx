@@ -5,17 +5,53 @@ import SignupFormContainer from '../session_form/login_form_container';
 import openModal from '../../actions/modal_actions';
 
 class NavBar extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      dropDown: false
+    }
+    this.addDropDown = this.addDropDown.bind(this);
+    this.removeDropDown = this.removeDropDown.bind(this);
+    this.removeDropDownDelayed = this.removeDropDownDelayed.bind(this);
+  }
+
+  addDropDown() {
+    this.setState({
+      dropDown: true
+    });
+  }
+
+  removeDropDown() {
+    this.setState({
+      dropDown: false
+    });
+  }
+
+  removeDropDownDelayed() {
+    setTimeout(() => this.setState({ dropDown: false }), 1000)
+  }
   
   render() {
+    const addDropdown = this.addDropDown;
     let userDisplay = this.props.currentUser ? (
-      <div>
-        Welcome, {this.props.currentUser.firstName}
-        <button className='nav-button' onClick={this.props.logout}>Logout</button>
-      </div>
+        <ul className='right-nav'>
+          <button className='nav-item'>List your car</button>
+          <div className='dropdown' onMouseEnter={this.addDropDown} onMouseLeave={this.removeDropDownDelayed}>
+              <div className='profile'/>
+              <div 
+                className={this.state.dropDown ? 'dropdown-content active' : 'dropdown-content'}
+                
+                onMouseEnter={this.addDropDown}
+              >
+                <button className='nav-button' onClick={this.props.logout}>Logout</button>
+              </div>
+          </div>
+        </ul>
     ) : (
       <div>
         <ul className='right-nav'>
           <button className='nav-item'>List your car</button>
+          <button className='nav-button'>Demo Login</button>
           <button className='nav-button' onClick={() => this.props.openModal('login')}>Login</button>
           <button className='nav-button' onClick={() => this.props.openModal('signup')}>Signup</button>
         </ul>
@@ -23,29 +59,11 @@ class NavBar extends React.Component {
     );
 
     return (
-      <header>
         <div>
           {userDisplay}
         </div>
-      </header>
     )
   }
 }
 
 export default withRouter(NavBar);
-
-// const userDisplay = () => (
-//   <header>
-//     Welcome, {this.props.currentUser.firstName}
-//     <button onClick={this.props.logout}>Logout</button>
-//   </header>
-// );
-
-// const guestDisplay = () => (
-//   <div>
-//     {<Link to='/signup'>Sign up</Link>}
-//     {<Link to='/login'>Login</Link>}
-//   </div>
-// );
-
-// return this.props.currentUserId ? userDisplay() : guestDisplay()

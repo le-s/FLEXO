@@ -1,9 +1,9 @@
 .header-link {
-   text-decoration: none;
-   color: black;
- }
+  text-decoration: none;
+  color: black;
+}
 
- .navbar-search-links {
+.navbar-search-links {
   display: flex;
   justify-content: space-between;
   height: 80px;
@@ -23,16 +23,17 @@
 .container {
   display: flex;
   justify-content: space-between;
-  margin-right: 393px;
-  margin-left: 393px;
+  margin: 0px auto;
+  width: 750px;
+  height: 48px;
 }
 
 .right-nav {
   display: flex;
-  justify-content: space-between;
-  min-width: 205px;
+  justify-content: space-around;
+  min-width: 300px;
   position: relative;
-  top: 13px;
+  top: 14px;
 }
 .nav-button {
   border: none;
@@ -42,12 +43,17 @@
   cursor: pointer;
 }
 
+.nav-button button:hover {
+  text-decoration: underline;
+}
+
 .nav-item {
   background: #221F1F;
   color: #FEFFFE;
   border: 1px solid #FEFFFE;
   font-weight: bold;
   cursor: pointer;
+  height: 19px;
 }
 
 .navbar-logo {
@@ -63,3 +69,56 @@
   position: relative;
   top: 10px;
 }
+
+.nav-item-list > li {
+  position: relative;
+}
+
+.profile {
+  background-image: url('profile_icon.png');
+  background-size: cover;
+  height: 25px;
+  padding-right: 25px;
+  position: relative;
+  top: 10px;
+}
+
+.dropbtn {
+  background-size: cover;
+  background-color: transparent;
+  border: none;
+  top: 10px;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+  height: 48px;
+  bottom: 13px;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: -1;
+  // top: 48px;
+  padding-top: 26px;
+}
+
+.dropdown-content button {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  background-color: white;
+}
+
+.dropdown-content.active {
+  display: block;
+}
+
+// .dropdown:hover .dropdown-content, .dropdown-content:hover {display: block;}

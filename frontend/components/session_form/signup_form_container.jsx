@@ -18,11 +18,11 @@ const mSTP = state => ({
 const mDTP = dispatch => ({
   processForm: user => dispatch(signup(user)),
   otherForm: (
-    <button onClick={() => dispatch(openModal('login'))}>
+    <button className='form-button' onClick={() => dispatch(openModal('login'))}>
       Login
     </button>
   ),
-  closeModal: () => dispatch(closeModal())
+  closeModal: () => dispatch(closeModal()),
 })
 
 export default connect(mSTP, mDTP)(SessionForm);

@@ -37,25 +37,42 @@ class SessionForm extends React.Component {
     if (this.props.formType === 'login') {
       displayForm = <div>
           <form className="signlog-form" onSubmit={this.handleSubmit}>
+
             <div className="close" onClick={this.props.closeModal}>
               &times;
             </div>
-            Welcome back
+
+            <h1 className='header'>Welcome back</h1>
+
             <br />
-            <label>
+
+            <label className='form-text'>
               Email
+              <br/>
               <input type="text" value={this.state.email} placeholder="Email" onChange={this.update("email")} />
             </label>
+
             <br />
-            <label>
+
+            <label className='form-text'>
               Password
+              <br/>
               <input type="password" value={this.state.password} placeholder="Password" onChange={this.update("password")} />
             </label>
-            <input type="submit" value="Log in" />
+
+            <br/>
+
+            <input className='submit' type="submit" value="Log in" />
+
             <br />
-            or
-            <br />
-            Don't have an account?
+
+            <div className='align'>
+              <h3 className='sub'>
+                Don't have an account?
+              </h3>
+
+              {this.props.otherForm}
+            </div>
             {this.renderErrors()}
           </form>
         </div>;
@@ -65,30 +82,59 @@ class SessionForm extends React.Component {
             <div className="close" onClick={this.props.closeModal}>
               &times;
             </div>
-            Welcome to Turo
+
+            <h1 className='header'>
+              Welcome to Turo
+            </h1>
+
             <br />
-            <label>
+
+            <label className='form-text'>
               First name
+              <br/>
               <input type="text" value={this.state.firstName} onChange={this.update("firstName")} />
             </label>
+
             <br />
-            <label>
+
+            <label className='form-text'>
               Last name
+              <br/>
               <input type="text" value={this.state.lastName} onChange={this.update("lastName")} />
             </label>
+
             <br />
-            <label>
+
+            <label className='form-text'>
               Email
+              <br/>
               <input type="email" value={this.state.email} onChange={this.update("email")} />
             </label>
+
             <br />
-            <label>
+
+            <label className='form-text'>
               Password
+              <br/>
               <input type="password" value={this.state.password} onChange={this.update("password")} />
             </label>
+
             <br />
-            <input type="submit" value="Sign up" />
+
+            <input className='submit' type="submit" value="Sign up" />
+
+            <br/>
+
+            <div className='align'>
+              <h3 className='sub'>
+                Have an account?
+              </h3>
+
+              {this.props.otherForm}
+            </div>
+
             {this.renderErrors()}
+
           </form>
         </div>;
     }

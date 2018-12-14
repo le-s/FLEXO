@@ -1,0 +1,22 @@
+.main-text {
+  color: white;
+  font-weight: bold;
+  padding-top: 200px;
+  font-size: 60px;
+}
+
+.sub-text {
+  color: white;
+  font-family: BasisGrotesque, Avenir, 
+  Helvetica Neue, Helvetica, sans-serif;
+  font-size: 19px;
+  font-weight: bold;
+  padding-top: 7px;
+}
+
+.main_splash_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
