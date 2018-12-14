@@ -3,11 +3,14 @@ import { withRouter, Route, Link } from 'react-router-dom';
 
 class Footer extends React.Component {
   render() {
-    let footerDisplay = (
-      <div>
-        
-      </div>
-    )
+    let footerDisplay = <div className="footer">
+        <div className='github'>
+        <a href="https://github.com/le-s">Github</a>
+        </div>
+        <div className="linkedin">
+        <a href="https://www.linkedin.com/in/sle94/">LinkedIn</a>
+        </div>
+      </div>;
 
     return (
       <div>
@@ -16,3 +19,5 @@ class Footer extends React.Component {
     )
   }
 }
+
+export default withRouter(Footer);

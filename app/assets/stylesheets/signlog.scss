@@ -11,6 +11,7 @@
   font-size: 20px;
   overflow: hidden;
   border-radius: 25px;
+  z-index: 0;
 }
 
 .splash {
@@ -34,11 +35,12 @@
 }
 
 .close {
-  width: 16px;
-  height: 16px;
   color: #F0EFF0;
   font-size: 20px;
-  font-weight: 0;
+  z-index: 2;
+  position: fixed;
+  transform: translate(306px, 10px);
+  cursor: pointer;
 }
 
 .header {

@@ -36,11 +36,12 @@ class SessionForm extends React.Component {
 
     if (this.props.formType === 'login') {
       displayForm = <div>
+          <div className="close" onClick={this.props.closeModal}>
+            &times;
+          </div>
           <form className="signlog-form" onSubmit={this.handleSubmit}>
 
-            <div className="close" onClick={this.props.closeModal}>
-              &times;
-            </div>
+            
 
             <h1 className='header'>Welcome back</h1>
 
@@ -78,10 +79,10 @@ class SessionForm extends React.Component {
         </div>;
     } else {
       displayForm = <div>
+          <div className="close" onClick={this.props.closeModal}>
+            &times;
+          </div>
           <form className="signlog-form" onSubmit={this.handleSubmit}>
-            <div className="close" onClick={this.props.closeModal}>
-              &times;
-            </div>
 
             <h1 className='header'>
               Welcome to Turo
