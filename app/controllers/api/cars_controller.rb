@@ -15,7 +15,24 @@ class Api::UsersController < ApplicationController
   end
 
   def index
-    @car = Car.all
+    @cars = Car.all
+  end
+
+  def destroy
+    @car = Car.find(params[:id])
+    if @car.delete
+      render :index
+    else
+      render json @car.errors.full_messages, status: 422
+  end
+
+  def update
+    @car = Car.find(params[:id])
+    if @car.update(car_params)
+      render :show
+    else
+      render json: @car.errors.full_messages, status: 422
+    end
   end
 
   private
