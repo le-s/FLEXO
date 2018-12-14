@@ -119,7 +119,7 @@ var closeModal = function closeModal() {
 /*!*********************************************!*\
   !*** ./frontend/actions/session_actions.js ***!
   \*********************************************/
-/*! exports provided: RECEIVE_CURRENT_USER, LOGOUT_CURRENT_USER, RECEIVE_ERRORS, CLEAR_ERRORS, receiveCurrentUser, logoutCurrentUser, receiveDemo, receiveErrors, clearErrors, login, logout, signup, demo */
+/*! exports provided: RECEIVE_CURRENT_USER, LOGOUT_CURRENT_USER, RECEIVE_ERRORS, CLEAR_ERRORS, receiveCurrentUser, logoutCurrentUser, receiveErrors, clearErrors, login, logout, signup */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -130,13 +130,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CLEAR_ERRORS", function() { return CLEAR_ERRORS; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "receiveCurrentUser", function() { return receiveCurrentUser; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "logoutCurrentUser", function() { return logoutCurrentUser; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "receiveDemo", function() { return receiveDemo; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "receiveErrors", function() { return receiveErrors; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "clearErrors", function() { return clearErrors; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "login", function() { return login; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "logout", function() { return logout; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "signup", function() { return signup; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "demo", function() { return demo; });
 /* harmony import */ var _util_session_api_util__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../util/session_api_util */ "./frontend/util/session_api_util.js");
 
 var RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';
@@ -152,12 +150,6 @@ var receiveCurrentUser = function receiveCurrentUser(currentUser) {
 var logoutCurrentUser = function logoutCurrentUser() {
   return {
     type: LOGOUT_CURRENT_USER
-  };
-};
-var receiveDemo = function receiveDemo(demoUser) {
-  return {
-    type: DEMO,
-    demoUser: demoUser
   };
 };
 var receiveErrors = function receiveErrors(errors) {
@@ -193,13 +185,6 @@ var signup = function signup(user) {
       return dispatch(receiveCurrentUser(currentUser));
     }, function (errors) {
       return dispatch(receiveErrors(errors.responseJSON));
-    });
-  };
-};
-var demo = function demo() {
-  return function (dispatch) {
-    return _util_session_api_util__WEBPACK_IMPORTED_MODULE_0__["demo"]().then(function (currentUser) {
-      return dispatch(receiveDemo(currentUser));
     });
   };
 };
@@ -1219,11 +1204,6 @@ var sessionReducer = function sessionReducer() {
       newState.id = action.currentUser.id;
       return newState;
 
-    case _actions_session_actions__WEBPACK_IMPORTED_MODULE_0__["DEMO"]:
-      newState = Object.assign({}, state);
-      newState.id = action.currentUser.id;
-      return newState;
-
     case _actions_session_actions__WEBPACK_IMPORTED_MODULE_0__["LOGOUT_CURRENT_USER"]:
       return _nullSession;
 
@@ -1382,7 +1362,7 @@ var ProtectedRoute = Object(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["withR
 /*!*******************************************!*\
   !*** ./frontend/util/session_api_util.js ***!
   \*******************************************/
-/*! exports provided: signup, login, logout, demo */
+/*! exports provided: signup, login, logout */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1390,7 +1370,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "signup", function() { return signup; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "login", function() { return login; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "logout", function() { return logout; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "demo", function() { return demo; });
 var signup = function signup(user) {
   return $.ajax({
     method: 'post',
@@ -1413,16 +1392,6 @@ var logout = function logout() {
   return $.ajax({
     method: 'delete',
     url: '/api/session'
-  });
-};
-var demo = function demo() {
-  return $.ajax({
-    method: 'post',
-    url: '/api/users',
-    data: {
-      email: 'demo',
-      password: 'password'
-    }
   });
 };
 

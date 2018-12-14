@@ -14,11 +14,6 @@ export const logoutCurrentUser = () => ({
   type: LOGOUT_CURRENT_USER,
 });
 
-export const receiveDemo = (demoUser) => ({
-  type: DEMO,
-  demoUser
-});
-
 export const receiveErrors = (errors) => ({
   type: RECEIVE_ERRORS,
   errors
@@ -44,8 +39,4 @@ export const signup = (user) => dispatch => (
     currentUser => dispatch(receiveCurrentUser(currentUser)),
     errors => dispatch(receiveErrors(errors.responseJSON)),
   )
-);
-
-export const demo = () => dispatch => (
-  ApiUtil.demo().then(currentUser => dispatch(receiveDemo(currentUser)))
 );
