@@ -60,7 +60,7 @@ input:hover{
 }
 
 .navbar-logo {
-  background-image: url("Turo_Logo.png");
+  background-image: image-url("Turo_Logo.png");
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -78,7 +78,7 @@ input:hover{
 }
 
 .profile {
-  background-image: url('profile_icon.png');
+  background-image: image-url('profile_icon.png');
   background-size: cover;
   height: 25px;
   padding-right: 25px;
@@ -93,7 +93,7 @@ input:hover{
   top: 10px;
 }
 
-/* The container <div> - needed to position the dropdown content */
+
 .dropdown {
   position: relative;
   display: inline-block;
@@ -101,14 +101,12 @@ input:hover{
   bottom: 13px;
 }
 
-/* Dropdown Content (Hidden by Default) */
 .dropdown-content {
   display: none;
   position: absolute;
   background-color: #f1f1f1;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: -1;
-  // top: 48px;
   padding-top: 26px;
 }
 
@@ -124,4 +122,3 @@ input:hover{
   display: block;
 }
 
-// .dropdown:hover .dropdown-content, .dropdown-content:hover {display: block;}

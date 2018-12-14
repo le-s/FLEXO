@@ -1,5 +1,5 @@
 .signlog-form {
-  background-image: url("defender.jpg");
+  background-image: image-url("defender.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
@@ -16,7 +16,7 @@
 }
 
 .splash {
-  background-image: url("gtr.jpg");
+  background-image: image-url("gtr.jpg");
   background-size: cover;
   height: 100%;
   width: 100%;
