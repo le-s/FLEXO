@@ -10,10 +10,41 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_11_200911) do
+ActiveRecord::Schema.define(version: 2018_12_14_183539) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "cars", force: :cascade do |t|
+    t.integer "owner_id", null: false
+    t.integer "year", null: false
+    t.string "make", null: false
+    t.string "model", null: false
+    t.integer "price", null: false
+    t.text "description", null: false
+    t.integer "mpg", null: false
+    t.string "fuel_type", null: false
+    t.integer "num_doors", null: false
+    t.integer "num_seats", null: false
+    t.boolean "bluetooth", null: false
+    t.boolean "auxiliary_input", null: false
+    t.boolean "heated_seats", null: false
+    t.boolean "gps", null: false
+    t.boolean "automatic_trans", null: false
+    t.boolean "usb_ports", null: false
+    t.boolean "backup_camera", null: false
+    t.text "mods"
+    t.string "address", null: false
+    t.string "city", null: false
+    t.string "state", null: false
+    t.integer "zipcode", null: false
+    t.float "longitude", null: false
+    t.float "latitude", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["city"], name: "index_cars_on_city"
+    t.index ["owner_id"], name: "index_cars_on_owner_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", null: false
