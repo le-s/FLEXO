@@ -21,27 +21,35 @@ class SessionForm extends React.Component {
     this.props.processForm(user).then(this.props.closeModal);
   }
   
+  handleDemologin(e) {
+    e.preventDefault(e);
+    this.props.processForm({
+      email: 'demo@email.com',
+      password: 'password'
+    })
+  }
+
   renderErrors() {
-    if (this.props.errors) {
-      return this.props.errors.map(error => {
-        return <li key={error}>
+    return(
+      <ul className='errors'>
+        {this.props.errors.map((error, i) => (
+          <li key={`error-${i}`}>
             {error}
-          </li>;
-      });
-    }
+          </li>
+        ))}
+      </ul>
+    );
   }
 
   render() {
     let displayForm;
-
+    // let errors = this.state.errorsArray;
     if (this.props.formType === 'login') {
       displayForm = <div>
           <div className="close" onClick={this.props.closeModal}>
             &times;
           </div>
-          <form className="signlog-form" onSubmit={this.handleSubmit}>
-
-            
+          <form className="signlog-form has-error" onSubmit={this.handleSubmit}>
 
             <h1 className='header'>Welcome back</h1>
 
@@ -75,6 +83,7 @@ class SessionForm extends React.Component {
               {this.props.otherForm}
             </div>
             {this.renderErrors()}
+            
           </form>
         </div>;
     } else {
@@ -94,30 +103,28 @@ class SessionForm extends React.Component {
               First name
               <br/>
               <input type="text" value={this.state.firstName} onChange={this.update("firstName")} />
+              <h1 className='single-error'>{this.props.errors.first_name}</h1>
             </label>
-
-            <br />
 
             <label className='form-text'>
               Last name
               <br/>
               <input type="text" value={this.state.lastName} onChange={this.update("lastName")} />
+              <h1 className='single-error'>{this.props.errors.last_name}</h1>
             </label>
-
-            <br />
 
             <label className='form-text'>
               Email
               <br/>
               <input type="email" value={this.state.email} onChange={this.update("email")} />
+              <h1 className='single-error'>{this.props.errors.email}</h1>
             </label>
-
-            <br />
 
             <label className='form-text'>
               Password
               <br/>
               <input type="password" value={this.state.password} onChange={this.update("password")} />
+              <h1 className='single-error'>{this.props.errors.password}</h1>
             </label>
 
             <br />
@@ -133,8 +140,6 @@ class SessionForm extends React.Component {
 
               {this.props.otherForm}
             </div>
-
-            {this.renderErrors()}
 
           </form>
         </div>;

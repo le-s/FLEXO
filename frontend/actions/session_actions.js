@@ -3,28 +3,30 @@ import * as ApiUtil from '../util/session_api_util';
 export const RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';
 export const LOGOUT_CURRENT_USER = 'LOGOUT_CURRENT_USER';
 export const RECEIVE_ERRORS = 'RECEIVE_ERRORS';
-export const DEMO = 'DEMO';
+export const CLEAR_ERRORS = "CLEAR ERRORS";
 
-const receiveCurrentUser = (currentUser) => ({
+export const receiveCurrentUser = (currentUser) => ({
   type: RECEIVE_CURRENT_USER,
   currentUser
 });
 
-const logoutCurrentUser = () => ({
+export const logoutCurrentUser = () => ({
   type: LOGOUT_CURRENT_USER,
 });
 
-const receiveDemo = (demoUser) => ({
+export const receiveDemo = (demoUser) => ({
   type: DEMO,
   demoUser
 });
 
-const receiveErrors = (errors) => ({
+export const receiveErrors = (errors) => ({
   type: RECEIVE_ERRORS,
   errors
 });
 
-
+export const clearErrors = () => ({
+  type: CLEAR_ERRORS
+});
 
 export const login = (user) => dispatch => (
   ApiUtil.login(user).then(
