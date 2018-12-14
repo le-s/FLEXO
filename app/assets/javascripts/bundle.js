@@ -506,8 +506,6 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "nav-item"
       }, "List your car"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        className: "nav-button"
-      }, "Demo Login"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "nav-button",
         onClick: function onClick() {
           return _this3.props.openModal('login');
@@ -703,6 +701,7 @@ function (_React$Component) {
     _this = _possibleConstructorReturn(this, _getPrototypeOf(SessionForm).call(this, props));
     _this.state = _this.props.formFields;
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_assertThisInitialized(_this)));
+    _this.handleDemoLogin = _this.handleDemoLogin.bind(_assertThisInitialized(_assertThisInitialized(_this)));
     return _this;
   }
 
@@ -723,15 +722,6 @@ function (_React$Component) {
       this.props.processForm(user).then(this.props.closeModal);
     }
   }, {
-    key: "handleDemologin",
-    value: function handleDemologin(e) {
-      e.preventDefault(e);
-      this.props.processForm({
-        email: 'demo@email.com',
-        password: 'password'
-      });
-    }
-  }, {
     key: "renderErrors",
     value: function renderErrors() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
@@ -741,6 +731,15 @@ function (_React$Component) {
           key: "error-".concat(i)
         }, error);
       }));
+    }
+  }, {
+    key: "handleDemoLogin",
+    value: function handleDemoLogin(e) {
+      e.preventDefault(e);
+      this.props.processForm({
+        email: 'demo@email.com',
+        password: 'password'
+      }).then(this.props.closeModal);
     }
   }, {
     key: "render",
@@ -774,6 +773,11 @@ function (_React$Component) {
           className: "submit",
           type: "submit",
           value: "Log in"
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+          className: "demo",
+          onClick: this.handleDemoLogin,
+          type: "submit",
+          value: "Demo Login"
         }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "align"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {

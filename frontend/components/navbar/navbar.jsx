@@ -30,7 +30,7 @@ class NavBar extends React.Component {
   removeDropDownDelayed() {
     setTimeout(() => this.setState({ dropDown: false }), 1000)
   }
-  
+
   render() {
     const addDropdown = this.addDropDown;
     let userDisplay = this.props.currentUser ? (
@@ -51,7 +51,6 @@ class NavBar extends React.Component {
       <div>
         <ul className='right-nav'>
           <button className='nav-item'>List your car</button>
-          <button className='nav-button'>Demo Login</button>
           <button className='nav-button' onClick={() => this.props.openModal('login')}>Login</button>
           <button className='nav-button' onClick={() => this.props.openModal('signup')}>Signup</button>
         </ul>
