@@ -1,5 +1,5 @@
 import React from "react";
-import {Route, Link} from 'react-router-dom';
+import {Route, Link, Redirect, Switch} from 'react-router-dom';
 import SignupFormContainer from './session_form/signup_form_container';
 import LoginFormContainer from './session_form/login_form_container';
 import NavBar from './navbar/navbar_container';
@@ -20,7 +20,10 @@ const App = () => (
         <NavBar /> 
       </div>
     </header>
-    <Route exact path='/' component={Splash}/>
+    <Switch>
+      <Route exact path='/' component={Splash}/>
+      <Redirect to='/'/>
+    </Switch>
   </div>
 );
 
