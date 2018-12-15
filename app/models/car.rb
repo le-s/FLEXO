@@ -32,7 +32,9 @@
 #
 
 class Car < ApplicationRecord
-  validates :owner_id, :year, :make, :model, :price, :description, :mpg, :fuel_type, :num_doors, :num_seats,:bluetooth, :auxiliary_input, :heated_seats, :gps, :automatic_trans, :usb_ports, :backup_camera, :address, :city, :state, :zipcode, :longitude, :latitude, presence: true
+  validates :owner_id, :year, :make, :model, :price, :description, :mpg, :fuel_type, :num_doors, :num_seats, :address, :city, :state, :zipcode, :longitude, :latitude, presence: true
+
+  validates :bluetooth, :auxiliary_input, :heated_seats, :gps, :automatic_trans, :usb_ports, :backup_camera, inclusion: [true, false]
 
   belongs_to :user,
     foreign_key: :owner_id,

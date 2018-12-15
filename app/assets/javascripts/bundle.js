@@ -77,7 +77,7 @@
 /******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
 /******/
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "";
+/******/ 	__webpack_require__.p = "./app/assets";
 /******/
 /******/
 /******/ 	// Load entry module and return exports
@@ -85,6 +85,98 @@
 /******/ })
 /************************************************************************/
 /******/ ({
+
+/***/ "./frontend/actions/car_actions.js":
+/*!*****************************************!*\
+  !*** ./frontend/actions/car_actions.js ***!
+  \*****************************************/
+/*! exports provided: RECEIVE_CARS, RECEIVE_CAR, DELETE_CAR, RECEIVE_ERRORS, receiveCars, receiveCar, removeCar, receiveErrors, fetchCars, fetchCar, editCar, deleteCar, createCar */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_CARS", function() { return RECEIVE_CARS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_CAR", function() { return RECEIVE_CAR; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DELETE_CAR", function() { return DELETE_CAR; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_ERRORS", function() { return RECEIVE_ERRORS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "receiveCars", function() { return receiveCars; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "receiveCar", function() { return receiveCar; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "removeCar", function() { return removeCar; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "receiveErrors", function() { return receiveErrors; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchCars", function() { return fetchCars; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchCar", function() { return fetchCar; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "editCar", function() { return editCar; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deleteCar", function() { return deleteCar; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createCar", function() { return createCar; });
+/* harmony import */ var _util_car_api_util__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../util/car_api_util */ "./frontend/util/car_api_util.js");
+
+var RECEIVE_CARS = 'RECEIVE_CARS';
+var RECEIVE_CAR = 'RECEIVE_CAR';
+var DELETE_CAR = 'DELETE_CAR';
+var RECEIVE_ERRORS = 'RECEIVE_ERRORS';
+var receiveCars = function receiveCars(cars) {
+  return {
+    type: RECEIVE_CARS,
+    cars: cars
+  };
+};
+var receiveCar = function receiveCar(car) {
+  return {
+    type: RECEIVE_CAR,
+    car: car
+  };
+};
+var removeCar = function removeCar(carId) {
+  return {
+    type: DELETE_CAR,
+    carId: carId.id
+  };
+};
+var receiveErrors = function receiveErrors(errors) {
+  return {
+    type: RECEIVE_ERRORS,
+    errors: errors
+  };
+};
+var fetchCars = function fetchCars() {
+  return function (dispatch) {
+    return _util_car_api_util__WEBPACK_IMPORTED_MODULE_0__["fetchCars"]().then(function (cars) {
+      return dispatch(receiveCars(cars));
+    });
+  };
+};
+var fetchCar = function fetchCar(id) {
+  return function (dispatch) {
+    return _util_car_api_util__WEBPACK_IMPORTED_MODULE_0__["fetchCar"](id).then(function (car) {
+      return dispatch(receiveCar(car));
+    });
+  };
+};
+var editCar = function editCar(car) {
+  return function (dispatch) {
+    return _util_car_api_util__WEBPACK_IMPORTED_MODULE_0__["editCar"](car).then(function (car) {
+      return dispatch(receiveCar(car));
+    });
+  };
+};
+var deleteCar = function deleteCar(id) {
+  return function (dispatch) {
+    return _util_car_api_util__WEBPACK_IMPORTED_MODULE_0__["deleteCar"](id).then(function (carId) {
+      return dispatch(removeCar(carId));
+    });
+  };
+};
+var createCar = function createCar(car) {
+  return function (dispatch) {
+    return _util_car_api_util__WEBPACK_IMPORTED_MODULE_0__["createCar"](car).then(function (car) {
+      return dispatch(receiveCar(car));
+    }, function (errors) {
+      return dispatch(receiveErrors(errors));
+    });
+  };
+};
+
+/***/ }),
 
 /***/ "./frontend/actions/modal_actions.js":
 /*!*******************************************!*\
@@ -1000,7 +1092,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _store_store__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./store/store */ "./frontend/store/store.js");
 /* harmony import */ var _components_root__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/root */ "./frontend/components/root.jsx");
 /* harmony import */ var _actions_session_actions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./actions/session_actions */ "./frontend/actions/session_actions.js");
+/* harmony import */ var _actions_car_actions__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./actions/car_actions */ "./frontend/actions/car_actions.js");
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 
 
@@ -1030,6 +1124,11 @@ document.addEventListener("DOMContentLoaded", function () {
   window.login = _actions_session_actions__WEBPACK_IMPORTED_MODULE_4__["login"];
   window.signup = _actions_session_actions__WEBPACK_IMPORTED_MODULE_4__["signup"];
   window.logout = _actions_session_actions__WEBPACK_IMPORTED_MODULE_4__["logout"];
+  window.fetchCars = _actions_car_actions__WEBPACK_IMPORTED_MODULE_5__["fetchCars"];
+  window.fetchCar = _actions_car_actions__WEBPACK_IMPORTED_MODULE_5__["fetchCar"];
+  window.deleteCar = _actions_car_actions__WEBPACK_IMPORTED_MODULE_5__["deleteCar"];
+  window.createCar = _actions_car_actions__WEBPACK_IMPORTED_MODULE_5__["createCar"];
+  window.editCar = _actions_car_actions__WEBPACK_IMPORTED_MODULE_5__["editCar"];
   window.getState = store.getState;
   window.dispatch = store.dispatch; // test end
 
@@ -1037,6 +1136,47 @@ document.addEventListener("DOMContentLoaded", function () {
     store: store
   }), root);
 });
+
+/***/ }),
+
+/***/ "./frontend/reducers/cars_reducer.js":
+/*!*******************************************!*\
+  !*** ./frontend/reducers/cars_reducer.js ***!
+  \*******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _actions_car_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../actions/car_actions */ "./frontend/actions/car_actions.js");
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+var carsReducer = function carsReducer() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+  var action = arguments.length > 1 ? arguments[1] : undefined;
+  Object.freeze(state);
+  var newState;
+
+  switch (action.type) {
+    case _actions_car_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_CARS"]:
+      return action.cars;
+
+    case _actions_car_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_CAR"]:
+      return Object.assign({}, state, _defineProperty({}, action.car.id, action.car));
+
+    case _actions_car_actions__WEBPACK_IMPORTED_MODULE_0__["DELETE_CAR"]:
+      newState = Object.assign({}, state);
+      delete newState[action.carId];
+      return newState;
+
+    default:
+      return state;
+  }
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (carsReducer);
 
 /***/ }),
 
@@ -1051,10 +1191,13 @@ document.addEventListener("DOMContentLoaded", function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! redux */ "./node_modules/redux/es/redux.js");
 /* harmony import */ var _users_reducer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./users_reducer */ "./frontend/reducers/users_reducer.js");
+/* harmony import */ var _cars_reducer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./cars_reducer */ "./frontend/reducers/cars_reducer.js");
+
 
 
 var entitiesReducer = Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers"])({
-  users: _users_reducer__WEBPACK_IMPORTED_MODULE_1__["default"]
+  users: _users_reducer__WEBPACK_IMPORTED_MODULE_1__["default"],
+  cars: _cars_reducer__WEBPACK_IMPORTED_MODULE_2__["default"]
 });
 /* harmony default export */ __webpack_exports__["default"] = (entitiesReducer);
 
@@ -1295,6 +1438,59 @@ var configureStore = function configureStore() {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (configureStore);
+
+/***/ }),
+
+/***/ "./frontend/util/car_api_util.js":
+/*!***************************************!*\
+  !*** ./frontend/util/car_api_util.js ***!
+  \***************************************/
+/*! exports provided: fetchCars, fetchCar, createCar, deleteCar, editCar */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchCars", function() { return fetchCars; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchCar", function() { return fetchCar; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createCar", function() { return createCar; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deleteCar", function() { return deleteCar; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "editCar", function() { return editCar; });
+var fetchCars = function fetchCars() {
+  return $.ajax({
+    method: 'get',
+    url: '/api/cars'
+  });
+};
+var fetchCar = function fetchCar(id) {
+  return $.ajax({
+    method: 'get',
+    url: "/api/cars/".concat(id)
+  });
+};
+var createCar = function createCar(car) {
+  return $.ajax({
+    method: 'post',
+    url: '/api/cars',
+    data: {
+      car: car
+    }
+  });
+};
+var deleteCar = function deleteCar(id) {
+  return $.ajax({
+    method: 'delete',
+    url: "/api/cars/".concat(id)
+  });
+};
+var editCar = function editCar(car) {
+  return $.ajax({
+    method: 'patch',
+    url: "/api/cars/".concat(car.id),
+    data: {
+      car: car
+    }
+  });
+};
 
 /***/ }),
 

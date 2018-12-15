@@ -29,7 +29,7 @@ export const deleteCar = (id) => (
 
 export const editCar = (car) => (
   $.ajax({
-    method: 'delete',
+    method: 'patch',
     url: `/api/cars/${car.id}`,
     data: {car}
   })
