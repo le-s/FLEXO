@@ -40,8 +40,7 @@ class Car < ApplicationRecord
     foreign_key: :owner_id,
     class_name: :User
 
-  # ActiveStorage Association
-  # has_many_attached :photos
+  has_many_attached :photos
 
   # def self.in_bounds(bounds)
   # self.where("lat < ?", bounds[:northEast][:lat])
