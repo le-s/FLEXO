@@ -1,0 +1,81 @@
+.details {
+  font-family: BasisGrotesque, Avenir, Helvetica Neue, Helvetica, sans-serif;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  width: 100%;
+  border: 1px solid black;
+}
+
+.div0 {
+  width: 800px;
+  border: 1px solid black;
+  overflow: hidden;
+}
+.div1a {
+  border: 1px solid black;
+  width: 500px;
+  float: left;
+}
+
+.div1b {
+  border: 1px solid black;
+  float: left;
+}
+
+.div2 {
+  width: 100%;
+  border: 1px solid black;
+  overflow: hidden;
+}
+
+.div3a {
+  border: 1px solid black;
+  width: 150px;
+  float: left;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.div3a h2{
+  font-size: 10px;
+  font-weight: bold;
+  color: #5C5D5C;
+  padding-right: 6px;
+  padding-top: 4px;
+}
+
+.div3b {
+  border: 1px solid black;
+  width: 346px;
+  float: left;
+}
+
+.div4 {
+  width: 100%
+}
+
+.div5a {
+  border: 1px solid black;  
+}
+
+.div5b {
+  border: 1px solid black;
+}
+
+.owner-name {
+  font-size: 14px;
+  font-weight: 500;
+  position: fixed;
+}
+
+.make-model {
+  font-family: Freight, HoeflerText-Black, Times New Roman, serif;
+  font-size: 26px;
+  text-transform: uppercase;
+}
+
+.year {
+  font-family: Freight, HoeflerText-Black, Times New Roman, serif;
+  font-size: 12px;
+}

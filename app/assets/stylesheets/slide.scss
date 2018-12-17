@@ -1,0 +1,36 @@
+.car-show-container {
+  width: 100%;
+}
+
+.img-container {
+  height: 50vw;
+  width: 100%;
+}
+
+.slide-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  min-height: 300px;
+  height: 75vw;
+}
+
+.slick-prev {
+  left: 0;
+  z-index: 1;
+}
+
+.slick-next {
+  right: 0;
+  z-index: 1;
+}
+
+.slick-slider, .slick-list {
+  height: 100%;
+}
+
+.slick-slider {
+  img {
+    object-fit: cover;
+  }
+}

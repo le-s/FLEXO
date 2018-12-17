@@ -21,9 +21,9 @@
 
 .container {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   margin: 0px auto;
-  width: 750px;
+  width: 100%;
   height: 48px;
 }
 
@@ -60,17 +60,16 @@ input:hover{
 }
 
 .navbar-logo {
-  background-image: image-url("Turo_Logo.png");
+  background-image: image-url("flexo.png");
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  width: 34px;
+  width: 46px;
   height: 42px;
   padding-left: 24px;
   padding-right: 24px;
   position: relative;
-  top: 10px;
 }
 
 .nav-item-list > li {
@@ -81,23 +80,26 @@ input:hover{
   background-image: image-url('profile_icon.png');
   background-size: cover;
   height: 25px;
-  padding-right: 25px;
+  width: 25px;
+  margin: auto;
+  // padding-right: 25px;
   position: relative;
   top: 10px;
 }
 
-.dropbtn {
-  background-size: cover;
-  background-color: transparent;
-  border: none;
-  top: 10px;
-}
+// .dropbtn {
+//   background-size: cover;
+//   background-color: transparent;
+//   border: none;
+//   top: 10px;
+// }
 
 
 .dropdown {
   position: relative;
   display: inline-block;
   height: 48px;
+  width: 48px;
   bottom: 13px;
 }
 
@@ -106,8 +108,9 @@ input:hover{
   position: absolute;
   background-color: #f1f1f1;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: -1;
-  padding-top: 26px;
+  z-index: 1;
+  margin: 22px 0 0 0;
+  // padding-top: 22px;
 }
 
 .dropdown-content button {

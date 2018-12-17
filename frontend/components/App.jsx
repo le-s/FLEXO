@@ -7,6 +7,7 @@ import Landing from './navbar/navbar_container';
 import {AuthRoute} from '../util/route_util';
 import Modal from './modal/modal';
 import Splash from './splash/splash_container';
+import CarShow from './car/car_show_container';
 
 
 const App = () => (
@@ -21,6 +22,7 @@ const App = () => (
       </div>
     </header>
     <Switch>
+      <Route path="/cars/:id" component={CarShow} />
       <Route exact path='/' component={Splash}/>
       <Redirect to='/'/>
     </Switch>
