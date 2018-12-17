@@ -347,3 +347,6 @@ Car.create!(
   longitude: -73.9976,
   latitude: 40.7191
 )
+
+#pictures
+joseph.photos.attach(io: File.open("/Users/sle/Desktop/pictures/joseph1.jpg"), filename: joseph1.jpg")

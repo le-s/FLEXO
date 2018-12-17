@@ -5,7 +5,7 @@ const SlideShow = ({photo}) => (
   <Slider>
 
     {photo.photoUrls.map(photo => (
-      <div>
+      <div key={photo}>
         <img src={photo}/>
       </div>
     ))}

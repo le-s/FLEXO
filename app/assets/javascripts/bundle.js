@@ -475,6 +475,94 @@ __webpack_require__.r(__webpack_exports__);
 
 var Details = function Details(_ref) {
   var details = _ref.details;
+  var aux;
+  var bluetooth;
+  var transmission;
+  var backup;
+  var gps;
+  var heated;
+  var usb;
+
+  if (details.auxiliaryInput === true) {
+    aux = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "div6"
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+      className: "aux-icon"
+    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "features"
+    }, "Audio Input"));
+  }
+
+  if (details.bluetooth === true) {
+    aux = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "div6"
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+      className: "bluetooth-icon"
+    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "features"
+    }, "Bluetooth"));
+  }
+
+  if (details.automaticTrans === true) {
+    transmission = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "div6"
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+      className: "auto-icon"
+    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "features"
+    }, "Automatic Transmission"));
+  }
+
+  if (details.automaticTrans === false) {
+    transmission = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "div6"
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+      className: "manual-icon"
+    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "features"
+    }, "Manual Transmission"));
+  }
+
+  if (details.backupCamera === true) {
+    backup = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "div6"
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+      className: "backup-icon"
+    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "features"
+    }, "Backup Camera"));
+  }
+
+  if (details.gps === true) {
+    gps = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "div6"
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+      className: "gps-icon"
+    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "features"
+    }, "GPS"));
+  }
+
+  if (details.heatedSeats === true) {
+    heated = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "div6"
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+      className: "heated-icon"
+    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "features"
+    }, "Heated seats"));
+  }
+
+  if (details.usbPorts === true) {
+    usb = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "div6"
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+      className: "usb-icon"
+    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "features"
+    }, "USB Input"));
+  }
+
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "div0"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -491,13 +579,51 @@ var Details = function Details(_ref) {
     className: "div5a"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "owner-name"
-  }, "Owner's name"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+  }, details.firstName, "'s"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "make-model"
-  }, " ", details.make, " ", details.model, " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+  }, details.make, " ", details.model), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "year"
-  }, " ", details.year, " ")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, "  ", details.year, " ")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "div5b"
-  }, details.mpg))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "div6"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "mpg-icon"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "features"
+  }, details.mpg, " mpg")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "div6"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "gas-icon"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "features"
+  }, details.fuelType)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "div6"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "door-icon"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "features"
+  }, details.numDoors, " doors")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "div6"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "seat-icon"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "features"
+  }, details.numSeats, " seats"))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "div2"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "div3a"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "DESCRIPTION")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "div3ba"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, details.description))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "div2"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "div3a"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "FEATURES")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "div3ba"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "div5b"
+  }, aux, bluetooth, transmission, backup, gps, heated, usb))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "div1b"
   }, "Side bar"));
 };
@@ -525,7 +651,9 @@ __webpack_require__.r(__webpack_exports__);
 var SlideShow = function SlideShow(_ref) {
   var photo = _ref.photo;
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_slick__WEBPACK_IMPORTED_MODULE_1___default.a, null, photo.photoUrls.map(function (photo) {
-    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      key: photo
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
       src: photo
     }));
   }));
@@ -1025,7 +1153,7 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      var displayForm; // let errors = this.state.errorsArray;
+      var displayForm;
 
       if (this.props.formType === 'login') {
         displayForm = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {

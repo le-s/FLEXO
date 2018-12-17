@@ -44,7 +44,6 @@ class SessionForm extends React.Component {
 
   render() {
     let displayForm;
-    // let errors = this.state.errorsArray;
     if (this.props.formType === 'login') {
       displayForm = <div>
           <div className="close" onClick={this.props.closeModal}>
