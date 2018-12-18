@@ -397,11 +397,20 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, this.props.cars.map(function (car) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "divi0"
+      }, this.props.cars.map(function (car) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          key: car.id,
+          className: "divi1"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+          href: "/cars/{car.id}"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "divi2"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
           src: car.photoUrl
-        }), car.make, car.model, car.year);
-      }));
+        })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, car.make, car.model, car.year)));
+      })));
     }
   }]);
 

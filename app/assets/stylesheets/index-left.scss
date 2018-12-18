@@ -1,0 +1,47 @@
+.image-wrapping {
+  border-radius: 5px;
+  margin-bottom: 11px;
+  overflow: hidden;
+  padding-bottom: 53%;
+  position: relative;
+}
+
+.vehicle-card {
+  color: black;
+  display: block;
+  position: relative
+}
+
+.vehicle-wrapper {
+  height: 180px;
+  overflow: hidden;
+}
+
+.vehicle-container {
+  padding-right: 25px;
+  padding-bottom: 35px;
+  display: block;
+}
+
+.divi0 {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.divi1 {
+  width: 336px;
+  height: 210px;
+  /* object-fit: contain; */
+  position: relative;
+}
+
+.divi2 {
+  height: 185px;
+  width: 336px;
+  overflow: hidden;
+  border-radius: 6px;
+}
+
+
+
