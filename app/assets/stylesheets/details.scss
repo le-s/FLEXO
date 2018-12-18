@@ -7,30 +7,29 @@
   // border: 1px solid black;
 }
 
-.div0 {
+.detail-side {
   width: 800px;
   // border: 1px solid black;
   overflow: hidden;
 }
-.div1a {
+.info {
   // border: 1px solid black;
-  width: 500px;
+  width: 526px;
   float: left;
 }
 
-.div1b {
-  // border: 1px solid black;
+.side {
   float: left;
 }
 
-.div2 {
+.all-info {
   width: 100%;
   // border: 1px solid black;
   overflow: hidden;
   margin-top: 25px;
 }
 
-.div3a {
+.heading {
   // border: 1px solid black;
   width: 150px;
   float: left;
@@ -39,7 +38,7 @@
   padding-right: 3px;
 }
 
-.div3a h2{
+.heading h2{
   font-size: 10px;
   font-weight: bold;
   color: #5C5D5C;
@@ -47,39 +46,45 @@
   padding-top: 4px;
 }
 
-.div3b {
+.car-detail {
   // border: 1px solid black;
   width: 346px;
   float: left;
 }
 
-.div3ba {
+.more-features {
   // border: 1px solid black;
-  width: 346px;
+  width: 373px;
+  float: left;
+  font-size: 13px;
+  font-weight: 500;
+  margin-top: -4px;
+}
+
+.description-text {
+  // border: 1px solid black;
+  width: 373px;
   float: left;
   font-size: 13px;
   font-weight: 500;
   margin-top: 3px;
 }
 
-.div4 {
+.car-width {
   width: 100%
 }
 
-.div5a {
-  // border: 1px solid black;  
-}
-
-.div5b {
+.all-features {
   // border: 1px solid black;
   display: flex;
   flex: 0 1 auto;
   flex-flow: row wrap;
 }
 
-.div6 {
-  flex-basis: 50%;
-  max-width: 50%;
+.features {
+  // flex-basis: 50%;
+  // max-width: 50%;
+  width: 171px;
   margin-top: 6px;
   display:flex;
 }
@@ -101,7 +106,7 @@
   padding-left: 2px;
 }
 
-.features {
+.single-feature {
   padding-top: 3px;
 }
 

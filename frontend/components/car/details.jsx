@@ -11,78 +11,78 @@ const Details = ({ details }) => {
 
   if (details.auxiliaryInput === true) {
     aux = 
-    <div className="div6">
+    <div className="features">
       <span className="aux-icon" />
-      <div className='features'>Audio Input</div>
+      <div className='single-feature'>Audio Input</div>
     </div>
   }
 
   if (details.bluetooth === true) {
     aux = 
-    <div className="div6">
+    <div className="features">
       <span className="bluetooth-icon" />
-      <div className='features'>Bluetooth</div>
+      <div className='single-feature'>Bluetooth</div>
     </div>
   }
 
   if (details.automaticTrans === true) {
     transmission = 
-    <div className="div6">
+    <div className="features">
       <span className="auto-icon" />
-      <div className='features'>Automatic Transmission</div>
+      <div className='single-feature'>Auto Transmission</div>
     </div>
   }
 
   if (details.automaticTrans === false) {
     transmission = 
-    <div className="div6">
+    <div className="features">
       <span className="manual-icon" />
-      <div className='features'>Manual Transmission</div>
+      <div className='single-feature'>Manual Transmission</div>
     </div>
   }
 
   if (details.backupCamera === true) {
     backup = 
-    <div className="div6">
+    <div className="features">
       <span className="backup-icon" />
-      <div className='features'>Backup Camera</div>
+      <div className='single-feature'>Backup Camera</div>
     </div>
   }
 
   if (details.gps === true) {
     gps = 
-    <div className="div6">
+    <div className="features">
       <span className="gps-icon" />
-      <div className='features'>GPS</div>
+      <div className='single-feature'>GPS</div>
     </div>
   }
 
   if (details.heatedSeats === true) {
     heated = 
-    <div className="div6">
+    <div className="features">
       <span className="heated-icon" />
-      <div className='features'>Heated seats</div>
+      <div className='single-feature'>Heated seats</div>
     </div>
   }
 
   if (details.usbPorts === true) {
     usb = 
-    <div className="div6">
+    <div className="features">
       <span className="usb-icon" />
-      <div className='features'>USB Input</div>
+      <div className='single-feature'>USB Input</div>
     </div>
   }
 
   return (
-  <div className="div0">
-    <div className="div1a">
-      <div className="div2">
-        <div className="div3a">
+  <div className="detail-side">
+    <div className="info">
+      <div className="all-info">
+        <div className="heading">
           <h2>THE CAR</h2>
         </div>
-        <div className="div3b">
-          <div className="div4">
-            <div className="div5a">
+        <div className="car-detail">
+          <div className="car-width">
+            <div>
               <h1>
                 <span className="owner-name">{details.firstName}'s</span>
                 <br />
@@ -94,40 +94,40 @@ const Details = ({ details }) => {
                 </span>
               </h1>
             </div>
-            <div className="div5b">
-              <div className="div6">
+            <div className="all-features">
+              <div className="features">
                 <span className="mpg-icon" />
-                <div className='features'>{details.mpg} mpg</div>
+                <div className='single-feature'>{details.mpg} mpg</div>
               </div>
-              <div className="div6">
+              <div className="features">
                 <span className="gas-icon" />
-                <div className='features'>{details.fuelType}</div>
+                <div className='single-feature'>{details.fuelType}</div>
               </div>
-              <div className="div6">
+              <div className="features">
                 <span className="door-icon" />
-                <div className='features'>{details.numDoors} doors</div>
+                <div className='single-feature'>{details.numDoors} doors</div>
               </div>
-              <div className="div6">
+              <div className="features">
                 <span className="seat-icon" />
-                <div className='features'>{details.numSeats} seats</div>
+                <div className='single-feature'>{details.numSeats} seats</div>
               </div>
             </div>
           </div>
         </div>
-        <div className="div2">
-          <div className="div3a">
+        <div className="all-info">
+          <div className="heading">
             <h2>DESCRIPTION</h2>
           </div>
-          <div className="div3ba">
+          <div className="description-text">
             <h2>{details.description}</h2>
           </div>
         </div>
-        <div className="div2">
-          <div className="div3a">
+        <div className="all-info">
+          <div className="heading">
             <h2>FEATURES</h2>
           </div>
-          <div className="div3ba">
-            <div className="div5b">
+          <div className="more-features">
+            <div className="all-features">
               {aux}
               {bluetooth}
               {transmission}
@@ -140,7 +140,37 @@ const Details = ({ details }) => {
         </div>
       </div>
     </div>
-    <div className="div1b">Side bar</div>
+    <div className="side">
+      <div className="reservation-info">
+        <div className="cost">
+          <div className="dollar-price">
+            <div className="dollar">
+              $
+            </div>
+            <div className="price">
+              {details.price}
+            </div>
+          </div>
+          <span className="per-day">per day</span>
+        </div>
+        <div className="div1">
+          <div className="div2a">
+            Distance Included
+          </div>
+          <div className="div2">
+            <div>Day</div>
+            <div>200 mi</div>
+          </div>
+          <div className="div2">
+            Week
+          </div>
+          <div className="div2">
+            Month
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
   )};
 
