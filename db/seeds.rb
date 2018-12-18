@@ -78,7 +78,7 @@ miso = User.create!(
 )
 
 #Cars
-Car.create!(
+tl = Car.create!(
   owner_id: dillon.id,
   year: 2007,
   make: 'Acura',
@@ -105,8 +105,8 @@ Car.create!(
   latitude: 37.7587
 )
 
-Car.create!(
-  owner_id: miata.id,
+miata = Car.create!(
+  owner_id: steven.id,
   year: 2000,
   make: 'Mazda',
   model: 'Miata',
@@ -132,7 +132,7 @@ Car.create!(
   latitude: 37.7989
 )
 
-Car.create!(
+prelude = Car.create!(
   owner_id: tommy.id,
   year: 1998,
   make: 'Honda',
@@ -159,7 +159,7 @@ Car.create!(
   latitude: 37.76014
 )
 
-Car.create!(
+gc8 = Car.create!(
   owner_id: tommy.id,
   year: 1997,
   make: 'Subaru',
@@ -186,7 +186,7 @@ Car.create!(
   latitude: 37.76014
 )
 
-Car.create!(
+e90 = Car.create!(
   owner_id: nathan.id,
   year: 201,
   make: 'BMW',
@@ -213,7 +213,7 @@ Car.create!(
   latitude: 37.7321
 )
 
-Car.create!(
+325e = Car.create!(
   owner_id: nathan.id,
   year: 1985,
   make: 'BMW',
@@ -240,7 +240,7 @@ Car.create!(
   latitude: 37.7321
 )
 
-Car.create!(
+e30 = Car.create!(
   owner_id: dylan.id,
   year: 1984,
   make: 'BMW',
@@ -267,7 +267,7 @@ Car.create!(
   latitude: 37.7612
 )
 
-Car.create!(
+rs = Car.create!(
   owner_id: joseph.id,
   year: 2001,
   make: 'Subaru',
@@ -294,7 +294,7 @@ Car.create!(
   latitude: 37.7939
 )
 
-Car.create!(
+charger = Car.create!(
   owner_id: theo.id,
   year: 1973,
   make: 'Dodge',
@@ -321,7 +321,7 @@ Car.create!(
   latitude: 37.7860
 )
 
-Car.create!(
+mustang = Car.create!(
   owner_id: miso.id,
   year: 2017,
   make: 'Ford',
@@ -349,4 +349,79 @@ Car.create!(
 )
 
 #pictures
-joseph.photos.attach(io: File.open("/Users/sle/Desktop/pictures/joseph1.jpg"), filename: joseph1.jpg")
+rs.photos.attach(io: File.open("/Users/sle/Desktop/pictures/joseph1.jpg"), filename: "joseph1.jpg")
+
+rs.photos.attach(io: File.open("/Users/sle/Desktop/pictures/joseph2.jpg"), filename: "joseph2.jpg")
+
+tl.photos.attach(io: File.open("/Users/sle/Desktop/pictures/dillon1.jpg"), filename: "dillon1.jpg")
+
+tl.photos.attach(io: File.open("/Users/sle/Desktop/pictures/dillon2.jpg"), filename: "dillon2.jpg")
+
+tl.photos.attach(io: File.open("/Users/sle/Desktop/pictures/dillon3.jpg"), filename: "dillon3.jpg")
+
+tl.photos.attach(io: File.open("/Users/sle/Desktop/pictures/dillon4.jpg"), filename: "dillon4.jpg")
+
+miata.photos.attach(io: File.open("/Users/sle/Desktop/pictures/miata1.jpg"), filename: "miata1.jpg")
+
+miata.photos.attach(io: File.open("/Users/sle/Desktop/pictures/miata2.jpg"), filename: "miata2.jpg")
+
+miata.photos.attach(io: File.open("/Users/sle/Desktop/pictures/miata3.jpg"), filename: "miata3.jpg")
+
+miata.photos.attach(io: File.open("/Users/sle/Desktop/pictures/miata4.jpg"), filename: "miata4.jpg")
+
+prelude.photos.attach(io: File.open("/Users/sle/Desktop/pictures/prelude1.jpg"), filename: "prelude1.jpg")
+
+prelude.photos.attach(io: File.open("/Users/sle/Desktop/pictures/prelude2.jpg"), filename: "prelude2.jpg")
+
+prelude.photos.attach(io: File.open("/Users/sle/Desktop/pictures/prelude3.jpg"), filename: "prelude3.jpg")
+
+prelude.photos.attach(io: File.open("/Users/sle/Desktop/pictures/prelude4.jpg"), filename: "prelude4.jpg")
+
+gc8.photos.attach(io: File.open("/Users/sle/Desktop/pictures/gc81.jpg"), filename: "gc81.jpg")
+
+gc8.photos.attach(io: File.open("/Users/sle/Desktop/pictures/gc82.jpg"), filename: "gc82.jpg")
+
+gc8.photos.attach(io: File.open("/Users/sle/Desktop/pictures/gc83.jpg"), filename: "gc83.jpg")
+
+gc8.photos.attach(io: File.open("/Users/sle/Desktop/pictures/gc84.jpg"), filename: "gc84.jpg")
+
+e90.photos.attach(io: File.open("/Users/sle/Desktop/pictures/e901.jpg"), filename: "e901.jpg")
+
+e90.photos.attach(io: File.open("/Users/sle/Desktop/pictures/e902.jpg"), filename: "e902.jpg")
+
+e90.photos.attach(io: File.open("/Users/sle/Desktop/pictures/e903.jpg"), filename: "e903.jpg")
+
+e90.photos.attach(io: File.open("/Users/sle/Desktop/pictures/e904.jpg"), filename: "e904.jpg")
+
+325e.photos.attach(io: File.open("/Users/sle/Desktop/pictures/e301.jpg"), filename: "e301.jpg")
+
+325e.photos.attach(io: File.open("/Users/sle/Desktop/pictures/e302.jpg"), filename: "e302.jpg")
+
+325e.photos.attach(io: File.open("/Users/sle/Desktop/pictures/e303.jpg"), filename: "e303.jpg")
+
+325e.photos.attach(io: File.open("/Users/sle/Desktop/pictures/e304.jpg"), filename: "e304.jpg")
+
+e30.photos.attach(io: File.open("/Users/sle/Desktop/pictures/dylan1.jpg"), filename: "dylan1.jpg")
+
+e30.photos.attach(io: File.open("/Users/sle/Desktop/pictures/dylan2.jpg"), filename: "dylan2.jpg")
+
+e30.photos.attach(io: File.open("/Users/sle/Desktop/pictures/dylan3.jpg"), filename: "dylan3.jpg")
+
+e30.photos.attach(io: File.open("/Users/sle/Desktop/pictures/dylan4.jpg"), filename: "dylan4.jpg")
+
+charger.photos.attach(io: File.open("/Users/sle/Desktop/pictures/theo1.jpg"), filename: "theo1.jpg")
+
+charger.photos.attach(io: File.open("/Users/sle/Desktop/pictures/theo2.jpg"), filename: "theo2.jpg")
+
+charger.photos.attach(io: File.open("/Users/sle/Desktop/pictures/theo3.jpg"), filename: "theo3.jpg")
+
+charger.photos.attach(io: File.open("/Users/sle/Desktop/pictures/theo4.jpg"), filename: "theo4.jpg")
+
+mustang.photos.attach(io: File.open("/Users/sle/Desktop/pictures/miso1.jpg"), filename: "miso1.jpg")
+
+mustang.photos.attach(io: File.open("/Users/sle/Desktop/pictures/miso2.jpg"), filename: "miso2.jpg")
+
+mustang.photos.attach(io: File.open("/Users/sle/Desktop/pictures/miso3.jpg"), filename: "miso3.jpg")
+
+mustang.photos.attach(io: File.open("/Users/sle/Desktop/pictures/miso4.jpg"), filename: "miso4.jpg")
+
