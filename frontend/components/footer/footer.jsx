@@ -8,7 +8,9 @@ class Footer extends React.Component {
         <a href="https://github.com/le-s">Github</a>
         </div>
         <div className="linkedin">
-        <a href="https://www.linkedin.com/in/sle94/">LinkedIn</a>
+          <div className="linkedin-align">
+            <a href="https://www.linkedin.com/in/sle94/">LinkedIn</a>
+          </div>
         </div>
       </div>;
 

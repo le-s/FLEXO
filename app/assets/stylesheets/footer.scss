@@ -10,6 +10,7 @@
   color: white;
   font-family: BasisGrotesque, Avenir, 
   Helvetica Neue, Helvetica, sans-serif;
+  font-size: 22px;
 }
 
 .linkedin {
@@ -26,6 +27,10 @@
 
 .linkedin a:hover {
   text-decoration: underline;
+}
+
+.linkedin-align {
+  margin-top: -3px;
 }
 
 .github {

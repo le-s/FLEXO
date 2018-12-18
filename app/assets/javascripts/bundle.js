@@ -403,8 +403,8 @@ function (_React$Component) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           key: car.id,
           className: "divi1"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-          href: "/cars/{car.id}"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+          to: "/cars/".concat(car.id)
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "divi2"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
@@ -591,9 +591,109 @@ var mDTP = function mDTP(dispatch) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _reservation__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./reservation */ "./frontend/components/car/reservation.jsx");
+/* harmony import */ var _icon__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./icon */ "./frontend/components/car/icon.jsx");
+
+
 
 
 var Details = function Details(_ref) {
+  var details = _ref.details;
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "detail-side"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "info"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "all-info"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "heading"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "THE CAR")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "car-detail"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "car-width"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "owner-name"
+  }, details.firstName, "'s"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "make-model"
+  }, details.make, " ", details.model), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "year"
+  }, "  ", details.year, " ")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "fas fa-star"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "fas fa-star"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "fas fa-star"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "fas fa-star"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "fas fa-star"
+  }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "all-features"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "features"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "mpg-icon"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "single-feature"
+  }, details.mpg, " mpg")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "features"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "gas-icon"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "single-feature"
+  }, details.fuelType)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "features"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "door-icon"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "single-feature"
+  }, details.numDoors, " doors")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "features"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "seat-icon"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "single-feature"
+  }, details.numSeats, " seats")))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "all-info"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "heading"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "DESCRIPTION")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "description-text"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, details.description))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "all-info"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "heading"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "FEATURES")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_icon__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    details: details
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "all-info"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "heading"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "MODS")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "description-text"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, details.mods)))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_reservation__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    details: details
+  }));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Details);
+
+/***/ }),
+
+/***/ "./frontend/components/car/icon.jsx":
+/*!******************************************!*\
+  !*** ./frontend/components/car/icon.jsx ***!
+  \******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+
+var Icon = function Icon(_ref) {
   var details = _ref.details;
   var aux;
   var bluetooth;
@@ -630,7 +730,7 @@ var Details = function Details(_ref) {
       className: "auto-icon"
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       className: "single-feature"
-    }, "Auto Transmission"));
+    }, "Automatic Transmission"));
   }
 
   if (details.automaticTrans === false) {
@@ -684,64 +784,32 @@ var Details = function Details(_ref) {
   }
 
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "detail-side"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "info"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "all-info"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "heading"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "THE CAR")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "car-detail"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "car-width"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    className: "owner-name"
-  }, details.firstName, "'s"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    className: "make-model"
-  }, details.make, " ", details.model), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    className: "year"
-  }, "  ", details.year, " ")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "all-features"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "features"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    className: "mpg-icon"
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "single-feature"
-  }, details.mpg, " mpg")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "features"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    className: "gas-icon"
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "single-feature"
-  }, details.fuelType)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "features"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    className: "door-icon"
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "single-feature"
-  }, details.numDoors, " doors")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "features"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    className: "seat-icon"
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "single-feature"
-  }, details.numSeats, " seats"))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "all-info"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "heading"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "DESCRIPTION")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "description-text"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, details.description))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "all-info"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "heading"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "FEATURES")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "more-features"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "all-features"
-  }, aux, bluetooth, transmission, backup, gps, heated, usb))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, aux, bluetooth, transmission, backup, gps, heated, usb));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Icon);
+
+/***/ }),
+
+/***/ "./frontend/components/car/reservation.jsx":
+/*!*************************************************!*\
+  !*** ./frontend/components/car/reservation.jsx ***!
+  \*************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+
+var ReservationInfo = function ReservationInfo(_ref) {
+  var details = _ref.details;
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "side"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "reservation-info"
@@ -763,12 +831,52 @@ var Details = function Details(_ref) {
     className: "div2"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Day"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "200 mi")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "div2"
-  }, "Week"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Week"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "1000 mi")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "div2"
-  }, "Month")))));
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Month"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "1500 mi"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "div1"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "div2a"
+  }, "Insurance Provided VIA"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "insurance"
+  }, "Liberty Mututal"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "div1b"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "owner-details-container"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "owner-details"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "owner-body"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "owner-details"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "corgi"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "name-pic"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "div2a"
+  }, "Owned by"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "right-side-owner-name"
+  }, details.firstName), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "fas fa-star"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "fas fa-star"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "fas fa-star"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "fas fa-star"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "fas fa-star"
+  })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "sidebar-response"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "div2"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Response rate"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "99 %")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "div2"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Response time"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "20 minutes")))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Add to Favorites"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Social Media Buttons")));
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Details);
+/* harmony default export */ __webpack_exports__["default"] = (ReservationInfo);
 
 /***/ }),
 
@@ -790,6 +898,8 @@ __webpack_require__.r(__webpack_exports__);
 
 var SlideShow = function SlideShow(_ref) {
   var photo = _ref.photo;
+  // debugger
+  if (photo.photoUrls === undefined) return null;
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_slick__WEBPACK_IMPORTED_MODULE_1___default.a, null, photo.photoUrls.map(function (photo) {
     return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       key: photo
@@ -858,9 +968,11 @@ function (_React$Component) {
         href: "https://github.com/le-s"
       }, "Github")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "linkedin"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "linkedin-align"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         href: "https://www.linkedin.com/in/sle94/"
-      }, "LinkedIn")));
+      }, "LinkedIn"))));
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, footerDisplay);
     }
   }]);
@@ -1000,12 +1112,15 @@ function (_React$Component) {
     _this.addDropDown = _this.addDropDown.bind(_assertThisInitialized(_assertThisInitialized(_this)));
     _this.removeDropDown = _this.removeDropDown.bind(_assertThisInitialized(_assertThisInitialized(_this)));
     _this.removeDropDownDelayed = _this.removeDropDownDelayed.bind(_assertThisInitialized(_assertThisInitialized(_this)));
+    $('body').on("click", _this.removeDropDown);
     return _this;
   }
 
   _createClass(NavBar, [{
     key: "addDropDown",
-    value: function addDropDown() {
+    value: function addDropDown(event) {
+      // event.stopPropagation();
+      event.preventDefault();
       this.setState({
         dropDown: true
       });
@@ -1033,20 +1148,18 @@ function (_React$Component) {
     value: function render() {
       var _this3 = this;
 
-      var addDropdown = this.addDropDown;
+      // const addDropdown = this.addDropDown;
       var userDisplay = this.props.currentUser ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
         className: "right-nav"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "nav-item"
       }, "List your car"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "dropdown",
-        onMouseEnter: this.addDropDown,
-        onMouseLeave: this.removeDropDownDelayed
+        className: "dropdown"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "profile"
+        className: "profile",
+        onClick: this.addDropDown
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: this.state.dropDown ? 'dropdown-content active' : 'dropdown-content',
-        onMouseEnter: this.addDropDown
+        className: this.state.dropDown ? 'dropdown-content active' : 'dropdown-content'
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "nav-button",
         onClick: this.props.logout

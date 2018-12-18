@@ -13,9 +13,12 @@ class NavBar extends React.Component {
     this.addDropDown = this.addDropDown.bind(this);
     this.removeDropDown = this.removeDropDown.bind(this);
     this.removeDropDownDelayed = this.removeDropDownDelayed.bind(this);
+    $('body').on("click", this.removeDropDown);
   }
 
-  addDropDown() {
+  addDropDown(event) {
+    // event.stopPropagation();
+    event.preventDefault();
     this.setState({
       dropDown: true
     });
@@ -28,20 +31,18 @@ class NavBar extends React.Component {
   }
 
   removeDropDownDelayed() {
-    setTimeout(() => this.setState({ dropDown: false }), 1000)
+    setTimeout(() => this.setState({ dropDown: false }), 1000);
   }
 
   render() {
-    const addDropdown = this.addDropDown;
+    // const addDropdown = this.addDropDown;
     let userDisplay = this.props.currentUser ? (
         <ul className='right-nav'>
           <button className='nav-item'>List your car</button>
-          <div className='dropdown' onMouseEnter={this.addDropDown} onMouseLeave={this.removeDropDownDelayed}>
-              <div className='profile'/>
+          <div className='dropdown'>
+              <div className='profile' onClick={this.addDropDown}/>
               <div 
                 className={this.state.dropDown ? 'dropdown-content active' : 'dropdown-content'}
-                
-                onMouseEnter={this.addDropDown}
               >
                 <button className='nav-button' onClick={this.props.logout}>Logout</button>
               </div>

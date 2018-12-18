@@ -1,6 +1,6 @@
 class Api::CarsController < ApplicationController
   def show
-    @car = Car.find(params[:id])
+    @car = Car.with_attached_photos.find(params[:id])
   end
 
   def create

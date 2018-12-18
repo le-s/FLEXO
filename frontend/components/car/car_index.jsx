@@ -16,7 +16,7 @@ class CarIndex extends React.Component {
         <div className="divi0">
           {this.props.cars.map(car => 
           <div key={car.id} className="divi1">
-            <a href={`/cars/{car.id}`}>
+            <Link to={`/cars/${car.id}`}>
 
               <div className="divi2">
                 <img src={car.photoUrl} />
@@ -26,7 +26,7 @@ class CarIndex extends React.Component {
                 {car.model}
                 {car.year}
               </div>
-            </a>
+            </Link>
           </div>)}
         </div>
       </>

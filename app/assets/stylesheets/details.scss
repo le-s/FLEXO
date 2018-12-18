@@ -8,18 +8,21 @@
 }
 
 .detail-side {
-  width: 800px;
+  width: 940px;
   // border: 1px solid black;
   overflow: hidden;
+  margin-top: 20px;
 }
 .info {
   // border: 1px solid black;
-  width: 526px;
+  width: 620px;
   float: left;
 }
 
 .side {
   float: left;
+  width: 300px;
+  margin-left: 20px;
 }
 
 .all-info {
@@ -39,7 +42,7 @@
 }
 
 .heading h2{
-  font-size: 10px;
+  font-size: 13px;
   font-weight: bold;
   color: #5C5D5C;
   padding-right: 6px;
@@ -48,13 +51,13 @@
 
 .car-detail {
   // border: 1px solid black;
-  width: 346px;
+  width: 467px;
   float: left;
 }
 
 .more-features {
   // border: 1px solid black;
-  width: 373px;
+  width: 467px;
   float: left;
   font-size: 13px;
   font-weight: 500;
@@ -70,6 +73,13 @@
   margin-top: 3px;
 }
 
+.description-text h2 {
+  // border: 1px solid black;
+  font-size: 16px;
+  font-weight: 600;
+  color: #221F1E;
+}
+
 .car-width {
   width: 100%
 }
@@ -79,35 +89,39 @@
   display: flex;
   flex: 0 1 auto;
   flex-flow: row wrap;
+  width: 467px;
 }
 
 .features {
   // flex-basis: 50%;
   // max-width: 50%;
-  width: 171px;
+  width: 50%;
   margin-top: 6px;
   display:flex;
 }
 
 .owner-name {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 500;
 }
 
 .make-model {
   font-family: Freight, HoeflerText-Black, Times New Roman, serif;
-  font-size: 26px;
+  font-size: 36px;
   text-transform: uppercase;
 }
 
 .year {
   font-family: Freight, HoeflerText-Black, Times New Roman, serif;
-  font-size: 25px;
+  font-size: 30px;
   padding-left: 2px;
 }
 
 .single-feature {
-  padding-top: 3px;
+  padding-top: 5px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #221F1E;
 }
 
 .door-icon {
@@ -115,7 +129,6 @@
   height: 30px;
   display: inline-block;
   width: 30px;
-  background-size: 25px 25px;
   background-repeat: no-repeat;
   margin: 0px 5px;
 }
@@ -125,7 +138,6 @@
   height: 30px;
   display: inline-block;
   width: 30px;
-  background-size: 25px 25px;
   background-repeat: no-repeat;
   margin: 0px 5px;
 }
@@ -135,7 +147,6 @@
   height: 30px;
   display: inline-block;
   width: 30px;
-  background-size: 25px 25px;
   background-repeat: no-repeat;
   margin: 0px 5px;
 }
@@ -145,7 +156,6 @@
   height: 30px;
   display: inline-block;
   width: 30px;
-  background-size: 25px 25px;
   background-repeat: no-repeat;
   margin: 0px 5px;
 }
@@ -155,7 +165,6 @@
   height: 30px;
   display: inline-block;
   width: 30px;
-  background-size: 25px 25px;
   background-repeat: no-repeat;
   margin: 0px 5px;
 }
@@ -165,7 +174,6 @@
   height: 30px;
   display: inline-block;
   width: 30px;
-  background-size: 25px 25px;
   background-repeat: no-repeat;
   margin: 0px 5px;
 }
@@ -175,7 +183,6 @@
   height: 30px;
   display: inline-block;
   width: 30px;
-  background-size: 25px 25px;
   background-repeat: no-repeat;
   margin: 0px 5px;
 }
@@ -185,7 +192,6 @@
   height: 30px;
   display: inline-block;
   width: 30px;
-  background-size: 25px 25px;
   background-repeat: no-repeat;
   margin: 0px 5px;
 }
@@ -195,7 +201,6 @@
   height: 30px;
   display: inline-block;
   width: 30px;
-  background-size: 25px 25px;
   background-repeat: no-repeat;
   margin: 0px 5px;
 }
@@ -205,7 +210,6 @@
   height: 30px;
   display: inline-block;
   width: 30px;
-  background-size: 25px 25px;
   background-repeat: no-repeat;
   margin: 0px 5px;
 }
@@ -215,7 +219,6 @@
   height: 30px;
   display: inline-block;
   width: 30px;
-  background-size: 25px 25px;
   background-repeat: no-repeat;
   margin: 0px 5px;
 }
@@ -225,7 +228,11 @@
   height: 30px;
   display: inline-block;
   width: 30px;
-  background-size: 25px 25px;
   background-repeat: no-repeat;
   margin: 0px 5px;
+}
+
+.fas {
+  font-size: 15px;
+  color: #8F63F3;
 }
