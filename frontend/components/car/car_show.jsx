@@ -5,6 +5,7 @@ import Details from './details';
 class CarShow extends React.Component {
   constructor(props) {
     super(props);
+    this.handleDelete = this.handleDelete.bind(this);
   }
 
   componentDidMount() {
@@ -21,6 +22,11 @@ class CarShow extends React.Component {
     window.scrollTo(0, 0);
   }
 
+  handleDelete(e) {
+    e.preventDefault(e);
+    this.props.removeCar(this.props.car.id);
+  }
+
   render() {
     if (this.props.car === undefined) return null;
     return (
@@ -29,7 +35,7 @@ class CarShow extends React.Component {
           <SlideShow photo={this.props.car}/>
         </div>
         <div className="details">
-          <Details details={this.props.car} />
+          <Details details={this.props.car} remove={this.handleDelete} currentUser={this.props.currentUserId}/>
         </div>
       </div>
     )

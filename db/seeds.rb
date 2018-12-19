@@ -77,6 +77,13 @@ miso = User.create!(
   last_name: 'sora'
 )
 
+nav = User.create!(
+  email: 'nav@email.com',
+  password: 'password',
+  first_name: 'nav',
+  last_name: 'spot'
+)
+
 #Cars
 tl = Car.create!(
   owner_id: dillon.id,
@@ -348,6 +355,60 @@ mustang = Car.create!(
   latitude: 40.7191
 )
 
+challenger = Car.create!(
+  owner_id: theo.id,
+  year: 2013,
+  make: 'Dodge',
+  model: 'Challenger',
+  price: 130,
+  description: "Loud n fast ",
+  mpg: 16,
+  fuel_type: 'Gas',
+  num_doors: 2,
+  num_seats: 5,
+  bluetooth: false,
+  auxiliary_input: true,
+  heated_seats: false,
+  gps: false,
+  automatic_trans: false,
+  usb_ports: true,
+  backup_camera: true,
+  mods: 'Brembo, 89mm throttle body, ported intake manifold, Corsa catbck, mopar short throw short shifter, Eibach lowering springs, oem red leather interior, Michelin Pilot Super Sports',
+  address: '401 Harrison St',
+  city: 'San Francisco',
+  state: 'CA',
+  zipcode: 94105,
+  longitude: -122.3921,
+  latitude: 37.7860
+)
+
+is300 = Car.create!(
+  owner_id: nav.id,
+  year: 2005,
+  make: 'Lexus',
+  model: 'IS300',
+  price: 90,
+  description: "It's manual yo",
+  mpg: 20,
+  fuel_type: 'Gas',
+  num_doors: 4,
+  num_seats: 5,
+  bluetooth: false,
+  auxiliary_input: true,
+  heated_seats: false,
+  gps: false,
+  automatic_trans: false,
+  usb_ports: false,
+  backup_camera: false,
+  mods: 'Enkei wheels',
+  address: '56 Spring St',
+  city: 'New York',
+  state: 'NY',
+  zipcode: 10012,
+  longitude: -73.9967,
+  latitude: 40.7219
+)
+
 #pictures
 rs.photos.attach(io: File.open("/Users/sle/Desktop/pictures/joseph1.jpg"), filename: "joseph1.jpg")
 
@@ -424,4 +485,20 @@ mustang.photos.attach(io: File.open("/Users/sle/Desktop/pictures/miso2.jpg"), fi
 mustang.photos.attach(io: File.open("/Users/sle/Desktop/pictures/miso3.jpg"), filename: "miso3.jpg")
 
 mustang.photos.attach(io: File.open("/Users/sle/Desktop/pictures/miso4.jpg"), filename: "miso4.jpg")
+
+challenger.photos.attach(io: File.open("/Users/sle/Desktop/pictures/challenger1.jpg"), filename: "challenger1.jpg")
+
+challenger.photos.attach(io: File.open("/Users/sle/Desktop/pictures/challenger2.jpg"), filename: "challenger2.jpg")
+
+challenger.photos.attach(io: File.open("/Users/sle/Desktop/pictures/challenger3.jpg"), filename: "challenger3.jpg")
+
+challenger.photos.attach(io: File.open("/Users/sle/Desktop/pictures/challenger4.jpg"), filename: "challenger4.jpg")
+
+is300.photos.attach(io: File.open("/Users/sle/Desktop/pictures/nav1.jpg"), filename: "nav1.jpg")
+
+is300.photos.attach(io: File.open("/Users/sle/Desktop/pictures/nav2.jpg"), filename: "nav2.jpg")
+
+is300.photos.attach(io: File.open("/Users/sle/Desktop/pictures/nav3.jpg"), filename: "nav3.jpg")
+
+is300.photos.attach(io: File.open("/Users/sle/Desktop/pictures/nav4.jpg"), filename: "nav4.jpg")
 

@@ -511,13 +511,13 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
 
 
@@ -529,9 +529,13 @@ function (_React$Component) {
   _inherits(CarShow, _React$Component);
 
   function CarShow(props) {
+    var _this;
+
     _classCallCheck(this, CarShow);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(CarShow).call(this, props));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(CarShow).call(this, props));
+    _this.handleDelete = _this.handleDelete.bind(_assertThisInitialized(_assertThisInitialized(_this)));
+    return _this;
   }
 
   _createClass(CarShow, [{
@@ -552,6 +556,12 @@ function (_React$Component) {
       window.scrollTo(0, 0);
     }
   }, {
+    key: "handleDelete",
+    value: function handleDelete(e) {
+      e.preventDefault(e);
+      this.props.removeCar(this.props.car.id);
+    }
+  }, {
     key: "render",
     value: function render() {
       if (this.props.car === undefined) return null;
@@ -564,7 +574,9 @@ function (_React$Component) {
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "details"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_details__WEBPACK_IMPORTED_MODULE_2__["default"], {
-        details: this.props.car
+        details: this.props.car,
+        remove: this.handleDelete,
+        currentUser: this.props.currentUserId
       })));
     }
   }]);
@@ -597,7 +609,8 @@ __webpack_require__.r(__webpack_exports__);
 
 var mSTP = function mSTP(state, ownProps) {
   return {
-    car: state.entities.cars[ownProps.match.params.id]
+    car: state.entities.cars[ownProps.match.params.id],
+    currentUserId: state.session.id
   };
 };
 
@@ -605,6 +618,9 @@ var mDTP = function mDTP(dispatch) {
   return {
     fetchCar: function fetchCar(id) {
       return dispatch(Object(_actions_car_actions__WEBPACK_IMPORTED_MODULE_2__["fetchCar"])(id));
+    },
+    removeCar: function removeCar(carId) {
+      return dispatch(Object(_actions_car_actions__WEBPACK_IMPORTED_MODULE_2__["removeCar"])(carId));
     }
   };
 };
@@ -631,7 +647,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var Details = function Details(_ref) {
-  var details = _ref.details;
+  var details = _ref.details,
+      remove = _ref.remove,
+      currentUser = _ref.currentUser;
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "detail-side"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -705,7 +723,9 @@ var Details = function Details(_ref) {
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "MODS")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "description-text"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, details.mods)))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_reservation__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    details: details
+    details: details,
+    remove: remove,
+    currentUser: currentUser
   }));
 };
 
@@ -841,7 +861,18 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var ReservationInfo = function ReservationInfo(_ref) {
-  var details = _ref.details;
+  var details = _ref.details,
+      remove = _ref.remove,
+      currentUser = _ref.currentUser;
+  var deleteButton;
+
+  if (details.ownerId === currentUser) {
+    deleteButton = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      className: "remove-car-btn",
+      onClick: remove
+    }, "Remove Car"));
+  }
+
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "side"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -914,7 +945,7 @@ var ReservationInfo = function ReservationInfo(_ref) {
     className: "empty-heart"
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Add to favorites"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "report"
-  }, "Report listing")));
+  }, "Report listing")), deleteButton);
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (ReservationInfo);

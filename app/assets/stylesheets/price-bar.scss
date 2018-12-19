@@ -118,7 +118,7 @@
 }
 
 .favorite-btn {
-  width: 99%;
+  width: 100%;
   border: 1px solid black;
   background: #fff;
   cursor: pointer;
@@ -160,7 +160,30 @@
   text-align: center;
 }
 
-.report:hover{
+.report:hover {
   text-decoration:underline;
   cursor: pointer;
+}
+
+.remove-car-btn {
+  width: 100%;
+  border: 1px solid black;
+  background: #fff;
+  cursor: pointer;
+  color: #231f20;
+  font-family: BasisGrotesque,Avenir,Helvetica Neue,Helvetica,sans-serif;
+  font-weight: 700;
+  height: 34px;
+  font-size: 16px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  transition: all .5s ease;
+}
+
+.remove-car-btn:hover {
+  background-color: #CE3526;
+  color: white;
+  text-decoration: none;
 }

@@ -2,7 +2,7 @@ import React from 'react';
 import ReservationInfo from './reservation';
 import Icon from './icon';
 
-const Details = ({ details }) => {
+const Details = ({ details, remove, currentUser }) => {
 
   return (
   <div className="detail-side">
@@ -78,7 +78,7 @@ const Details = ({ details }) => {
         </div>
       </div>
     </div>
-    <ReservationInfo details={details}/>
+    <ReservationInfo details={details} remove={remove} currentUser={currentUser}/>
   </div>
   )}
 
