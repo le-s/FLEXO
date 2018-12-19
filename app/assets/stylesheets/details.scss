@@ -10,8 +10,8 @@
 .detail-side {
   width: 940px;
   // border: 1px solid black;
-  overflow: hidden;
   margin-top: 20px;
+  position: relative;
 }
 .info {
   // border: 1px solid black;
@@ -20,16 +20,18 @@
 }
 
 .side {
-  float: left;
   width: 300px;
   margin-left: 20px;
+  position: absolute;
+  right: 0;
+  top: -90px;
 }
 
 .all-info {
   width: 100%;
   // border: 1px solid black;
   overflow: hidden;
-  margin-top: 25px;
+  margin-top: 20px;
 }
 
 .heading {
@@ -93,10 +95,9 @@
 }
 
 .features {
-  // flex-basis: 50%;
-  // max-width: 50%;
   width: 50%;
-  margin-top: 6px;
+  margin-bottom: 8px;
+  margin-top: 3px;
   display:flex;
 }
 

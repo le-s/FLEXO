@@ -40,14 +40,15 @@
   background: #221F1F;
   font-weight: bold;
   cursor: pointer;
+  font-size: 13px;
 }
 
 button:hover{
-    text-decoration:underline;
+  text-decoration:underline;
 }
 
 input:hover{
-    text-decoration:underline;
+  text-decoration:underline;
 }
 
 .nav-item {
@@ -58,6 +59,8 @@ input:hover{
   cursor: pointer;
   height: 26px;
   margin-top: 2px;
+  font-size: 13px;
+  padding: 3px 10px 10px 10px;
 }
 
 .navbar-logo {
@@ -112,7 +115,7 @@ input:hover{
   background-color: #f1f1f1;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
-  margin: 22px 0 0 0;
+  margin: 27px 0 0 0;
   // padding-top: 22px;
 }
 

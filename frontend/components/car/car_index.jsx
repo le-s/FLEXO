@@ -15,18 +15,34 @@ class CarIndex extends React.Component {
       <>
         <div className="divi0">
           {this.props.cars.map(car => 
-          <div key={car.id} className="divi1">
-            <Link to={`/cars/${car.id}`}>
+          <div className="div1a">
+            <div key={car.id} className="divi1">
+              <Link to={`/cars/${car.id}`}>
 
-              <div className="divi2">
-                <img src={car.photoUrl} />
-              </div>
-              <div>
-                {car.make}
-                {car.model}
-                {car.year}
-              </div>
-            </Link>
+                <div className="divi2">
+                  <img src={car.photoUrl} />
+                </div>
+                <div>
+                  <div className="card-price"></div>
+                  <div className="year-make-model">
+                    <div className="make-model">
+                      {car.make}
+                      {car.model}
+                    </div>
+                    <div className="year-card">
+                      {car.year}
+                    </div>
+                  </div>
+                  <div>
+                    <span className="fas fa-star"></span>
+                    <span className="fas fa-star"></span>
+                    <span className="fas fa-star"></span>
+                    <span className="fas fa-star"></span>
+                    <span className="fas fa-star"></span>
+                  </div>
+                </div>
+              </Link>
+            </div>
           </div>)}
         </div>
       </>

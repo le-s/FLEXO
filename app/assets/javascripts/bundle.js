@@ -401,6 +401,8 @@ function (_React$Component) {
         className: "divi0"
       }, this.props.cars.map(function (car) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "div1a"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           key: car.id,
           className: "divi1"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
@@ -409,7 +411,25 @@ function (_React$Component) {
           className: "divi2"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
           src: car.photoUrl
-        })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, car.make, car.model, car.year)));
+        })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "card-price"
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "year-make-model"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "make-model"
+        }, car.make, car.model), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "year-card"
+        }, car.year)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+          className: "fas fa-star"
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+          className: "fas fa-star"
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+          className: "fas fa-star"
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+          className: "fas fa-star"
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+          className: "fas fa-star"
+        }))))));
       })));
     }
   }]);
@@ -873,7 +893,15 @@ var ReservationInfo = function ReservationInfo(_ref) {
     className: "div2"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Response rate"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "99 %")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "div2"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Response time"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "20 minutes")))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Add to Favorites"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Social Media Buttons")));
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Response time"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "20 minutes")))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "bottom-price"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "favorite-btn"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "empty-heart"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Add to favorites"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "report"
+  }, "Report listing")));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (ReservationInfo);
