@@ -412,14 +412,18 @@ function (_React$Component) {
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
           src: car.photoUrl
         })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "card-price"
-        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "year-make-model"
+          className: "per-day-card"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "make-model"
-        }, car.make, car.model), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "card-price"
+        }, "$", car.price), "/day"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "year-make-model"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+          className: "make-model-card"
+        }, car.make, " ", car.model), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
           className: "year-card"
-        }, car.year)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        }, car.year)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "star-card"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
           className: "fas fa-star"
         }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
           className: "fas fa-star"

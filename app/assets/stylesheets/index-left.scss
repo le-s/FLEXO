@@ -31,12 +31,9 @@
 }
 
 .divi1 {
-  width: 336px;
-  height: 210px;
   /* object-fit: contain; */
   position: relative;
-  padding-right: 25px;
-  padding-bottom: 25px;
+
 }
 
 .divi2 {
@@ -48,6 +45,51 @@
 
 .div1a {
   position: relative;
+  padding-right: 25px;
+  padding-bottom: 25px;
+}
+
+.year-make-model {
+  display: flex;
+  align-items: baseline;
+  margin-top: 9px;
+}
+
+.make-model-card {
+  font-size: 24px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: -0.5px;
+}
+
+.year-card {
+  padding-left: 5px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.star-card {
+  margin-top: 4px;
+}
+
+.per-day-card {
+  background: #fff;
+  border-radius: 2px;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 15px;
+  margin-top: -21px;
+  padding: 7px 5px 5px;
+  position: absolute;
+  right: 10px;
+  transform: translateY(-100%);
+  font-family: BasisGrotesque, Avenir, Helvetica Neue, Helvetica, sans-serif;
+  display: inline-flex;
+}
+
+.card-price {
+  font-size: 15px;
+  font-weight: 700;
 }
 
 

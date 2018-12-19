@@ -18,22 +18,25 @@ class CarIndex extends React.Component {
           <div className="div1a">
             <div key={car.id} className="divi1">
               <Link to={`/cars/${car.id}`}>
-
                 <div className="divi2">
                   <img src={car.photoUrl} />
                 </div>
                 <div>
-                  <div className="card-price"></div>
-                  <div className="year-make-model">
-                    <div className="make-model">
-                      {car.make}
-                      {car.model}
+                  <div className="per-day-card">
+                    <div className="card-price">
+                      ${car.price}
                     </div>
-                    <div className="year-card">
-                      {car.year}
-                    </div>
+                    /day
                   </div>
-                  <div>
+                  <div className="year-make-model">
+                    <span className="make-model-card">
+                      {car.make} {car.model}
+                    </span>
+                    <span className="year-card">
+                      {car.year}
+                    </span>
+                  </div>
+                  <div className="star-card">
                     <span className="fas fa-star"></span>
                     <span className="fas fa-star"></span>
                     <span className="fas fa-star"></span>
