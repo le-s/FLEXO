@@ -8,45 +8,55 @@ class CarIndex extends React.Component {
 
   componentDidMount() {
     this.props.fetchCars();
+    window.scrollTo(0,0);
   }
 
   render() {
     return (
       <>
-        <div className="divi0">
-          {this.props.cars.map(car => 
-          <div className="div1a">
-            <div key={car.id} className="divi1">
-              <Link to={`/cars/${car.id}`}>
-                <div className="divi2">
-                  <img src={car.photoUrl} />
-                </div>
-                <div>
-                  <div className="per-day-card">
-                    <div className="card-price">
-                      ${car.price}
+        <div className="filter-bar">
+          <button>Sort by</button>
+          <button>Book instantly</button>
+          <button>Price</button>
+          <button>Delivery</button>
+          <button>More Filters</button>
+        </div>
+        <div className="index-page-container">
+          <div className="car-index-container">
+            {this.props.cars.map(car => 
+            <div className="car-card-container">
+              <div key={car.id} className="car-container">
+                <Link to={`/cars/${car.id}`} className="car-hover">
+                  <div className="car-index-image">
+                    <img src={car.photoUrl} />
+                  </div>
+                  <div>
+                    <div className="per-day-card">
+                      <div className="card-price">
+                        ${car.price}
+                      </div>
+                      /day
                     </div>
-                    /day
+                    <div className="year-make-model">
+                      <span className="make-model-card">
+                        {car.make} {car.model}
+                      </span>
+                      <span className="year-card">
+                        {car.year}
+                      </span>
+                    </div>
+                    <div className="star-card">
+                      <span className="fas fa-star"></span>
+                      <span className="fas fa-star"></span>
+                      <span className="fas fa-star"></span>
+                      <span className="fas fa-star"></span>
+                      <span className="fas fa-star"></span>
+                    </div>
                   </div>
-                  <div className="year-make-model">
-                    <span className="make-model-card">
-                      {car.make} {car.model}
-                    </span>
-                    <span className="year-card">
-                      {car.year}
-                    </span>
-                  </div>
-                  <div className="star-card">
-                    <span className="fas fa-star"></span>
-                    <span className="fas fa-star"></span>
-                    <span className="fas fa-star"></span>
-                    <span className="fas fa-star"></span>
-                    <span className="fas fa-star"></span>
-                  </div>
-                </div>
-              </Link>
-            </div>
-          </div>)}
+                </Link>
+              </div>
+            </div>)}
+          </div>
         </div>
       </>
     )

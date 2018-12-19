@@ -23,27 +23,36 @@
   display: block;
 }
 
-.divi0 {
+.car-index-container {
   display: flex;
   flex-wrap: wrap;
   padding-top: 25px;
   padding-left: 25px;
 }
 
-.divi1 {
+.car-container {
   /* object-fit: contain; */
   position: relative;
 
 }
 
-.divi2 {
+.car-index-image {
   height: 185px;
   width: 336px;
   overflow: hidden;
   border-radius: 6px;
 }
 
-.div1a {
+.car-hover {
+  display: block;
+  position: relative;
+}
+
+.car-hover:hover {
+  background-color: rgba(255,255,255,10%);
+}
+
+.car-card-container {
   position: relative;
   padding-right: 25px;
   padding-bottom: 25px;
@@ -92,5 +101,7 @@
   font-weight: 700;
 }
 
-
+.index-page-container {
+  margin-top: 74px;
+}
 

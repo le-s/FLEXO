@@ -10,6 +10,7 @@ class CarShow extends React.Component {
   componentDidMount() {
     const carId = this.props.match.params.id;
     this.props.fetchCar(carId);
+    window.scrollTo(0, 0);
   }
 
   componentDidUpdate(prevProps) {
@@ -17,6 +18,7 @@ class CarShow extends React.Component {
       const nextId = this.props.match.params.id;
       this.props.fetchCar(nextId);
     }
+    window.scrollTo(0, 0);
   }
 
   render() {

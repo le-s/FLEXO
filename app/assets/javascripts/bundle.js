@@ -393,22 +393,28 @@ function (_React$Component) {
     key: "componentDidMount",
     value: function componentDidMount() {
       this.props.fetchCars();
+      window.scrollTo(0, 0);
     }
   }, {
     key: "render",
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "divi0"
+        className: "filter-bar"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "Sort by"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "Book instantly"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "Price"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "Delivery"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "More Filters")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "index-page-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "car-index-container"
       }, this.props.cars.map(function (car) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "div1a"
+          className: "car-card-container"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           key: car.id,
-          className: "divi1"
+          className: "car-container"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-          to: "/cars/".concat(car.id)
+          to: "/cars/".concat(car.id),
+          className: "car-hover"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "divi2"
+          className: "car-index-image"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
           src: car.photoUrl
         })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -434,7 +440,7 @@ function (_React$Component) {
         }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
           className: "fas fa-star"
         }))))));
-      })));
+      }))));
     }
   }]);
 
@@ -533,6 +539,7 @@ function (_React$Component) {
     value: function componentDidMount() {
       var carId = this.props.match.params.id;
       this.props.fetchCar(carId);
+      window.scrollTo(0, 0);
     }
   }, {
     key: "componentDidUpdate",
@@ -541,6 +548,8 @@ function (_React$Component) {
         var nextId = this.props.match.params.id;
         this.props.fetchCar(nextId);
       }
+
+      window.scrollTo(0, 0);
     }
   }, {
     key: "render",
