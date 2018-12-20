@@ -4,7 +4,7 @@ class CarCreate extends React.Component {
   constructor(props) {
     super(props);
     this.state = this.props.formFields;
-  
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   update(field) {
@@ -20,8 +20,7 @@ class CarCreate extends React.Component {
   }
 
   render() {
-    return (
-      <>
+    return <>
         <div>
           <div className="create-header">
             <div className="create-header-container">
@@ -97,7 +96,6 @@ class CarCreate extends React.Component {
                         <input className="create-input-field" type="text" value={this.state.model} placeholder="Model" onChange={this.update("model")} />
                       </label>
                     </div>
-
                     <div className="location-flex">
                       <label>
                         MPG
@@ -128,18 +126,16 @@ class CarCreate extends React.Component {
                       <div>Transmission</div>
                       <div className="transmission-flex">
                         <div>
-                          <input className="styled-radio" type="radio" name="transmission"/> Automatic
+                          <input className="styled-radio" type="radio" name="automaticTrans" value="true" onChange={this.update("automaticTrans")} /> Automatic
                         </div>
                         <div>
-                          <input className="styled-radio radio-margin-left" type="radio" name="transmission"/> Manual
+                          <input className="styled-radio radio-margin-left" type="radio" name="automaticTrans" value="false" onChange={this.update("automaticTrans")}/> Manual
                         </div>
                       </div>
                     </label>
                   </div>
 
-                  <div className="create-form-heading">
-                    Car Details
-                  </div>
+                  <div className="create-form-heading">Car Details</div>
                   <div className="create-form-subheading">
                     <label>
                       Price
@@ -150,7 +146,7 @@ class CarCreate extends React.Component {
                   <div>
                     <label className="create-form-subheading">
                       <div>Car description</div>
-                      <input className="create-textarea" type="textarea" placeholder="A detailed description will get you more trips"/>
+                      <textarea className="create-textarea" placeholder="A detailed description will get you more trips" />
                     </label>
                   </div>
 
@@ -159,22 +155,22 @@ class CarCreate extends React.Component {
                       <div>Car features</div>
                       <div className="create-feature-wrap">
                         <div className="feature-sizing">
-                          <input type="checkbox"/> Bluetooth
+                          <input type="checkbox" value="true" /> Bluetooth
                         </div>
                         <div className="feature-sizing">
-                          <input type="checkbox"/> GPS
+                          <input type="checkbox" value="true" /> GPS
                         </div>
                         <div className="feature-sizing">
-                          <input type="checkbox"/> Auxiliary input
+                          <input type="checkbox" value="true" /> Auxiliary input
                         </div>
                         <div className="feature-sizing">
-                          <input type="checkbox"/> Heated seats
+                          <input type="checkbox" value="true" /> Heated seats
                         </div>
                         <div className="feature-sizing">
-                          <input type="checkbox"/> USB ports
+                          <input type="checkbox" value="true" /> USB ports
                         </div>
                         <div className="feature-sizing">
-                          <input type="checkbox"/> Backup camera
+                          <input type="checkbox" value="true" /> Backup camera
                         </div>
                       </div>
                     </label>
@@ -193,8 +189,7 @@ class CarCreate extends React.Component {
             </div>
           </div>
         </div>
-      </>
-    );
+      </>;
   }
 }
 

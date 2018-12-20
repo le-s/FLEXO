@@ -24,8 +24,8 @@ class CarIndex extends React.Component {
         <div className="index-page-container">
           <div className="car-index-container">
             {this.props.cars.map(car => 
-            <div className="car-card-container">
-              <div key={car.id} className="car-container">
+            <div key={car.id} className="car-card-container">
+              <div className="car-container">
                 <Link to={`/cars/${car.id}`} className="car-hover">
                   <div className="car-index-image">
                     <img src={car.photoUrl} />

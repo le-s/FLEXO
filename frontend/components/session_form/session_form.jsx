@@ -113,14 +113,14 @@ class SessionForm extends React.Component {
               First name
               <br/>
               <input type="text" value={this.state.firstName} onChange={this.update("firstName")} />
-              <h1 className='single-error'>{this.props.errors.first_name}</h1>
+              <h1 className='single-error'>{this.props.errors.firstName}</h1>
             </label>
 
             <label className='form-text'>
               Last name
               <br/>
               <input type="text" value={this.state.lastName} onChange={this.update("lastName")} />
-              <h1 className='single-error'>{this.props.errors.last_name}</h1>
+              <h1 className='single-error'>{this.props.errors.lastName}</h1>
             </label>
 
             <label className='form-text'>

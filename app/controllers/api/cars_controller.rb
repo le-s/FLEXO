@@ -5,7 +5,7 @@ class Api::CarsController < ApplicationController
 
   def create
     @car = Car.new(car_params)
-
+    
     if @car.save
       render 'api/cars/show'
     else

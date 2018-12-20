@@ -33,5 +33,8 @@ class ApplicationController < ActionController::Base
     if params[:user]
       params[:user] = params[:user].transform_keys!(&:underscore)
     end
+    if params[:car]
+      params[:car] = params[:car].transform_keys!(&:underscore)
+    end
   end
 end

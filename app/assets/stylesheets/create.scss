@@ -102,6 +102,14 @@
   color: #231f20;
   width: 100%;
   padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.create-textarea::-webkit-input-placeholder {
+  text-align: start;
+  transform-origin: 0% 50%;
 }
 
 .create-feature-wrap {
