@@ -24,7 +24,7 @@ class CarShow extends React.Component {
 
   handleDelete(e) {
     e.preventDefault(e);
-    this.props.removeCar(this.props.car.id);
+    this.props.deleteCar(this.props.car.id).then(() => this.props.history.push('/'));
   }
 
   render() {

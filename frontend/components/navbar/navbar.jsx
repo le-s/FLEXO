@@ -38,7 +38,9 @@ class NavBar extends React.Component {
     // const addDropdown = this.addDropDown;
     let userDisplay = this.props.currentUser ? (
         <ul className='right-nav'>
-          <button className='nav-item'>List your car</button>
+          <Link to={'/cars/create'}>
+            <button className='nav-item'>List your car</button>
+          </Link>
           <div className='dropdown'>
               <div className='profile' onClick={this.addDropDown}/>
               <div 
@@ -51,7 +53,9 @@ class NavBar extends React.Component {
     ) : (
       <div>
         <ul className='right-nav'>
-          <button className='nav-item'>List your car</button>
+          <Link to={'/cars/create'}>
+            <button className='nav-item'>List your car</button>
+          </Link>
           <button className='nav-button' onClick={() => this.props.openModal('login')}>Login</button>
           <button className='nav-button' onClick={() => this.props.openModal('signup')}>Signup</button>
         </ul>

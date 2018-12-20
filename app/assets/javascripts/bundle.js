@@ -129,7 +129,7 @@ var receiveCar = function receiveCar(car) {
 var removeCar = function removeCar(carId) {
   return {
     type: DELETE_CAR,
-    carId: carId.id
+    carId: carId
   };
 };
 var receiveErrors = function receiveErrors(errors) {
@@ -161,8 +161,8 @@ var editCar = function editCar(car) {
 };
 var deleteCar = function deleteCar(id) {
   return function (dispatch) {
-    return _util_car_api_util__WEBPACK_IMPORTED_MODULE_0__["deleteCar"](id).then(function (carId) {
-      return dispatch(removeCar(carId));
+    return _util_car_api_util__WEBPACK_IMPORTED_MODULE_0__["deleteCar"](id).then(function (car) {
+      return dispatch(removeCar(car));
     });
   };
 };
@@ -303,6 +303,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _splash_splash_container__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./splash/splash_container */ "./frontend/components/splash/splash_container.jsx");
 /* harmony import */ var _car_car_show_container__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./car/car_show_container */ "./frontend/components/car/car_show_container.jsx");
 /* harmony import */ var _car_car_index_container__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./car/car_index_container */ "./frontend/components/car/car_index_container.jsx");
+/* harmony import */ var _car_car_create_container__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./car/car_create_container */ "./frontend/components/car/car_create_container.jsx");
+
 
 
 
@@ -325,13 +327,15 @@ var App = function App() {
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "navbar-logo"
   })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_navbar_navbar_container__WEBPACK_IMPORTED_MODULE_4__["default"], null))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+    exact: true,
+    path: "/cars/create",
+    component: _car_car_create_container__WEBPACK_IMPORTED_MODULE_10__["default"]
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     path: "/cars/:id",
     component: _car_car_show_container__WEBPACK_IMPORTED_MODULE_8__["default"]
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     path: "/cars",
     component: _car_car_index_container__WEBPACK_IMPORTED_MODULE_9__["default"]
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
-    path: "/cars/create"
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     exact: true,
     path: "/",
@@ -342,6 +346,302 @@ var App = function App() {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (App);
+
+/***/ }),
+
+/***/ "./frontend/components/car/car_create.jsx":
+/*!************************************************!*\
+  !*** ./frontend/components/car/car_create.jsx ***!
+  \************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+var CarCreate =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(CarCreate, _React$Component);
+
+  function CarCreate(props) {
+    var _this;
+
+    _classCallCheck(this, CarCreate);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(CarCreate).call(this, props));
+    _this.state = _this.props.formFields;
+    return _this;
+  }
+
+  _createClass(CarCreate, [{
+    key: "update",
+    value: function update(field) {
+      var _this2 = this;
+
+      return function (e) {
+        return _this2.setState(_defineProperty({}, field, e.currentTarget.value));
+      };
+    }
+  }, {
+    key: "handleSubmit",
+    value: function handleSubmit(e) {
+      e.preventDefault();
+      var car = Object.assign({}, this.state);
+      this.props.createCar(car);
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "create-header"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "create-header-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "create-form-align"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "header-text"
+      }, "List your car")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "create-form-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "create-form-align"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "create-form-parent-style"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+        onSubmit: this.handleSubmit
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "create-form-heading"
+      }, "Your Car"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "create-form-subheading"
+      }, "Where is the car located?", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "location-flex"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Address", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "create-input-field",
+        type: "text",
+        value: this.state.address,
+        placeholder: "Address",
+        onChange: this.update("address")
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "City", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "create-input-field",
+        type: "text",
+        value: this.state.city,
+        placeholder: "City",
+        onChange: this.update("city")
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "State", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "create-input-field",
+        type: "text",
+        value: this.state.state,
+        placeholder: "State",
+        onChange: this.update("state")
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Zip Code", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "create-input-field",
+        type: "text",
+        value: this.state.zipcode,
+        placeholder: "Zip Code",
+        onChange: this.update("zipcode")
+      })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "create-form-subheading"
+      }, "What car do you have?", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "location-flex"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Year", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "create-input-field",
+        type: "text",
+        value: this.state.year,
+        placeholder: "Year",
+        onChange: this.update("year")
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Make", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "create-input-field",
+        type: "text",
+        value: this.state.make,
+        placeholder: "Make",
+        onChange: this.update("make")
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Model", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "create-input-field",
+        type: "text",
+        value: this.state.model,
+        placeholder: "Model",
+        onChange: this.update("model")
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "location-flex"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "MPG", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "create-input-field",
+        type: "text",
+        value: this.state.mpg,
+        placeholder: "MPG",
+        onChange: this.update("mpg")
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Number of Doors", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "create-input-field",
+        type: "text",
+        value: this.state.numDoors,
+        placeholder: "Doors",
+        onChange: this.update("numDoors")
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Number of Seats", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "create-input-field",
+        type: "text",
+        value: this.state.numSeats,
+        placeholder: "Seats",
+        onChange: this.update("numSeats")
+      })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        className: "create-form-subheading"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Transmission"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "transmission-flex"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "styled-radio",
+        type: "radio",
+        name: "transmission"
+      }), " Automatic"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "styled-radio radio-margin-left",
+        type: "radio",
+        name: "transmission"
+      }), " Manual")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "create-form-heading"
+      }, "Car Details"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "create-form-subheading"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Price", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "price-input-field",
+        type: "text",
+        value: this.state.price,
+        placeholder: "Price",
+        onChange: this.update("price")
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        className: "create-form-subheading"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Car description"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "create-textarea",
+        type: "textarea",
+        placeholder: "A detailed description will get you more trips"
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        className: "create-form-subheading"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Car features"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "create-feature-wrap"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "feature-sizing"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "checkbox"
+      }), " Bluetooth"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "feature-sizing"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "checkbox"
+      }), " GPS"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "feature-sizing"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "checkbox"
+      }), " Auxiliary input"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "feature-sizing"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "checkbox"
+      }), " Heated seats"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "feature-sizing"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "checkbox"
+      }), " USB ports"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "feature-sizing"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "checkbox"
+      }), " Backup camera")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        className: "create-form-subheading"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Car modifications"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "create-textarea",
+        type: "textarea",
+        placeholder: "The more mods you have the more fun it'll be"
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "button-purple",
+        type: "submit",
+        value: "Finish"
+      })))))));
+    }
+  }]);
+
+  return CarCreate;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["default"] = (CarCreate);
+
+/***/ }),
+
+/***/ "./frontend/components/car/car_create_container.jsx":
+/*!**********************************************************!*\
+  !*** ./frontend/components/car/car_create_container.jsx ***!
+  \**********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _actions_car_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/car_actions */ "./frontend/actions/car_actions.js");
+/* harmony import */ var _car_create__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./car_create */ "./frontend/components/car/car_create.jsx");
+
+
+
+
+
+var mSTP = function mSTP(state) {
+  return {
+    formFields: {
+      ownerId: state.session.id,
+      make: '',
+      model: '',
+      year: '',
+      price: '',
+      description: '',
+      mpg: '',
+      fuelType: '',
+      numDoors: '',
+      numSeats: '',
+      bluetooth: false,
+      auxiliaryInput: false,
+      heatedSeats: false,
+      gps: false,
+      automaticTrans: false,
+      usbPorts: false,
+      backupCamera: false,
+      mods: '',
+      address: '',
+      city: '',
+      state: '',
+      zipcode: '',
+      longitude: '',
+      latitude: ''
+    },
+    errors: state.errors.session,
+    formType: 'create'
+  };
+};
+
+var mDTP = function mDTP(dispatch) {
+  return {
+    createCar: function createCar(car) {
+      return dispatch(Object(_actions_car_actions__WEBPACK_IMPORTED_MODULE_2__["createCar"])(car));
+    }
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mSTP, mDTP)(_car_create__WEBPACK_IMPORTED_MODULE_3__["default"]));
 
 /***/ }),
 
@@ -558,8 +858,12 @@ function (_React$Component) {
   }, {
     key: "handleDelete",
     value: function handleDelete(e) {
+      var _this2 = this;
+
       e.preventDefault(e);
-      this.props.removeCar(this.props.car.id);
+      this.props.deleteCar(this.props.car.id).then(function () {
+        return _this2.props.history.push('/');
+      });
     }
   }, {
     key: "render",
@@ -619,8 +923,8 @@ var mDTP = function mDTP(dispatch) {
     fetchCar: function fetchCar(id) {
       return dispatch(Object(_actions_car_actions__WEBPACK_IMPORTED_MODULE_2__["fetchCar"])(id));
     },
-    removeCar: function removeCar(carId) {
-      return dispatch(Object(_actions_car_actions__WEBPACK_IMPORTED_MODULE_2__["removeCar"])(carId));
+    deleteCar: function deleteCar(carId) {
+      return dispatch(Object(_actions_car_actions__WEBPACK_IMPORTED_MODULE_2__["deleteCar"])(carId));
     }
   };
 };
@@ -1223,9 +1527,11 @@ function (_React$Component) {
       // const addDropdown = this.addDropDown;
       var userDisplay = this.props.currentUser ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
         className: "right-nav"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        to: '/cars/create'
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "nav-item"
-      }, "List your car"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "List your car")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "dropdown"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "profile",
@@ -1237,9 +1543,11 @@ function (_React$Component) {
         onClick: this.props.logout
       }, "Logout")))) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
         className: "right-nav"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        to: '/cars/create'
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "nav-item"
-      }, "List your car"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      }, "List your car")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "nav-button",
         onClick: function onClick() {
           return _this3.props.openModal('login');
@@ -1507,7 +1815,9 @@ function (_React$Component) {
           className: "submit",
           type: "submit",
           value: "Log in"
-        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "sign-in-or"
+        }, "or"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
           className: "demo",
           onClick: this.handleDemoLogin,
           type: "submit",

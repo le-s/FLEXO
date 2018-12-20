@@ -1,13 +1,14 @@
 .filter-bar {
   height: 34px;
-  padding: 15px 25px 20px 25px;  top: 55px;
+  padding: 12px 25px 20px 25px;  
+  top: 60px;
   background: #fff;
   box-shadow: 0 2px 9px -3px rgba(0,0,0,.12);
   display: flex;
   left: 0;
   position: absolute;
   right: 0;
-  z-index: -1;
+  z-index: 0;
 }
 
 .filter-bar button {

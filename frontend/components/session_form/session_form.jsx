@@ -75,6 +75,12 @@ class SessionForm extends React.Component {
 
             <br/>
 
+            <div className="sign-in-or">
+              or
+            </div>
+
+            <br/>
+
             <input className='demo' onClick={this.handleDemoLogin} type="submit" value='Demo Login' />
 
             <br />

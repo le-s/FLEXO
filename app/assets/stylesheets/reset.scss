@@ -51,3 +51,8 @@ input[type="submit"] {
   cursor: pointer;
   outline: none;
 }
+
+textarea:focus, input:focus{
+    outline: none;
+    border: 1px solid #8F63F3;
+}

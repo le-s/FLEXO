@@ -34,3 +34,7 @@
     object-fit: cover;
   }
 }
+
+.slick-slide {
+  transform: translate3d(0px, -120px, 0px);
+}

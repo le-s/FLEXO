@@ -17,7 +17,7 @@ export const receiveCar = (car) => ({
 
 export const removeCar = (carId) => ({
   type: DELETE_CAR,
-  carId: carId.id
+  carId: carId
 });
 
 export const receiveErrors = errors => ({
@@ -38,7 +38,7 @@ export const editCar = (car) => dispatch => (
 );
 
 export const deleteCar = (id) => dispatch => (
-  CarApiUtil.deleteCar(id).then(carId => dispatch(removeCar(carId)))
+  CarApiUtil.deleteCar(id).then(car => dispatch(removeCar(car)))
 );
 
 export const createCar = (car) => dispatch => (

@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from "react-redux";
-import {fetchCar, removeCar} from '../../actions/car_actions';
+import {fetchCar, deleteCar} from '../../actions/car_actions';
 import CarShow from './car_show';
 
 const mSTP = (state, ownProps)=> ({
@@ -10,7 +10,7 @@ const mSTP = (state, ownProps)=> ({
 
 const mDTP = dispatch => ({
   fetchCar: id => dispatch(fetchCar(id)),
-  removeCar: carId => dispatch(removeCar(carId))
+  deleteCar: carId => dispatch(deleteCar(carId))
 });
 
 export default connect(mSTP, mDTP)(CarShow);

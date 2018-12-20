@@ -82,36 +82,9 @@ nav = User.create!(
   password: 'password',
   first_name: 'nav',
   last_name: 'spot'
-)
-
+  )
+  
 #Cars
-tl = Car.create!(
-  owner_id: dillon.id,
-  year: 2007,
-  make: 'Acura',
-  model: 'TL',
-  price: 60,
-  description: 'Mean clean stance machine',
-  mpg: 24,
-  fuel_type: 'Gas',
-  num_doors: 4,
-  num_seats: 5,
-  bluetooth: false,
-  auxiliary_input: true,
-  heated_seats: true,
-  gps: true,
-  automatic_trans: true,
-  usb_ports: true,
-  backup_camera: false,
-  mods: 'coilovers, body work',
-  address: '3005 20th St',
-  city: 'San Francisco',
-  state: 'CA',
-  zipcode: 94110,
-  longitude: -122.4168,
-  latitude: 37.7587
-)
-
 miata = Car.create!(
   owner_id: steven.id,
   year: 2000,
@@ -137,6 +110,33 @@ miata = Car.create!(
   zipcode: 94101,
   longitude: -122.4012,
   latitude: 37.7989
+)
+
+tl = Car.create!(
+  owner_id: dillon.id,
+  year: 2007,
+  make: 'Acura',
+  model: 'TL',
+  price: 60,
+  description: 'Mean clean stance machine',
+  mpg: 24,
+  fuel_type: 'Gas',
+  num_doors: 4,
+  num_seats: 5,
+  bluetooth: false,
+  auxiliary_input: true,
+  heated_seats: true,
+  gps: true,
+  automatic_trans: true,
+  usb_ports: true,
+  backup_camera: false,
+  mods: 'coilovers, body work',
+  address: '3005 20th St',
+  city: 'San Francisco',
+  state: 'CA',
+  zipcode: 94110,
+  longitude: -122.4168,
+  latitude: 37.7587
 )
 
 prelude = Car.create!(
@@ -220,7 +220,7 @@ e90 = Car.create!(
   latitude: 37.7321
 )
 
-325e = Car.create!(
+e325 = Car.create!(
   owner_id: nathan.id,
   year: 1985,
   make: 'BMW',
@@ -454,13 +454,13 @@ e90.photos.attach(io: File.open("/Users/sle/Desktop/pictures/e903.jpg"), filenam
 
 e90.photos.attach(io: File.open("/Users/sle/Desktop/pictures/e904.jpg"), filename: "e904.jpg")
 
-325e.photos.attach(io: File.open("/Users/sle/Desktop/pictures/e301.jpg"), filename: "e301.jpg")
+e325.photos.attach(io: File.open("/Users/sle/Desktop/pictures/e301.jpg"), filename: "e301.jpg")
 
-325e.photos.attach(io: File.open("/Users/sle/Desktop/pictures/e302.jpg"), filename: "e302.jpg")
+e325.photos.attach(io: File.open("/Users/sle/Desktop/pictures/e302.jpg"), filename: "e302.jpg")
 
-325e.photos.attach(io: File.open("/Users/sle/Desktop/pictures/e303.jpg"), filename: "e303.jpg")
+e325.photos.attach(io: File.open("/Users/sle/Desktop/pictures/e303.jpg"), filename: "e303.jpg")
 
-325e.photos.attach(io: File.open("/Users/sle/Desktop/pictures/e304.jpg"), filename: "e304.jpg")
+e325.photos.attach(io: File.open("/Users/sle/Desktop/pictures/e304.jpg"), filename: "e304.jpg")
 
 e30.photos.attach(io: File.open("/Users/sle/Desktop/pictures/dylan1.jpg"), filename: "dylan1.jpg")
 
@@ -478,13 +478,13 @@ charger.photos.attach(io: File.open("/Users/sle/Desktop/pictures/theo3.jpg"), fi
 
 charger.photos.attach(io: File.open("/Users/sle/Desktop/pictures/theo4.jpg"), filename: "theo4.jpg")
 
-mustang.photos.attach(io: File.open("/Users/sle/Desktop/pictures/miso1.jpg"), filename: "miso1.jpg")
+mustang.photos.attach(io: File.open("/Users/sle/Desktop/pictures/mustang1.jpg"), filename: "mustang1.jpg")
 
-mustang.photos.attach(io: File.open("/Users/sle/Desktop/pictures/miso2.jpg"), filename: "miso2.jpg")
+mustang.photos.attach(io: File.open("/Users/sle/Desktop/pictures/mustang2.jpg"), filename: "mustang2.jpg")
 
-mustang.photos.attach(io: File.open("/Users/sle/Desktop/pictures/miso3.jpg"), filename: "miso3.jpg")
+mustang.photos.attach(io: File.open("/Users/sle/Desktop/pictures/mustang3.jpg"), filename: "mustang3.jpg")
 
-mustang.photos.attach(io: File.open("/Users/sle/Desktop/pictures/miso4.jpg"), filename: "miso4.jpg")
+mustang.photos.attach(io: File.open("/Users/sle/Desktop/pictures/mustang4.jpg"), filename: "mustang4.jpg")
 
 challenger.photos.attach(io: File.open("/Users/sle/Desktop/pictures/challenger1.jpg"), filename: "challenger1.jpg")
 

@@ -1,0 +1,139 @@
+.create-header {
+  background-image: url("create.jpg");
+  background-color: #231f20;
+  background-position: 50%;
+  background-size: cover;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  height: 125px;
+  justify-content: flex-end;
+}
+
+.create-header-container {
+  margin-left: auto;
+  margin-right: auto;
+  width: 940px;
+}
+
+.header-text {
+  padding-right: 350px;
+  padding-bottom: 20px;
+  font-size: 36px;
+  text-transform: uppercase;
+  font-family: Times New Roman,serif;
+}
+
+.create-form-container {
+  width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.create-form-align {
+  display: flex;
+  justify-content: center;
+}
+
+.create-form-parent-style {
+  color: #231f20;
+  font-family: BasisGrotesque, Avenir, Helvetica Neue, Helvetica, sans-serif;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 1.5;
+  flex-basis: 66%;
+  max-width: 66%;
+  margin-top: 20px;
+}
+
+.create-form-heading {
+  border-top: 1px solid #c7c7c7;
+  padding: 13px 0px 0px 16px;
+  font-weight: 600;
+  font-size: 15px;
+
+}
+
+.create-form-subheading {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 3px;
+  padding-top: 14px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.location-flex {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 12px;
+}
+
+.location-flex label {
+  width: 23%;
+}
+
+.create-input-field {
+  width: 100%;
+  border: 1px solid #c7c7c7;
+  font-size: 13px;
+  height: 35px;
+  padding: 3px;
+}
+
+.transmission-flex {
+  display: flex;
+  flex-direction: row;
+  padding-bottom: 15px;
+}
+
+.styled-radio {
+  margin-right: 10px;
+}
+
+.radio-margin-left {
+  margin-left: 15px;
+}
+
+.create-textarea {
+  height: 130px;
+  border: 1px solid #c7c7c7;
+  border-radius: 2px;
+  color: #231f20;
+  width: 100%;
+  padding: 10px;
+}
+
+.create-feature-wrap {
+  display: flex;
+  flex-flow: wrap;
+}
+
+.feature-sizing {
+  padding-left: 10px;
+  padding-right: 10px;
+  flex-basis: 30%;
+  max-width: 30%;
+}
+
+.button-purple {
+  background-color: #8f63f4;
+  border: 1px solid #8f63f4;
+  color: #fff;
+  font-family: BasisGrotesque,Avenir,Helvetica Neue,Helvetica,sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  height: 34px;
+  padding: 0 14px;
+  margin: 20px 0;
+}
+
+.price-input-field {
+  width: 10%;
+  border: none;
+  border-bottom: 1px solid #c7c7c7;
+  font-size: 13px;
+  height: 35px;
+  padding: 3px;
+  margin: 14px 0;
+}
