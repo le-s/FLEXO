@@ -410,95 +410,95 @@ is300 = Car.create!(
 )
 
 #pictures
-rs.photos.attach(io: File.open("/Users/sle/Desktop/pictures/joseph1.jpg"), filename: "joseph1.jpg")
+rs.photos.attach(io: File.open("app/assets/pictures/joseph1.jpg"), filename: "joseph1.jpg")
 
-rs.photos.attach(io: File.open("/Users/sle/Desktop/pictures/joseph2.jpg"), filename: "joseph2.jpg")
+rs.photos.attach(io: File.open("app/assets/pictures/joseph2.jpg"), filename: "joseph2.jpg")
 
-tl.photos.attach(io: File.open("/Users/sle/Desktop/pictures/dillon1.jpg"), filename: "dillon1.jpg")
+tl.photos.attach(io: File.open("app/assets/pictures/dillon1.jpg"), filename: "dillon1.jpg")
 
-tl.photos.attach(io: File.open("/Users/sle/Desktop/pictures/dillon2.jpg"), filename: "dillon2.jpg")
+tl.photos.attach(io: File.open("app/assets/pictures/dillon2.jpg"), filename: "dillon2.jpg")
 
-tl.photos.attach(io: File.open("/Users/sle/Desktop/pictures/dillon3.jpg"), filename: "dillon3.jpg")
+tl.photos.attach(io: File.open("app/assets/pictures/dillon3.jpg"), filename: "dillon3.jpg")
 
-tl.photos.attach(io: File.open("/Users/sle/Desktop/pictures/dillon4.jpg"), filename: "dillon4.jpg")
+tl.photos.attach(io: File.open("app/assets/pictures/dillon4.jpg"), filename: "dillon4.jpg")
 
-miata.photos.attach(io: File.open("/Users/sle/Desktop/pictures/miata1.jpg"), filename: "miata1.jpg")
+miata.photos.attach(io: File.open("app/assets/pictures/miata1.jpg"), filename: "miata1.jpg")
 
-miata.photos.attach(io: File.open("/Users/sle/Desktop/pictures/miata2.jpg"), filename: "miata2.jpg")
+miata.photos.attach(io: File.open("app/assets/pictures/miata2.jpg"), filename: "miata2.jpg")
 
-miata.photos.attach(io: File.open("/Users/sle/Desktop/pictures/miata3.jpg"), filename: "miata3.jpg")
+miata.photos.attach(io: File.open("app/assets/pictures/miata3.jpg"), filename: "miata3.jpg")
 
-miata.photos.attach(io: File.open("/Users/sle/Desktop/pictures/miata4.jpg"), filename: "miata4.jpg")
+miata.photos.attach(io: File.open("app/assets/pictures/miata4.jpg"), filename: "miata4.jpg")
 
-prelude.photos.attach(io: File.open("/Users/sle/Desktop/pictures/prelude1.jpg"), filename: "prelude1.jpg")
+prelude.photos.attach(io: File.open("app/assets/pictures/prelude1.jpg"), filename: "prelude1.jpg")
 
-prelude.photos.attach(io: File.open("/Users/sle/Desktop/pictures/prelude2.jpg"), filename: "prelude2.jpg")
+prelude.photos.attach(io: File.open("app/assets/pictures/prelude2.jpg"), filename: "prelude2.jpg")
 
-prelude.photos.attach(io: File.open("/Users/sle/Desktop/pictures/prelude3.jpg"), filename: "prelude3.jpg")
+prelude.photos.attach(io: File.open("app/assets/pictures/prelude3.jpg"), filename: "prelude3.jpg")
 
-prelude.photos.attach(io: File.open("/Users/sle/Desktop/pictures/prelude4.jpg"), filename: "prelude4.jpg")
+prelude.photos.attach(io: File.open("app/assets/pictures/prelude4.jpg"), filename: "prelude4.jpg")
 
-gc8.photos.attach(io: File.open("/Users/sle/Desktop/pictures/gc81.jpg"), filename: "gc81.jpg")
+gc8.photos.attach(io: File.open("app/assets/pictures/gc81.jpg"), filename: "gc81.jpg")
 
-gc8.photos.attach(io: File.open("/Users/sle/Desktop/pictures/gc82.jpg"), filename: "gc82.jpg")
+gc8.photos.attach(io: File.open("app/assets/pictures/gc82.jpg"), filename: "gc82.jpg")
 
-gc8.photos.attach(io: File.open("/Users/sle/Desktop/pictures/gc83.jpg"), filename: "gc83.jpg")
+gc8.photos.attach(io: File.open("app/assets/pictures/gc83.jpg"), filename: "gc83.jpg")
 
-gc8.photos.attach(io: File.open("/Users/sle/Desktop/pictures/gc84.jpg"), filename: "gc84.jpg")
+gc8.photos.attach(io: File.open("app/assets/pictures/gc84.jpg"), filename: "gc84.jpg")
 
-e90.photos.attach(io: File.open("/Users/sle/Desktop/pictures/e901.jpg"), filename: "e901.jpg")
+e90.photos.attach(io: File.open("app/assets/pictures/e901.jpg"), filename: "e901.jpg")
 
-e90.photos.attach(io: File.open("/Users/sle/Desktop/pictures/e902.jpg"), filename: "e902.jpg")
+e90.photos.attach(io: File.open("app/assets/pictures/e902.jpg"), filename: "e902.jpg")
 
-e90.photos.attach(io: File.open("/Users/sle/Desktop/pictures/e903.jpg"), filename: "e903.jpg")
+e90.photos.attach(io: File.open("app/assets/pictures/e903.jpg"), filename: "e903.jpg")
 
-e90.photos.attach(io: File.open("/Users/sle/Desktop/pictures/e904.jpg"), filename: "e904.jpg")
+e90.photos.attach(io: File.open("app/assets/pictures/e904.jpg"), filename: "e904.jpg")
 
-e325.photos.attach(io: File.open("/Users/sle/Desktop/pictures/e301.jpg"), filename: "e301.jpg")
+e325.photos.attach(io: File.open("app/assets/pictures/e301.jpg"), filename: "e301.jpg")
 
-e325.photos.attach(io: File.open("/Users/sle/Desktop/pictures/e302.jpg"), filename: "e302.jpg")
+e325.photos.attach(io: File.open("app/assets/pictures/e302.jpg"), filename: "e302.jpg")
 
-e325.photos.attach(io: File.open("/Users/sle/Desktop/pictures/e303.jpg"), filename: "e303.jpg")
+e325.photos.attach(io: File.open("app/assets/pictures/e303.jpg"), filename: "e303.jpg")
 
-e325.photos.attach(io: File.open("/Users/sle/Desktop/pictures/e304.jpg"), filename: "e304.jpg")
+e325.photos.attach(io: File.open("app/assets/pictures/e304.jpg"), filename: "e304.jpg")
 
-e30.photos.attach(io: File.open("/Users/sle/Desktop/pictures/dylan1.jpg"), filename: "dylan1.jpg")
+e30.photos.attach(io: File.open("app/assets/pictures/dylan1.jpg"), filename: "dylan1.jpg")
 
-e30.photos.attach(io: File.open("/Users/sle/Desktop/pictures/dylan2.jpg"), filename: "dylan2.jpg")
+e30.photos.attach(io: File.open("app/assets/pictures/dylan2.jpg"), filename: "dylan2.jpg")
 
-e30.photos.attach(io: File.open("/Users/sle/Desktop/pictures/dylan3.jpg"), filename: "dylan3.jpg")
+e30.photos.attach(io: File.open("app/assets/pictures/dylan3.jpg"), filename: "dylan3.jpg")
 
-e30.photos.attach(io: File.open("/Users/sle/Desktop/pictures/dylan4.jpg"), filename: "dylan4.jpg")
+e30.photos.attach(io: File.open("app/assets/pictures/dylan4.jpg"), filename: "dylan4.jpg")
 
-charger.photos.attach(io: File.open("/Users/sle/Desktop/pictures/theo1.jpg"), filename: "theo1.jpg")
+charger.photos.attach(io: File.open("app/assets/pictures/theo1.jpg"), filename: "theo1.jpg")
 
-charger.photos.attach(io: File.open("/Users/sle/Desktop/pictures/theo2.jpg"), filename: "theo2.jpg")
+charger.photos.attach(io: File.open("app/assets/pictures/theo2.jpg"), filename: "theo2.jpg")
 
-charger.photos.attach(io: File.open("/Users/sle/Desktop/pictures/theo3.jpg"), filename: "theo3.jpg")
+charger.photos.attach(io: File.open("app/assets/pictures/theo3.jpg"), filename: "theo3.jpg")
 
-charger.photos.attach(io: File.open("/Users/sle/Desktop/pictures/theo4.jpg"), filename: "theo4.jpg")
+charger.photos.attach(io: File.open("app/assets/pictures/theo4.jpg"), filename: "theo4.jpg")
 
-mustang.photos.attach(io: File.open("/Users/sle/Desktop/pictures/mustang1.jpg"), filename: "mustang1.jpg")
+mustang.photos.attach(io: File.open("app/assets/pictures/mustang1.jpg"), filename: "mustang1.jpg")
 
-mustang.photos.attach(io: File.open("/Users/sle/Desktop/pictures/mustang2.jpg"), filename: "mustang2.jpg")
+mustang.photos.attach(io: File.open("app/assets/pictures/mustang2.jpg"), filename: "mustang2.jpg")
 
-mustang.photos.attach(io: File.open("/Users/sle/Desktop/pictures/mustang3.jpg"), filename: "mustang3.jpg")
+mustang.photos.attach(io: File.open("app/assets/pictures/mustang3.jpg"), filename: "mustang3.jpg")
 
-mustang.photos.attach(io: File.open("/Users/sle/Desktop/pictures/mustang4.jpg"), filename: "mustang4.jpg")
+mustang.photos.attach(io: File.open("app/assets/pictures/mustang4.jpg"), filename: "mustang4.jpg")
 
-challenger.photos.attach(io: File.open("/Users/sle/Desktop/pictures/challenger1.jpg"), filename: "challenger1.jpg")
+challenger.photos.attach(io: File.open("app/assets/pictures/challenger1.jpg"), filename: "challenger1.jpg")
 
-challenger.photos.attach(io: File.open("/Users/sle/Desktop/pictures/challenger2.jpg"), filename: "challenger2.jpg")
+challenger.photos.attach(io: File.open("app/assets/pictures/challenger2.jpg"), filename: "challenger2.jpg")
 
-challenger.photos.attach(io: File.open("/Users/sle/Desktop/pictures/challenger3.jpg"), filename: "challenger3.jpg")
+challenger.photos.attach(io: File.open("app/assets/pictures/challenger3.jpg"), filename: "challenger3.jpg")
 
-challenger.photos.attach(io: File.open("/Users/sle/Desktop/pictures/challenger4.jpg"), filename: "challenger4.jpg")
+challenger.photos.attach(io: File.open("app/assets/pictures/challenger4.jpg"), filename: "challenger4.jpg")
 
-is300.photos.attach(io: File.open("/Users/sle/Desktop/pictures/nav1.jpg"), filename: "nav1.jpg")
+is300.photos.attach(io: File.open("app/assets/pictures/nav1.jpg"), filename: "nav1.jpg")
 
-is300.photos.attach(io: File.open("/Users/sle/Desktop/pictures/nav2.jpg"), filename: "nav2.jpg")
+is300.photos.attach(io: File.open("app/assets/pictures/nav2.jpg"), filename: "nav2.jpg")
 
-is300.photos.attach(io: File.open("/Users/sle/Desktop/pictures/nav3.jpg"), filename: "nav3.jpg")
+is300.photos.attach(io: File.open("app/assets/pictures/nav3.jpg"), filename: "nav3.jpg")
 
-is300.photos.attach(io: File.open("/Users/sle/Desktop/pictures/nav4.jpg"), filename: "nav4.jpg")
+is300.photos.attach(io: File.open("app/assets/pictures/nav4.jpg"), filename: "nav4.jpg")
 
