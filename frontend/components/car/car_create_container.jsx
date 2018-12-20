@@ -27,8 +27,8 @@ const mSTP = (state) => ({
     city: '',
     state: '',
     zipcode: '',
-    longitude: '',
-    latitude: ''
+    longitude: -100.0001,
+    latitude: 100.0002
   },
   errors: state.errors.session,
   formType: 'create'

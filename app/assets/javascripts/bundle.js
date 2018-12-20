@@ -535,7 +535,9 @@ function (_React$Component) {
         className: "create-form-subheading"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Car description"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("textarea", {
         className: "create-textarea",
-        placeholder: "A detailed description will get you more trips"
+        placeholder: "A detailed description will get you more trips",
+        value: this.state.description,
+        onChange: this.update("description")
       }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
         className: "create-form-subheading"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Car features"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -544,38 +546,45 @@ function (_React$Component) {
         className: "feature-sizing"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "checkbox",
-        value: "true"
+        value: "true",
+        onChange: this.update("bluetooth")
       }), " Bluetooth"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "feature-sizing"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "checkbox",
-        value: "true"
+        value: "true",
+        onChange: this.update("gps")
       }), " GPS"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "feature-sizing"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "checkbox",
-        value: "true"
+        value: "true",
+        onChange: this.update("auxiliaryInput")
       }), " Auxiliary input"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "feature-sizing"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "checkbox",
-        value: "true"
+        value: "true",
+        onChange: this.update("heatedSeats")
       }), " Heated seats"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "feature-sizing"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "checkbox",
-        value: "true"
+        value: "true",
+        onChange: this.update("usbPorts")
       }), " USB ports"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "feature-sizing"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "checkbox",
-        value: "true"
+        value: "true",
+        onChange: this.update("backupCamera")
       }), " Backup camera")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
         className: "create-form-subheading"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Car modifications"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Car modifications"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("textarea", {
         className: "create-textarea",
-        type: "textarea",
-        placeholder: "The more mods you have the more fun it'll be"
+        placeholder: "The more mods you have the more fun it'll be",
+        value: this.props.mods,
+        onChange: this.update("mods")
       }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         className: "button-purple",
         type: "submit",
@@ -635,8 +644,8 @@ var mSTP = function mSTP(state) {
       city: '',
       state: '',
       zipcode: '',
-      longitude: '',
-      latitude: ''
+      longitude: -100.0001,
+      latitude: 100.0002
     },
     errors: state.errors.session,
     formType: 'create'

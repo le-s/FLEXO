@@ -146,7 +146,7 @@ class CarCreate extends React.Component {
                   <div>
                     <label className="create-form-subheading">
                       <div>Car description</div>
-                      <textarea className="create-textarea" placeholder="A detailed description will get you more trips" />
+                      <textarea className="create-textarea" placeholder="A detailed description will get you more trips" value={this.state.description} onChange={this.update("description")}/>
                     </label>
                   </div>
 
@@ -155,22 +155,22 @@ class CarCreate extends React.Component {
                       <div>Car features</div>
                       <div className="create-feature-wrap">
                         <div className="feature-sizing">
-                          <input type="checkbox" value="true" /> Bluetooth
+                          <input type="checkbox" value="true" onChange={this.update("bluetooth")}/> Bluetooth
                         </div>
                         <div className="feature-sizing">
-                          <input type="checkbox" value="true" /> GPS
+                          <input type="checkbox" value="true" onChange={this.update("gps")}/> GPS
                         </div>
                         <div className="feature-sizing">
-                          <input type="checkbox" value="true" /> Auxiliary input
+                          <input type="checkbox" value="true" onChange={this.update("auxiliaryInput")}/> Auxiliary input
                         </div>
                         <div className="feature-sizing">
-                          <input type="checkbox" value="true" /> Heated seats
+                          <input type="checkbox" value="true" onChange={this.update("heatedSeats")}/> Heated seats
                         </div>
                         <div className="feature-sizing">
-                          <input type="checkbox" value="true" /> USB ports
+                          <input type="checkbox" value="true" onChange={this.update("usbPorts")}/> USB ports
                         </div>
                         <div className="feature-sizing">
-                          <input type="checkbox" value="true" /> Backup camera
+                          <input type="checkbox" value="true" onChange={this.update("backupCamera")}/> Backup camera
                         </div>
                       </div>
                     </label>
@@ -179,7 +179,7 @@ class CarCreate extends React.Component {
                   <div>
                     <label className="create-form-subheading">
                       <div>Car modifications</div>
-                      <input className="create-textarea" type="textarea" placeholder="The more mods you have the more fun it'll be" />
+                      <textarea className="create-textarea" placeholder="The more mods you have the more fun it'll be" value={this.props.mods} onChange={this.update("mods")}/>
                     </label>
                   </div>
 
