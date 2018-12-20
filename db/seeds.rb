@@ -6,6 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+require "open-uri"
+
 #Users
 demo = User.create!(
   email: 'demo@email.com',
@@ -410,95 +412,95 @@ is300 = Car.create!(
 )
 
 #pictures
-rs.photos.attach(io: File.open("#{Rails.root}/assets/images/pictures/joseph1.jpg"), filename: "joseph1.jpg")
+rs.photos.attach(io: open("https://s3-us-west-1.amazonaws.com/flexo-prod/joseph1.jpg"), filename: "joseph1.jpg")
 
-rs.photos.attach(io: File.open("#{Rails.root}/assets/images/pictures/joseph2.jpg"), filename: "joseph2.jpg")
+# rs.photos.attach(io: File.open("#{Rails.root}/assets/images/pictures/joseph2.jpg"), filename: "joseph2.jpg")
 
-tl.photos.attach(io: File.open("#{Rails.root}/assets/images/pictures/dillon1.jpg"), filename: "dillon1.jpg")
+# tl.photos.attach(io: File.open("#{Rails.root}/assets/images/pictures/dillon1.jpg"), filename: "dillon1.jpg")
 
-tl.photos.attach(io: File.open("#{Rails.root}/assets/images/pictures/dillon2.jpg"), filename: "dillon2.jpg")
+# tl.photos.attach(io: File.open("#{Rails.root}/assets/images/pictures/dillon2.jpg"), filename: "dillon2.jpg")
 
-tl.photos.attach(io: File.open("#{Rails.root}/assets/images/pictures/dillon3.jpg"), filename: "dillon3.jpg")
+# tl.photos.attach(io: File.open("#{Rails.root}/assets/images/pictures/dillon3.jpg"), filename: "dillon3.jpg")
 
-tl.photos.attach(io: File.open("#{Rails.root}/assets/images/pictures/dillon4.jpg"), filename: "dillon4.jpg")
+# tl.photos.attach(io: File.open("#{Rails.root}/assets/images/pictures/dillon4.jpg"), filename: "dillon4.jpg")
 
-miata.photos.attach(io: File.open("#{Rails.root}/assets/images/pictures/miata1.jpg"), filename: "miata1.jpg")
+# miata.photos.attach(io: File.open("#{Rails.root}/assets/images/pictures/miata1.jpg"), filename: "miata1.jpg")
 
-miata.photos.attach(io: File.open("#{Rails.root}/assets/images/pictures/miata2.jpg"), filename: "miata2.jpg")
+# miata.photos.attach(io: File.open("#{Rails.root}/assets/images/pictures/miata2.jpg"), filename: "miata2.jpg")
 
-miata.photos.attach(io: File.open("#{Rails.root}/assets/images/pictures/miata3.jpg"), filename: "miata3.jpg")
+# miata.photos.attach(io: File.open("#{Rails.root}/assets/images/pictures/miata3.jpg"), filename: "miata3.jpg")
 
-miata.photos.attach(io: File.open("#{Rails.root}/assets/images/pictures/miata4.jpg"), filename: "miata4.jpg")
+# miata.photos.attach(io: File.open("#{Rails.root}/assets/images/pictures/miata4.jpg"), filename: "miata4.jpg")
 
-prelude.photos.attach(io: File.open("#{Rails.root}/assets/images/pictures/prelude1.jpg"), filename: "prelude1.jpg")
+# prelude.photos.attach(io: File.open("#{Rails.root}/assets/images/pictures/prelude1.jpg"), filename: "prelude1.jpg")
 
-prelude.photos.attach(io: File.open("#{Rails.root}/assets/images/pictures/prelude2.jpg"), filename: "prelude2.jpg")
+# prelude.photos.attach(io: File.open("#{Rails.root}/assets/images/pictures/prelude2.jpg"), filename: "prelude2.jpg")
 
-prelude.photos.attach(io: File.open("#{Rails.root}/assets/images/pictures/prelude3.jpg"), filename: "prelude3.jpg")
+# prelude.photos.attach(io: File.open("#{Rails.root}/assets/images/pictures/prelude3.jpg"), filename: "prelude3.jpg")
 
-prelude.photos.attach(io: File.open("#{Rails.root}/assets/images/pictures/prelude4.jpg"), filename: "prelude4.jpg")
+# prelude.photos.attach(io: File.open("#{Rails.root}/assets/images/pictures/prelude4.jpg"), filename: "prelude4.jpg")
 
-gc8.photos.attach(io: File.open("#{Rails.root}/assets/images/pictures/gc81.jpg"), filename: "gc81.jpg")
+# gc8.photos.attach(io: File.open("#{Rails.root}/assets/images/pictures/gc81.jpg"), filename: "gc81.jpg")
 
-gc8.photos.attach(io: File.open("#{Rails.root}/assets/images/pictures/gc82.jpg"), filename: "gc82.jpg")
+# gc8.photos.attach(io: File.open("#{Rails.root}/assets/images/pictures/gc82.jpg"), filename: "gc82.jpg")
 
-gc8.photos.attach(io: File.open("#{Rails.root}/assets/images/pictures/gc83.jpg"), filename: "gc83.jpg")
+# gc8.photos.attach(io: File.open("#{Rails.root}/assets/images/pictures/gc83.jpg"), filename: "gc83.jpg")
 
-gc8.photos.attach(io: File.open("#{Rails.root}/assets/images/pictures/gc84.jpg"), filename: "gc84.jpg")
+# gc8.photos.attach(io: File.open("#{Rails.root}/assets/images/pictures/gc84.jpg"), filename: "gc84.jpg")
 
-e90.photos.attach(io: File.open("#{Rails.root}/assets/images/pictures/e901.jpg"), filename: "e901.jpg")
+# e90.photos.attach(io: File.open("#{Rails.root}/assets/images/pictures/e901.jpg"), filename: "e901.jpg")
 
-e90.photos.attach(io: File.open("#{Rails.root}/assets/images/pictures/e902.jpg"), filename: "e902.jpg")
+# e90.photos.attach(io: File.open("#{Rails.root}/assets/images/pictures/e902.jpg"), filename: "e902.jpg")
 
-e90.photos.attach(io: File.open("#{Rails.root}/assets/images/pictures/e903.jpg"), filename: "e903.jpg")
+# e90.photos.attach(io: File.open("#{Rails.root}/assets/images/pictures/e903.jpg"), filename: "e903.jpg")
 
-e90.photos.attach(io: File.open("#{Rails.root}/assets/images/pictures/e904.jpg"), filename: "e904.jpg")
+# e90.photos.attach(io: File.open("#{Rails.root}/assets/images/pictures/e904.jpg"), filename: "e904.jpg")
 
-e325.photos.attach(io: File.open("#{Rails.root}/assets/images/pictures/e301.jpg"), filename: "e301.jpg")
+# e325.photos.attach(io: File.open("#{Rails.root}/assets/images/pictures/e301.jpg"), filename: "e301.jpg")
 
-e325.photos.attach(io: File.open("#{Rails.root}/assets/images/pictures/e302.jpg"), filename: "e302.jpg")
+# e325.photos.attach(io: File.open("#{Rails.root}/assets/images/pictures/e302.jpg"), filename: "e302.jpg")
 
-e325.photos.attach(io: File.open("#{Rails.root}/assets/images/pictures/e303.jpg"), filename: "e303.jpg")
+# e325.photos.attach(io: File.open("#{Rails.root}/assets/images/pictures/e303.jpg"), filename: "e303.jpg")
 
-e325.photos.attach(io: File.open("#{Rails.root}/assets/images/pictures/e304.jpg"), filename: "e304.jpg")
+# e325.photos.attach(io: File.open("#{Rails.root}/assets/images/pictures/e304.jpg"), filename: "e304.jpg")
 
-e30.photos.attach(io: File.open("#{Rails.root}/assets/images/pictures/dylan1.jpg"), filename: "dylan1.jpg")
+# e30.photos.attach(io: File.open("#{Rails.root}/assets/images/pictures/dylan1.jpg"), filename: "dylan1.jpg")
 
-e30.photos.attach(io: File.open("#{Rails.root}/assets/images/pictures/dylan2.jpg"), filename: "dylan2.jpg")
+# e30.photos.attach(io: File.open("#{Rails.root}/assets/images/pictures/dylan2.jpg"), filename: "dylan2.jpg")
 
-e30.photos.attach(io: File.open("#{Rails.root}/assets/images/pictures/dylan3.jpg"), filename: "dylan3.jpg")
+# e30.photos.attach(io: File.open("#{Rails.root}/assets/images/pictures/dylan3.jpg"), filename: "dylan3.jpg")
 
-e30.photos.attach(io: File.open("#{Rails.root}/assets/images/pictures/dylan4.jpg"), filename: "dylan4.jpg")
+# e30.photos.attach(io: File.open("#{Rails.root}/assets/images/pictures/dylan4.jpg"), filename: "dylan4.jpg")
 
-charger.photos.attach(io: File.open("#{Rails.root}/assets/images/pictures/theo1.jpg"), filename: "theo1.jpg")
+# charger.photos.attach(io: File.open("#{Rails.root}/assets/images/pictures/theo1.jpg"), filename: "theo1.jpg")
 
-charger.photos.attach(io: File.open("#{Rails.root}/assets/images/pictures/theo2.jpg"), filename: "theo2.jpg")
+# charger.photos.attach(io: File.open("#{Rails.root}/assets/images/pictures/theo2.jpg"), filename: "theo2.jpg")
 
-charger.photos.attach(io: File.open("#{Rails.root}/assets/images/pictures/theo3.jpg"), filename: "theo3.jpg")
+# charger.photos.attach(io: File.open("#{Rails.root}/assets/images/pictures/theo3.jpg"), filename: "theo3.jpg")
 
-charger.photos.attach(io: File.open("#{Rails.root}/assets/images/pictures/theo4.jpg"), filename: "theo4.jpg")
+# charger.photos.attach(io: File.open("#{Rails.root}/assets/images/pictures/theo4.jpg"), filename: "theo4.jpg")
 
-mustang.photos.attach(io: File.open("#{Rails.root}/assets/images/pictures/mustang1.jpg"), filename: "mustang1.jpg")
+# mustang.photos.attach(io: File.open("#{Rails.root}/assets/images/pictures/mustang1.jpg"), filename: "mustang1.jpg")
 
-mustang.photos.attach(io: File.open("#{Rails.root}/assets/images/pictures/mustang2.jpg"), filename: "mustang2.jpg")
+# mustang.photos.attach(io: File.open("#{Rails.root}/assets/images/pictures/mustang2.jpg"), filename: "mustang2.jpg")
 
-mustang.photos.attach(io: File.open("#{Rails.root}/assets/images/pictures/mustang3.jpg"), filename: "mustang3.jpg")
+# mustang.photos.attach(io: File.open("#{Rails.root}/assets/images/pictures/mustang3.jpg"), filename: "mustang3.jpg")
 
-mustang.photos.attach(io: File.open("#{Rails.root}/assets/images/pictures/mustang4.jpg"), filename: "mustang4.jpg")
+# mustang.photos.attach(io: File.open("#{Rails.root}/assets/images/pictures/mustang4.jpg"), filename: "mustang4.jpg")
 
-challenger.photos.attach(io: File.open("#{Rails.root}/assets/images/pictures/challenger1.jpg"), filename: "challenger1.jpg")
+# challenger.photos.attach(io: File.open("#{Rails.root}/assets/images/pictures/challenger1.jpg"), filename: "challenger1.jpg")
 
-challenger.photos.attach(io: File.open("#{Rails.root}/assets/images/pictures/challenger2.jpg"), filename: "challenger2.jpg")
+# challenger.photos.attach(io: File.open("#{Rails.root}/assets/images/pictures/challenger2.jpg"), filename: "challenger2.jpg")
 
-challenger.photos.attach(io: File.open("#{Rails.root}/assets/images/pictures/challenger3.jpg"), filename: "challenger3.jpg")
+# challenger.photos.attach(io: File.open("#{Rails.root}/assets/images/pictures/challenger3.jpg"), filename: "challenger3.jpg")
 
-challenger.photos.attach(io: File.open("#{Rails.root}/assets/images/pictures/challenger4.jpg"), filename: "challenger4.jpg")
+# challenger.photos.attach(io: File.open("#{Rails.root}/assets/images/pictures/challenger4.jpg"), filename: "challenger4.jpg")
 
-is300.photos.attach(io: File.open("#{Rails.root}/assets/images/pictures/nav1.jpg"), filename: "nav1.jpg")
+# is300.photos.attach(io: File.open("#{Rails.root}/assets/images/pictures/nav1.jpg"), filename: "nav1.jpg")
 
-is300.photos.attach(io: File.open("#{Rails.root}/assets/images/pictures/nav2.jpg"), filename: "nav2.jpg")
+# is300.photos.attach(io: File.open("#{Rails.root}/assets/images/pictures/nav2.jpg"), filename: "nav2.jpg")
 
-is300.photos.attach(io: File.open("#{Rails.root}/assets/images/pictures/nav3.jpg"), filename: "nav3.jpg")
+# is300.photos.attach(io: File.open("#{Rails.root}/assets/images/pictures/nav3.jpg"), filename: "nav3.jpg")
 
-is300.photos.attach(io: File.open("#{Rails.root}/assets/images/pictures/nav4.jpg"), filename: "nav4.jpg")
+# is300.photos.attach(io: File.open("#{Rails.root}/assets/images/pictures/nav4.jpg"), filename: "nav4.jpg")
 
