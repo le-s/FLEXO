@@ -163,7 +163,7 @@ prelude = Car.create!(
   state: 'CA',
   zipcode: 94107,
   longitude: -122.3976,
-  latitude: 37.76014
+  latitude: 37.7601
 )
 
 gc8 = Car.create!(
@@ -185,12 +185,12 @@ gc8 = Car.create!(
   usb_ports: true,
   backup_camera: false,
   mods: 'coilovers, roll cage, flares, projectors',
-  address: '1616 20th St',
+  address: '746 Natoma St',
   city: 'San Francisco',
   state: 'CA',
-  zipcode: 94107,
-  longitude: -122.3976,
-  latitude: 37.76014
+  zipcode: 94103,
+  longitude: -122.4129,
+  latitude: 37.7761
 )
 
 e90 = Car.create!(
@@ -239,12 +239,12 @@ e325 = Car.create!(
   usb_ports: true,
   backup_camera: false,
   mods: 'coilovers, paint job',
-  address: '2616 Ocean Ave',
+  address: '3705 17th St',
   city: 'San Francisco',
   state: 'CA',
-  zipcode: 94132,
-  longitude: -122.4889,
-  latitude: 37.7321
+  zipcode: 94114,
+  longitude: -122.4287,
+  latitude: 37.7627
 )
 
 e30 = Car.create!(
