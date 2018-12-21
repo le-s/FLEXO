@@ -643,7 +643,7 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Car modifications"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("textarea", {
         className: "create-textarea",
         placeholder: "The more mods you have the more fun it'll be",
-        value: this.props.mods,
+        value: this.state.mods,
         onChange: this.update("mods")
       }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "file",
@@ -1099,6 +1099,8 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
+      var _this4 = this;
+
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "create-header"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1107,7 +1109,191 @@ function (_React$Component) {
         className: "create-form-align"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "header-text"
-      }, "Edit your car"))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null));
+      }, "Edit your car"))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "create-form-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "create-form-align"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "create-form-parent-style"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+        onSubmit: this.handleSubmit
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "create-form-heading"
+      }, "Your Car"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "create-form-subheading"
+      }, "Where is the car located?", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "location-flex"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Address", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "create-input-field",
+        type: "text",
+        value: this.state.address,
+        placeholder: "Address",
+        onChange: this.update("address")
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "City", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "create-input-field",
+        type: "text",
+        value: this.state.city,
+        placeholder: "City",
+        onChange: this.update("city")
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "State", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "create-input-field",
+        type: "text",
+        value: this.state.state,
+        placeholder: "State",
+        onChange: this.update("state")
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Zip Code", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "create-input-field",
+        type: "text",
+        value: this.state.zipcode,
+        placeholder: "Zip Code",
+        onChange: this.update("zipcode")
+      })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "create-form-subheading"
+      }, "What car do you have?", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "location-flex"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Year", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "create-input-field",
+        type: "text",
+        value: this.state.year,
+        placeholder: "Year"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Make", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "create-input-field",
+        type: "text",
+        value: this.state.make,
+        placeholder: "Make"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Model", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "create-input-field",
+        type: "text",
+        value: this.state.model,
+        placeholder: "Model"
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "location-flex"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "MPG", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "create-input-field",
+        type: "text",
+        value: this.state.mpg,
+        placeholder: "MPG"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Number of Doors", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "create-input-field",
+        type: "text",
+        value: this.state.numDoors,
+        placeholder: "Doors"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Number of Seats", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "create-input-field",
+        type: "text",
+        value: this.state.numSeats,
+        placeholder: "Seats",
+        onChange: this.update("numSeats")
+      })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "flex-trans-fuel"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "width-trans-fuel"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        className: "create-form-subheading"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Fuel Type"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "fuel-input-field",
+        type: "text",
+        value: this.state.fuelType,
+        onChange: this.update("fuelType"),
+        placeholder: "Fuel Type"
+      })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "width-trans-fuel"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        className: "create-form-subheading"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Transmission"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "transmission-flex"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "styled-radio",
+        type: "radio",
+        name: "automaticTrans",
+        value: "true",
+        onChange: this.update("automaticTrans")
+      }), " Automatic"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "styled-radio radio-margin-left",
+        type: "radio",
+        name: "automaticTrans",
+        value: "false",
+        onChange: this.update("automaticTrans")
+      }), " Manual"))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "create-form-heading"
+      }, "Car Details"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "create-form-subheading"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Price", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "price-input-field",
+        type: "text",
+        value: this.state.price,
+        placeholder: "Price",
+        onChange: this.update("price")
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        className: "create-form-subheading"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Car description"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("textarea", {
+        className: "create-textarea",
+        placeholder: "A detailed description will get you more trips",
+        value: this.state.description,
+        onChange: this.update("description")
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        className: "create-form-subheading"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Car features"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "create-feature-wrap"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "checkbox",
+        className: "dummy"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "feature-sizing"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "checkbox",
+        value: "true",
+        onChange: this.update("bluetooth")
+      }), " Bluetooth"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "feature-sizing"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "checkbox",
+        value: "true",
+        onChange: this.update("gps")
+      }), " GPS"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "feature-sizing"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "checkbox",
+        value: "true",
+        onChange: this.update("auxiliaryInput")
+      }), " Auxiliary input"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "feature-sizing"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "checkbox",
+        value: "true",
+        onChange: this.update("heatedSeats")
+      }), " Heated seats"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "feature-sizing"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "checkbox",
+        value: "true",
+        onChange: this.update("usbPorts")
+      }), " USB ports"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "feature-sizing"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "checkbox",
+        value: "true",
+        onChange: this.update("backupCamera")
+      }), " Backup camera")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        className: "create-form-subheading"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Car modifications"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("textarea", {
+        className: "create-textarea",
+        placeholder: "The more mods you have the more fun it'll be",
+        value: this.state.mods,
+        onChange: this.update("mods")
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "file",
+        onChange: function onChange(e) {
+          return _this4.setState({
+            photos: e.target.files
+          });
+        },
+        multiple: true
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "button-purple",
+        type: "submit",
+        value: "Finish"
+      }))))));
     }
   }]);
 

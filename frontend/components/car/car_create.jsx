@@ -228,7 +228,7 @@ class CarCreate extends React.Component {
                   <div>
                     <label className="create-form-subheading">
                       <div>Car modifications</div>
-                      <textarea className="create-textarea" placeholder="The more mods you have the more fun it'll be" value={this.props.mods} onChange={this.update("mods")}/>
+                      <textarea className="create-textarea" placeholder="The more mods you have the more fun it'll be" value={this.state.mods} onChange={this.update("mods")}/>
                     </label>
                   </div>
 
