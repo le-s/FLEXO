@@ -360,6 +360,7 @@ var App = function App() {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -379,6 +380,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
 
 
 
@@ -404,15 +406,19 @@ function (_React$Component) {
       var _this2 = this;
 
       return function (e) {
-        return _this2.setState(_defineProperty({}, field, e.currentTarget.value));
+        _this2.setState(_defineProperty({}, field, e.currentTarget.value));
       };
     }
   }, {
     key: "handleSubmit",
     value: function handleSubmit(e) {
+      var _this3 = this;
+
       e.preventDefault();
       var car = Object.assign({}, this.state);
-      this.props.createCar(car);
+      this.props.createCar(car).then(function () {
+        return _this3.props.history.push("/cars");
+      });
     }
   }, {
     key: "render",
@@ -505,7 +511,21 @@ function (_React$Component) {
         value: this.state.numSeats,
         placeholder: "Seats",
         onChange: this.update("numSeats")
-      })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+      })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "flex-trans-fuel"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "width-trans-fuel"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        className: "create-form-subheading"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Fuel Type"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "fuel-input-field",
+        type: "text",
+        value: this.state.fuelType,
+        onChange: this.update("fuelType"),
+        placeholder: "Fuel Type"
+      })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "width-trans-fuel"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
         className: "create-form-subheading"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Transmission"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "transmission-flex"
@@ -521,7 +541,7 @@ function (_React$Component) {
         name: "automaticTrans",
         value: "false",
         onChange: this.update("automaticTrans")
-      }), " Manual")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }), " Manual"))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "create-form-heading"
       }, "Car Details"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "create-form-subheading"
@@ -542,7 +562,10 @@ function (_React$Component) {
         className: "create-form-subheading"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Car features"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "create-feature-wrap"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "checkbox",
+        className: "dummy"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "feature-sizing"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "checkbox",
@@ -2023,7 +2046,17 @@ function (_React$Component) {
         className: "main-text"
       }, "Way better than a stock car"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
         className: "sub-text"
-      }, "Book extraordinary cars from local enthusiasts around the world")));
+      }, "Book extraordinary cars from local enthusiasts around the world")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "search-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "text",
+        placeholder: "Enter city, airport, or address",
+        className: "input-search-sizing"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        to: '/cars'
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "button-search"
+      }))));
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, splash, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_footer_footer__WEBPACK_IMPORTED_MODULE_2__["default"], null));
     }
   }]);

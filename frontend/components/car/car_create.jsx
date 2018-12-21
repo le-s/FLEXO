@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 class CarCreate extends React.Component {
   constructor(props) {
@@ -8,15 +9,17 @@ class CarCreate extends React.Component {
   }
 
   update(field) {
-    return e => this.setState({
-      [field]: e.currentTarget.value,
-    });
+    return e => {
+      this.setState({
+        [field]: e.currentTarget.value,
+      });
+    }
   }
 
   handleSubmit(e) {
     e.preventDefault();
     const car = Object.assign({}, this.state);
-    this.props.createCar(car);
+    this.props.createCar(car).then(() => this.props.history.push(`/cars`));
   }
 
   render() {
@@ -121,18 +124,29 @@ class CarCreate extends React.Component {
                     </div>
                   </div>
 
-                  <div>
-                    <label className="create-form-subheading">
-                      <div>Transmission</div>
-                      <div className="transmission-flex">
+                  <div className="flex-trans-fuel">
+                    <div className="width-trans-fuel">
+                      <label className="create-form-subheading">
+                        <div>Fuel Type</div>
                         <div>
-                          <input className="styled-radio" type="radio" name="automaticTrans" value="true" onChange={this.update("automaticTrans")} /> Automatic
+                          <input className="fuel-input-field" type="text" value={this.state.fuelType} onChange={this.update("fuelType")} placeholder="Fuel Type"/>
                         </div>
-                        <div>
-                          <input className="styled-radio radio-margin-left" type="radio" name="automaticTrans" value="false" onChange={this.update("automaticTrans")}/> Manual
+                      </label>
+                    </div>
+
+                    <div className="width-trans-fuel">
+                      <label className="create-form-subheading">
+                        <div>Transmission</div>
+                        <div className="transmission-flex">
+                          <div>
+                            <input className="styled-radio" type="radio" name="automaticTrans" value="true" onChange={this.update("automaticTrans")} /> Automatic
+                          </div>
+                          <div>
+                            <input className="styled-radio radio-margin-left" type="radio" name="automaticTrans" value="false" onChange={this.update("automaticTrans")}/> Manual
+                          </div>
                         </div>
-                      </div>
-                    </label>
+                      </label>
+                    </div>
                   </div>
 
                   <div className="create-form-heading">Car Details</div>
@@ -154,6 +168,9 @@ class CarCreate extends React.Component {
                     <label className="create-form-subheading">
                       <div>Car features</div>
                       <div className="create-feature-wrap">
+                        <div>
+                          <input type="checkbox" className="dummy"/>
+                        </div>
                         <div className="feature-sizing">
                           <input type="checkbox" value="true" onChange={this.update("bluetooth")}/> Bluetooth
                         </div>

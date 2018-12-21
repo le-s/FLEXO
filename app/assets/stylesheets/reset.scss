@@ -53,6 +53,7 @@ input[type="submit"] {
 }
 
 textarea:focus, input:focus{
-    outline: none;
-    border: 1px solid #8F63F3;
+  outline: none;
+  border: 1px solid #8F63F3;
+  text-decoration: none;
 }

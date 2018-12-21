@@ -144,3 +144,26 @@
   padding: 3px;
   margin: 14px 0;
 }
+
+.fuel-input-field {
+  width: 143px;
+  border: 1px solid #c7c7c7;
+  font-size: 13px;
+  height: 35px; 
+  margin-bottom: 20px;
+}
+
+.flex-trans-fuel {
+  display: flex;
+}
+
+.width-trans-fuel {
+  width: 201px;
+  margin-left: 19px;
+}
+
+.dummy {
+  width: 0;
+  height: 0;
+  display: none;
+}
