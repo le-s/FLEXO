@@ -2,7 +2,6 @@ import React from "react";
 import Slider from 'react-slick';
 
 const SlideShow = ({photo}) => {
-  // debugger
 
   if (photo.photoUrls === undefined) return null;
   return (

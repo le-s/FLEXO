@@ -1,13 +1,27 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 const ReservationInfo = ({details, remove, currentUser}) => {
   let deleteButton;
+  let editButton;
 
   if (details.ownerId === currentUser) {
-    deleteButton = <div>
+    deleteButton = 
+    <div>
       <button className="remove-car-btn" onClick={remove}>
         Remove Car
       </button>
+    </div>
+  }
+
+  if (details.ownerId === currentUser) {
+    editButton = 
+    <div>
+      <Link to={`/cars/${details.id}/edit`}>
+        <button className="edit-car-btn">
+          Edit Car
+        </button>
+      </Link>
     </div>
   }
   
@@ -83,6 +97,7 @@ const ReservationInfo = ({details, remove, currentUser}) => {
           </div>
           <div className="report">Report listing</div>
         </div>
+      {editButton}
       {deleteButton}
     </div>
   );

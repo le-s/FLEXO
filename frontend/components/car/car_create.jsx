@@ -13,7 +13,7 @@ class CarCreate extends React.Component {
       this.setState({
         [field]: e.currentTarget.value,
       });
-    }
+    };
   }
 
   handleSubmit(e) {
@@ -50,11 +50,10 @@ class CarCreate extends React.Component {
       formData.append('car[photos][]', this.state.photos[i]);
     }
 
-    this.props.createCar(formData).then(() => this.props.history.push(`/cars`));
+    this.props.createCar(formData).then((data) => this.props.history.push(`/cars/${data.car.id}`));
   }
 
   render() {
-    console.log(this.state);
     return (
       <>
         <div>

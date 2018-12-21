@@ -187,3 +187,27 @@
   color: white;
   text-decoration: none;
 }
+
+.edit-car-btn {
+  width: 100%;
+  border: 1px solid black;
+  background: #fff;
+  cursor: pointer;
+  color: #231f20;
+  font-family: BasisGrotesque,Avenir,Helvetica Neue,Helvetica,sans-serif;
+  font-weight: 700;
+  height: 34px;
+  font-size: 16px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  transition: all .5s ease;
+  margin-bottom: 20px;
+}
+
+.edit-car-btn:hover {
+  background-color: #59d389;
+  color: white;
+  text-decoration: none;
+}

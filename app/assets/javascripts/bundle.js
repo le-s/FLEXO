@@ -304,6 +304,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _car_car_show_container__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./car/car_show_container */ "./frontend/components/car/car_show_container.jsx");
 /* harmony import */ var _car_car_index_container__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./car/car_index_container */ "./frontend/components/car/car_index_container.jsx");
 /* harmony import */ var _car_car_create_container__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./car/car_create_container */ "./frontend/components/car/car_create_container.jsx");
+/* harmony import */ var _car_car_update_container__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./car/car_update_container */ "./frontend/components/car/car_update_container.jsx");
+
 
 
 
@@ -326,10 +328,14 @@ var App = function App() {
     to: "/"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "navbar-logo"
-  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_navbar_navbar_container__WEBPACK_IMPORTED_MODULE_4__["default"], null))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_navbar_navbar_container__WEBPACK_IMPORTED_MODULE_4__["default"], null))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_5__["ProtectedRoute"], {
     exact: true,
     path: "/cars/create",
     component: _car_car_create_container__WEBPACK_IMPORTED_MODULE_10__["default"]
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+    exact: true,
+    path: "/cars/:id/edit",
+    component: _car_car_update_container__WEBPACK_IMPORTED_MODULE_11__["default"]
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     path: "/cars/:id",
     component: _car_car_show_container__WEBPACK_IMPORTED_MODULE_8__["default"]
@@ -445,8 +451,8 @@ function (_React$Component) {
         formData.append('car[photos][]', this.state.photos[i]);
       }
 
-      this.props.createCar(formData).then(function () {
-        return _this3.props.history.push("/cars");
+      this.props.createCar(formData).then(function (data) {
+        return _this3.props.history.push("/cars/".concat(data.car.id));
       });
     }
   }, {
@@ -454,7 +460,6 @@ function (_React$Component) {
     value: function render() {
       var _this4 = this;
 
-      console.log(this.state);
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "create-header"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1016,6 +1021,147 @@ var mDTP = function mDTP(dispatch) {
 
 /***/ }),
 
+/***/ "./frontend/components/car/car_update.jsx":
+/*!************************************************!*\
+  !*** ./frontend/components/car/car_update.jsx ***!
+  \************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+
+
+var CarUpdate =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(CarUpdate, _React$Component);
+
+  function CarUpdate(props) {
+    var _this;
+
+    _classCallCheck(this, CarUpdate);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(CarUpdate).call(this, props));
+    _this.state = _this.props.car;
+    _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_assertThisInitialized(_this)));
+    return _this;
+  }
+
+  _createClass(CarUpdate, [{
+    key: "update",
+    value: function update(field) {
+      var _this2 = this;
+
+      return function (e) {
+        _this2.setState(_defineProperty({}, field, e.currentTarget.value));
+      };
+    }
+  }, {
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      var carId = this.props.match.params.id;
+      this.props.fetchCar(carId);
+      window.scrollTo(0, 0);
+    }
+  }, {
+    key: "handleSubmit",
+    value: function handleSubmit(e) {
+      var _this3 = this;
+
+      e.preventDefault();
+      this.props.editCar(car).then(function (data) {
+        return _this3.props.history.push("/cars/".concat(data.car.id));
+      });
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "create-header"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "create-header-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "create-form-align"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "header-text"
+      }, "Edit your car"))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null));
+    }
+  }]);
+
+  return CarUpdate;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["default"] = (CarUpdate);
+
+/***/ }),
+
+/***/ "./frontend/components/car/car_update_container.jsx":
+/*!**********************************************************!*\
+  !*** ./frontend/components/car/car_update_container.jsx ***!
+  \**********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _actions_car_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/car_actions */ "./frontend/actions/car_actions.js");
+/* harmony import */ var _car_update__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./car_update */ "./frontend/components/car/car_update.jsx");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
+
+
+
+
+
+
+var mSTP = function mSTP(state, ownProps) {
+  return {
+    car: state.entities.cars[ownProps.match.params.id],
+    errors: state.errors.session,
+    formType: 'update'
+  };
+};
+
+var mDTP = function mDTP(dispatch) {
+  return {
+    fetchCar: function fetchCar(id) {
+      return dispatch(Object(_actions_car_actions__WEBPACK_IMPORTED_MODULE_2__["fetchCar"])(id));
+    },
+    editCar: function editCar(car) {
+      return dispatch(Object(_actions_car_actions__WEBPACK_IMPORTED_MODULE_2__["editCar"])(car));
+    }
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_router_dom__WEBPACK_IMPORTED_MODULE_4__["withRouter"])(Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mSTP, mDTP)(_car_update__WEBPACK_IMPORTED_MODULE_3__["default"])));
+
+/***/ }),
+
 /***/ "./frontend/components/car/details.jsx":
 /*!*********************************************!*\
   !*** ./frontend/components/car/details.jsx ***!
@@ -1245,6 +1391,8 @@ var Icon = function Icon(_ref) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
+
 
 
 var ReservationInfo = function ReservationInfo(_ref) {
@@ -1252,12 +1400,21 @@ var ReservationInfo = function ReservationInfo(_ref) {
       remove = _ref.remove,
       currentUser = _ref.currentUser;
   var deleteButton;
+  var editButton;
 
   if (details.ownerId === currentUser) {
     deleteButton = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
       className: "remove-car-btn",
       onClick: remove
     }, "Remove Car"));
+  }
+
+  if (details.ownerId === currentUser) {
+    editButton = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+      to: "/cars/".concat(details.id, "/edit")
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      className: "edit-car-btn"
+    }, "Edit Car")));
   }
 
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1332,7 +1489,7 @@ var ReservationInfo = function ReservationInfo(_ref) {
     className: "empty-heart"
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Add to favorites"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "report"
-  }, "Report listing")), deleteButton);
+  }, "Report listing")), editButton, deleteButton);
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (ReservationInfo);
@@ -1357,7 +1514,6 @@ __webpack_require__.r(__webpack_exports__);
 
 var SlideShow = function SlideShow(_ref) {
   var photo = _ref.photo;
-  // debugger
   if (photo.photoUrls === undefined) return null;
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_slick__WEBPACK_IMPORTED_MODULE_1___default.a, null, photo.photoUrls.map(function (photo) {
     return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
