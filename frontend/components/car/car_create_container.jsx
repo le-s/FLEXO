@@ -28,7 +28,8 @@ const mSTP = (state) => ({
     state: '',
     zipcode: '',
     longitude: -100.0001,
-    latitude: 100.0002
+    latitude: 100.0002,
+    photos: []
   },
   errors: state.errors.session,
   formType: 'create'

@@ -18,12 +18,45 @@ class CarCreate extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const car = Object.assign({}, this.state);
-    this.props.createCar(car).then(() => this.props.history.push(`/cars`));
+
+    const formData = new FormData();
+    
+    formData.append('car[ownerId]', this.state.ownerId);
+    formData.append('car[make]', this.state.make);
+    formData.append('car[model]', this.state.model);
+    formData.append('car[year]', this.state.year);
+    formData.append('car[price]', this.state.price);
+    formData.append('car[description]', this.state.description);
+    formData.append('car[mpg]', this.state.mpg);
+    formData.append('car[fuelType]', this.state.fuelType);
+    formData.append('car[numDoors]', this.state.numDoors);
+    formData.append('car[numSeats]', this.state.numSeats);
+    formData.append('car[bluetooth]', this.state.bluetooth);
+    formData.append('car[auxiliaryInput]', this.state.auxiliaryInput);
+    formData.append('car[heatedSeats]', this.state.heatedSeats);
+    formData.append('car[gps]', this.state.gps);
+    formData.append('car[automaticTrans]', this.state.automaticTrans);
+    formData.append('car[usbPorts]', this.state.usbPorts);
+    formData.append('car[backupCamera]', this.state.backupCamera);
+    formData.append('car[mods]', this.state.mods);
+    formData.append('car[address]', this.state.address);
+    formData.append('car[city]', this.state.city);
+    formData.append('car[state]', this.state.state);
+    formData.append('car[zipcode]', this.state.zipcode);
+    formData.append('car[longitude]', this.state.longitude);
+    formData.append('car[latitude]', this.state.latitude);
+
+    for (let i = 0; i < this.state.photos.length; i++) {
+      formData.append('car[photos][]', this.state.photos[i]);
+    }
+
+    this.props.createCar(formData).then(() => this.props.history.push(`/cars`));
   }
 
   render() {
-    return <>
+    console.log(this.state);
+    return (
+      <>
         <div>
           <div className="create-header">
             <div className="create-header-container">
@@ -200,13 +233,20 @@ class CarCreate extends React.Component {
                     </label>
                   </div>
 
+                  <br/>
+
+                  <input type="file" onChange={e => this.setState({ photos: e.target.files })} multiple/>
+
+                  <br/>
+
                   <input className="button-purple" type="submit" value="Finish" />
                 </form>
               </div>
             </div>
           </div>
         </div>
-      </>;
+      </>
+    );
   }
 }
 

@@ -415,14 +415,46 @@ function (_React$Component) {
       var _this3 = this;
 
       e.preventDefault();
-      var car = Object.assign({}, this.state);
-      this.props.createCar(car).then(function () {
+      var formData = new FormData();
+      formData.append('car[ownerId]', this.state.ownerId);
+      formData.append('car[make]', this.state.make);
+      formData.append('car[model]', this.state.model);
+      formData.append('car[year]', this.state.year);
+      formData.append('car[price]', this.state.price);
+      formData.append('car[description]', this.state.description);
+      formData.append('car[mpg]', this.state.mpg);
+      formData.append('car[fuelType]', this.state.fuelType);
+      formData.append('car[numDoors]', this.state.numDoors);
+      formData.append('car[numSeats]', this.state.numSeats);
+      formData.append('car[bluetooth]', this.state.bluetooth);
+      formData.append('car[auxiliaryInput]', this.state.auxiliaryInput);
+      formData.append('car[heatedSeats]', this.state.heatedSeats);
+      formData.append('car[gps]', this.state.gps);
+      formData.append('car[automaticTrans]', this.state.automaticTrans);
+      formData.append('car[usbPorts]', this.state.usbPorts);
+      formData.append('car[backupCamera]', this.state.backupCamera);
+      formData.append('car[mods]', this.state.mods);
+      formData.append('car[address]', this.state.address);
+      formData.append('car[city]', this.state.city);
+      formData.append('car[state]', this.state.state);
+      formData.append('car[zipcode]', this.state.zipcode);
+      formData.append('car[longitude]', this.state.longitude);
+      formData.append('car[latitude]', this.state.latitude);
+
+      for (var i = 0; i < this.state.photos.length; i++) {
+        formData.append('car[photos][]', this.state.photos[i]);
+      }
+
+      this.props.createCar(formData).then(function () {
         return _this3.props.history.push("/cars");
       });
     }
   }, {
     key: "render",
     value: function render() {
+      var _this4 = this;
+
+      console.log(this.state);
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "create-header"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -608,7 +640,15 @@ function (_React$Component) {
         placeholder: "The more mods you have the more fun it'll be",
         value: this.props.mods,
         onChange: this.update("mods")
-      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "file",
+        onChange: function onChange(e) {
+          return _this4.setState({
+            photos: e.target.files
+          });
+        },
+        multiple: true
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         className: "button-purple",
         type: "submit",
         value: "Finish"
@@ -668,7 +708,8 @@ var mSTP = function mSTP(state) {
       state: '',
       zipcode: '',
       longitude: -100.0001,
-      latitude: 100.0002
+      latitude: 100.0002,
+      photos: []
     },
     errors: state.errors.session,
     formType: 'create'
@@ -2488,9 +2529,9 @@ var createCar = function createCar(car) {
   return $.ajax({
     method: 'post',
     url: '/api/cars',
-    data: {
-      car: car
-    }
+    data: car,
+    contentType: false,
+    processData: false
   });
 };
 var deleteCar = function deleteCar(id) {
