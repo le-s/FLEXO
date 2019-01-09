@@ -1,6 +1,7 @@
 # Production Readme
 
 [FLEXO Live](https://flex-o.herokuapp.com/#/)
+[Design docs](https://github.com/le-s/FLEXO/wiki)
 
 FLEXO is a full-stack, one page application that utilizes Ruby on Rails for the backend, PostgreSQL for the database, and React/Redux for the frontend. This website features extraordinary cars available to rent to experience the road from a different window. Find the car that will fit the experience for you by viewing the different details each car has.
 
