@@ -416,18 +416,9 @@ function (_React$Component) {
       };
     }
   }, {
-    key: "updateBox",
-    value: function updateBox(field) {
-      var _this3 = this;
-
-      return function (e) {
-        _this3.setState(_defineProperty({}, field, !e.currentTarget.checked));
-      };
-    }
-  }, {
     key: "handleSubmit",
     value: function handleSubmit(e) {
-      var _this4 = this;
+      var _this3 = this;
 
       e.preventDefault();
       var formData = new FormData();
@@ -461,13 +452,13 @@ function (_React$Component) {
       }
 
       this.props.createCar(formData).then(function (data) {
-        return _this4.props.history.push("/cars/".concat(data.car.id));
+        return _this3.props.history.push("/cars/".concat(data.car.id));
       });
     }
   }, {
     key: "render",
     value: function render() {
-      var _this5 = this;
+      var _this4 = this;
 
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "create-header"
@@ -579,7 +570,8 @@ function (_React$Component) {
         className: "styled-radio",
         type: "radio",
         name: "automaticTrans",
-        onChange: this.updateBox("automaticTrans")
+        value: "true",
+        onChange: this.update("automaticTrans")
       }), " Automatic"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         className: "styled-radio radio-margin-left",
         type: "radio",
@@ -614,32 +606,38 @@ function (_React$Component) {
         className: "feature-sizing"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "checkbox",
-        onChange: this.updateBox("bluetooth")
+        value: "true",
+        onChange: this.update("bluetooth")
       }), " Bluetooth"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "feature-sizing"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "checkbox",
-        onChange: this.updateBox("gps")
+        value: "true",
+        onChange: this.update("gps")
       }), " GPS"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "feature-sizing"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "checkbox",
-        onChange: this.updateBox("auxiliaryInput")
+        value: "true",
+        onChange: this.update("auxiliaryInput")
       }), " Auxiliary input"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "feature-sizing"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "checkbox",
-        onChange: this.updateBox("heatedSeats")
+        value: "true",
+        onChange: this.update("heatedSeats")
       }), " Heated seats"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "feature-sizing"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "checkbox",
-        onChange: this.updateBox("usbPorts")
+        value: "true",
+        onChange: this.update("usbPorts")
       }), " USB ports"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "feature-sizing"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "checkbox",
-        onChange: this.updateBox("backupCamera")
+        value: "true",
+        onChange: this.update("backupCamera")
       }), " Backup camera")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
         className: "create-form-subheading"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Car modifications"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("textarea", {
@@ -650,7 +648,7 @@ function (_React$Component) {
       }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "file",
         onChange: function onChange(e) {
-          return _this5.setState({
+          return _this4.setState({
             photos: e.target.files
           });
         },
@@ -1095,7 +1093,7 @@ function (_React$Component) {
       var _this3 = this;
 
       return function (e) {
-        _this3.setState(_defineProperty({}, field, !e.currentTarget.checked));
+        _this3.setState(_defineProperty({}, field, e.target.checked));
       };
     }
   }, {
@@ -1230,13 +1228,14 @@ function (_React$Component) {
         className: "styled-radio",
         type: "radio",
         name: "automaticTrans",
+        checked: this.state.automaticTrans,
         onChange: this.update("automaticTrans")
       }), " ", "Automatic"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         className: "styled-radio radio-margin-left",
         type: "radio",
         name: "automaticTrans",
-        value: "false",
-        onChange: this.updateBox("automaticTrans")
+        checked: !this.state.automaticTrans,
+        onChange: this.update("automaticTrans")
       }), " ", "Manual"))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "create-form-heading"
       }, "Car Details"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1265,31 +1264,37 @@ function (_React$Component) {
         className: "feature-sizing"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "checkbox",
+        checked: this.state.bluetooth,
         onChange: this.updateBox("bluetooth")
       }), " ", "Bluetooth"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "feature-sizing"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "checkbox",
+        checked: this.state.gps,
         onChange: this.updateBox("gps")
       }), " ", "GPS"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "feature-sizing"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "checkbox",
+        checked: this.state.auxiliaryInput,
         onChange: this.updateBox("auxiliaryInput")
       }), " ", "Auxiliary input"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "feature-sizing"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "checkbox",
+        checked: this.state.heatedSeats,
         onChange: this.updateBox("heatedSeats")
       }), " ", "Heated seats"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "feature-sizing"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "checkbox",
+        checked: this.state.usbPorts,
         onChange: this.updateBox("usbPorts")
       }), " ", "USB ports"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "feature-sizing"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "checkbox",
+        checked: this.state.backupCamera,
         onChange: this.updateBox("backupCamera")
       }), " ", "Backup camera")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
         className: "create-form-subheading"

@@ -16,14 +16,6 @@ class CarCreate extends React.Component {
     };
   }
 
-  updateBox(field) {
-    return e => {
-      this.setState({
-        [field]: !e.currentTarget.checked
-      });
-    };
-  }
-
   handleSubmit(e) {
     e.preventDefault();
 
@@ -179,7 +171,7 @@ class CarCreate extends React.Component {
                         <div>Transmission</div>
                         <div className="transmission-flex">
                           <div>
-                            <input className="styled-radio" type="radio" name="automaticTrans" onChange={this.updateBox("automaticTrans")} /> Automatic
+                            <input className="styled-radio" type="radio" name="automaticTrans" value="true" onChange={this.update("automaticTrans")} /> Automatic
                           </div>
                           <div>
                             <input className="styled-radio radio-margin-left" type="radio" name="automaticTrans" value="false" onChange={this.update("automaticTrans")}/> Manual
@@ -212,22 +204,22 @@ class CarCreate extends React.Component {
                           <input type="checkbox" className="dummy"/>
                         </div>
                         <div className="feature-sizing">
-                          <input type="checkbox" onChange={this.updateBox("bluetooth")}/> Bluetooth
+                          <input type="checkbox" value="true" onChange={this.update("bluetooth")}/> Bluetooth
                         </div>
                         <div className="feature-sizing">
-                          <input type="checkbox" onChange={this.updateBox("gps")}/> GPS
+                          <input type="checkbox" value="true" onChange={this.update("gps")}/> GPS
                         </div>
                         <div className="feature-sizing">
-                          <input type="checkbox" onChange={this.updateBox("auxiliaryInput")}/> Auxiliary input
+                          <input type="checkbox" value="true" onChange={this.update("auxiliaryInput")}/> Auxiliary input
                         </div>
                         <div className="feature-sizing">
-                          <input type="checkbox" onChange={this.updateBox("heatedSeats")}/> Heated seats
+                          <input type="checkbox" value="true" onChange={this.update("heatedSeats")}/> Heated seats
                         </div>
                         <div className="feature-sizing">
-                          <input type="checkbox" onChange={this.updateBox("usbPorts")}/> USB ports
+                          <input type="checkbox" value="true" onChange={this.update("usbPorts")}/> USB ports
                         </div>
                         <div className="feature-sizing">
-                          <input type="checkbox" onChange={this.updateBox("backupCamera")}/> Backup camera
+                          <input type="checkbox" value="true" onChange={this.update("backupCamera")}/> Backup camera
                         </div>
                       </div>
                     </label>

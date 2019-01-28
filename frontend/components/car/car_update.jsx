@@ -18,7 +18,7 @@ class CarUpdate extends React.Component {
   updateBox(field) {
     return e => {
       this.setState({
-        [field]: !e.currentTarget.checked
+        [field]: e.target.checked
       });
     };
   }
@@ -224,6 +224,7 @@ class CarUpdate extends React.Component {
                             className="styled-radio"
                             type="radio"
                             name="automaticTrans"
+                            checked={this.state.automaticTrans}
                             onChange={this.update("automaticTrans")}
                           />{" "}
                           Automatic
@@ -233,8 +234,8 @@ class CarUpdate extends React.Component {
                             className="styled-radio radio-margin-left"
                             type="radio"
                             name="automaticTrans"
-                            value="false"
-                            onChange={this.updateBox("automaticTrans")}
+                            checked={!this.state.automaticTrans}
+                            onChange={this.update("automaticTrans")}
                           />{" "}
                           Manual
                         </div>
@@ -279,6 +280,7 @@ class CarUpdate extends React.Component {
                       <div className="feature-sizing">
                         <input
                           type="checkbox"
+                          checked={this.state.bluetooth}
                           onChange={this.updateBox("bluetooth")}
                         />{" "}
                         Bluetooth
@@ -286,6 +288,7 @@ class CarUpdate extends React.Component {
                       <div className="feature-sizing">
                         <input
                           type="checkbox"
+                          checked={this.state.gps}
                           onChange={this.updateBox("gps")}
                         />{" "}
                         GPS
@@ -293,6 +296,7 @@ class CarUpdate extends React.Component {
                       <div className="feature-sizing">
                         <input
                           type="checkbox"
+                          checked={this.state.auxiliaryInput}
                           onChange={this.updateBox("auxiliaryInput")}
                         />{" "}
                         Auxiliary input
@@ -300,6 +304,7 @@ class CarUpdate extends React.Component {
                       <div className="feature-sizing">
                         <input
                           type="checkbox"
+                          checked={this.state.heatedSeats}
                           onChange={this.updateBox("heatedSeats")}
                         />{" "}
                         Heated seats
@@ -307,6 +312,7 @@ class CarUpdate extends React.Component {
                       <div className="feature-sizing">
                         <input
                           type="checkbox"
+                          checked={this.state.usbPorts}
                           onChange={this.updateBox("usbPorts")}
                         />{" "}
                         USB ports
@@ -314,6 +320,7 @@ class CarUpdate extends React.Component {
                       <div className="feature-sizing">
                         <input
                           type="checkbox"
+                          checked={this.state.backupCamera}
                           onChange={this.updateBox("backupCamera")}
                         />{" "}
                         Backup camera
