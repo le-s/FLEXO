@@ -24,8 +24,8 @@ const App = () => (
       </div>
     </header>
     <Switch>
-      <ProtectedRoute exact path="/cars/create" component={CarCreate} />
-      <Route exact path="/cars/:id/edit" component={CarUpdate} />
+      <Route exact path="/cars/create" component={CarCreate} />
+      <ProtectedRoute exact path="/cars/:id/edit" component={CarUpdate} />
       <Route path="/cars/:id" component={CarShow} />
       <Route path="/cars" component={CarIndex} />
       <Route exact path="/" component={Splash} />
