@@ -11,6 +11,7 @@ import CarShow from './car/car_show_container';
 import CarIndex from './car/car_index_container';
 import CarCreate from './car/car_create_container';
 import CarUpdate from './car/car_update_container';
+import Footer from './footer/footer';
 
 const App = () => (
   <div>
@@ -31,6 +32,7 @@ const App = () => (
       <Route exact path="/" component={Splash} />
       <Redirect to="/" />
     </Switch>
+    <Footer />
   </div>
 );
 

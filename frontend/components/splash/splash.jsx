@@ -1,8 +1,8 @@
 import React from "react";
 import { withRouter, Route, Link } from 'react-router-dom';
-import Footer from '../footer/footer';
 import Counter from './counter';
 import Porsche from './porsche';
+import Go from './go';
 
 class Splash extends React.Component {
 
@@ -39,7 +39,7 @@ class Splash extends React.Component {
         {splash}
         <Counter/>
         <Porsche/>
-        <Footer/>
+        <Go/>
       </div>
     )
   }

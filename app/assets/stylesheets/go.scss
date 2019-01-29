@@ -1,0 +1,51 @@
+.go-container {
+  margin-top: 70px;
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.go-image {
+  background-image: image-url("go.jpg");
+  width: 480px;
+  height: 270px;
+}
+
+.go-info {
+  width: 480px;
+  margin-left: 70px;
+  text-align: left;
+}
+
+.go-info h3 {
+  font-size: 54px;
+  margin-bottom: 15px;
+  font-family: Freight, HoeflerText-Black, Times New Roman, serif;
+  line-height: 1;
+}
+
+.go-info p {
+  margin-top: 20px;
+  color: #231f20;
+  font-family: BasisGrotesque, Avenir, Helvetica Neue, Helvetica, sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.go-info a {
+  background-color: #59D389;
+  color: #FFFFFF;
+  border: 1px solid #59D389;
+  font-size: 16px;
+  height: 44px;
+  line-height: 43px;
+  padding: 10px 14px;
+  font-family: BasisGrotesque, Avenir, Helvetica Neue, Helvetica, sans-serif;
+  font-weight: bold;
+  transition: 0.5s all ease;
+}
+
+.learn-margin {
+  margin-top: 55px;
+}
