@@ -1,0 +1,54 @@
+.porsche-container {
+  background-image: image-url("porsche.jpg");
+  // width: 100%;
+  // height: -webkit-fill-available;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-y: center;
+  padding: 65px;
+}
+
+.porsche-info {
+  margin: auto;
+  max-width: 650px;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: #fff;
+  font-family: Freight, HoeflerText-Black, Times New Roman, serif;
+  text-align: center
+}
+
+.porsche-info h5 {
+  font-size: 22px;
+  margin-bottom: 20px;
+  line-height: 1.2;
+  text-transform: uppercase;
+  font-weight: normal;
+}
+
+.porsche-info h3 {
+  margin-bottom: 20px;
+  line-height: 1;
+  font-size: 62px;
+}
+
+.porsche-info p {
+  margin-bottom: 40px;
+  max-width: 500px;
+  font-weight: 700;
+  font-family: BasisGrotesque, Avenir, Helvetica Neue, Helvetica, sans-serif;
+  margin-left: auto;
+  margin-right: auto
+}
+
+.porsche-info a {
+  background-color: transparent;
+  color: #FFFFFF;
+  border: 1px solid #FFFFFF;
+  font-size: 16px;
+  height: 44px;
+  line-height: 43px;
+  padding: 12px 14px;
+  font-family: BasisGrotesque, Avenir, Helvetica Neue, Helvetica, sans-serif;
+  font-weight: 500;
+}

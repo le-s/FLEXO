@@ -1,6 +1,8 @@
 import React from "react";
 import { withRouter, Route, Link } from 'react-router-dom';
-import Footer from '../footer/footer'
+import Footer from '../footer/footer';
+import Counter from './counter';
+import Porsche from './porsche';
 
 class Splash extends React.Component {
 
@@ -20,11 +22,23 @@ class Splash extends React.Component {
             <button className="button-search" />
           </Link>
         </div>
+        <div className="social-container">
+          <div className='github'>
+            <a href="https://github.com/le-s">Github</a>
+          </div>
+          <div className="linkedin">
+            <div className="linkedin-align">
+              <a href="https://www.linkedin.com/in/sle94/">LinkedIn</a>
+            </div>
+          </div>
+        </div>
       </div>;
 
     return (
-      <div>
+      <div className="splash-page-container">
         {splash}
+        <Counter/>
+        <Porsche/>
         <Footer/>
       </div>
     )

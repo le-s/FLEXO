@@ -1,16 +1,8 @@
 .footer {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  position:absolute;
-  bottom:0;
-  width:100%;
-  height:40px;   /* Height of the footer */
-  background: transparent;
-  color: white;
-  font-family: BasisGrotesque, Avenir, 
-  Helvetica Neue, Helvetica, sans-serif;
-  font-size: 22px;
+  padding: 0px 0 30px;
+  color: #fff;
+  min-height: 343px;
+  background-color: #221E1F;
 }
 
 .linkedin {
@@ -47,4 +39,78 @@
 
 .github a:hover {
   text-decoration: underline;
+}
+
+.footer-container {
+  width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.footer-info-container {
+  font-family: BasisGrotesque, Avenir, 
+  Helvetica Neue, Helvetica, sans-serif;
+  display: flex;
+  flex-direction: row;
+  max-height: 230px;
+  justify-content: space-between;
+}
+
+.footer-info-container a {
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: no-drop;
+}
+
+.about-info-container {
+  font-family: BasisGrotesque, Avenir, 
+  Helvetica Neue, Helvetica, sans-serif;
+  display: flex;
+  flex-direction: row;
+  max-height: 230px;
+  justify-content: space-between;
+  margin-top: 100px;
+}
+
+.about-info-container a {
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: no-drop;
+}
+
+.items-container {
+  padding-top: 50px;
+  // padding-left: 20px;
+}
+
+.items-container h4 {
+  font-weight: 500;
+}
+
+.cities-section {
+  display: flex;
+  justify-content: space-between;
+  width: 250px;
+}
+
+.footer-items {
+  margin-top: 20px;
+}
+
+.about-items {
+  display: flex;
+  justify-content: space-between;
+  width: 636px;
+  margin-top: 0px;
+}
+
+.cities-margin {
+  margin-left: 25px;
+}
+
+.social-media-size {
+  font-size: 18px;
+  margin: 0px 5px;
 }

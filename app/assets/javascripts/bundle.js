@@ -1786,17 +1786,129 @@ function (_React$Component) {
       var footerDisplay = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "footer"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "github"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: "https://github.com/le-s"
-      }, "Github")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "linkedin"
+        className: "footer-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "linkedin-align"
+        className: "footer-info-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "items-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "Get started"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+        className: "footer-items"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: ""
+      }, "Get the iPhone app")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: ""
+      }, "Get the Android app")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: ""
+      }, "Rent a car")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: ""
+      }, "Make money with your car")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: ""
+      }, "Carculator")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: ""
+      }, "Turo for business"))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "items-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "Learn more"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+        className: "footer-items"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: ""
+      }, "How Turo works")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: ""
+      }, "Policies")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: ""
+      }, "Trust & safety")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: ""
+      }, "Owner tools")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: ""
+      }, "Traveler FAQs"))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "items-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "Top cities"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+        className: "cities-section footer-items"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: ""
+      }, "Atlanta")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: ""
+      }, "Boston")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: ""
+      }, "Chicago")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: ""
+      }, "Denver")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: ""
+      }, "Honolulu")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: ""
+      }, "Houston")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: ""
+      }, "Los Angeles"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "cities-margin"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: ""
+      }, "Montreal")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: ""
+      }, "San Diego")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: ""
+      }, "San Francisco")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: ""
+      }, "Seattle")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: ""
+      }, "Toronto")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: ""
+      }, "Washington, DC")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: ""
+      }, "View airports")))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "items-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "Talk to us"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "social-media footer-items"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: "https://www.linkedin.com/in/sle94/"
-      }, "LinkedIn"))));
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, footerDisplay);
+        href: ""
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fab fa-facebook-f social-media-size"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: ""
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fab fa-twitter social-media-size"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: ""
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fab fa-instagram social-media-size"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: ""
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fab fa-youtube social-media-size"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: ""
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fab fa-pinterest-p social-media-size"
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+        className: "footer-items"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: ""
+      }, "Read our blog")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: ""
+      }, "Contact customer support")))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "about-info-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "about"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+        className: "footer-items about-items"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "\xA92019 Turo"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: ""
+      }, "About")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: ""
+      }, "Press")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: ""
+      }, "Team")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: ""
+      }, "Jobs")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: ""
+      }, "OpenRoad")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: ""
+      }, "Terms")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: ""
+      }, "Privacy")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "language"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: ""
+      }, "English (USA)")))));
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, footerDisplay);
     }
   }]);
 
@@ -1843,37 +1955,106 @@ var CarMap =
 function (_React$Component) {
   _inherits(CarMap, _React$Component);
 
-  function CarMap(props) {
+  function CarMap() {
     _classCallCheck(this, CarMap);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(CarMap).call(this, props));
+    return _possibleConstructorReturn(this, _getPrototypeOf(CarMap).apply(this, arguments));
   }
 
   _createClass(CarMap, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      var mapOptions = {
-        center: {
-          lat: this.props.car.latitude,
-          lng: this.props.car.longitude
-        },
-        zoom: 14
-      };
-      this.map = new google.maps.Map(this.mapNode, mapOptions); // this.MarkerManager = new MarkerManager(this.map, null, true)
-      // this.MarkerManager.updateMarkers([this.props.car])
+      var map = this.refs.map;
+      this.map = new google.maps.Map(map, mapOptions);
+      this.MarkerManager = new MarkerManager(this.map, this.handleMarkerClick.bind(this));
+
+      if (this.props.singleBench) {
+        this.props.fetchBench(this.props.benchId);
+      } else {
+        this.registerListeners();
+        this.MarkerManager.updateMarkers(this.props.benches);
+      }
+    }
+  }, {
+    key: "componentDidUpdate",
+    value: function componentDidUpdate() {
+      if (this.props.singleBench) {
+        var targetBenchKey = Object.keys(this.props.benches)[0];
+        var targetBench = this.props.benches[targetBenchKey];
+        this.MarkerManager.updateMarkers([targetBench]); //grabs only that one bench
+      } else {
+        this.MarkerManager.updateMarkers(this.props.benches);
+      }
+    }
+  }, {
+    key: "registerListeners",
+    value: function registerListeners() {
+      var _this = this;
+
+      google.maps.event.addListener(this.map, 'idle', function () {
+        var _this$map$getBounds$t = _this.map.getBounds().toJSON(),
+            north = _this$map$getBounds$t.north,
+            south = _this$map$getBounds$t.south,
+            east = _this$map$getBounds$t.east,
+            west = _this$map$getBounds$t.west;
+
+        var bounds = {
+          northEast: {
+            lat: north,
+            lng: east
+          },
+          southWest: {
+            lat: south,
+            lng: west
+          }
+        };
+
+        _this.props.updateFilter('bounds', bounds);
+      });
+      google.maps.event.addListener(this.map, 'click', function (event) {
+        var coords = getCoordsObj(event.latLng);
+
+        _this.handleClick(coords);
+      });
+    }
+  }, {
+    key: "handleMarkerClick",
+    value: function handleMarkerClick(bench) {
+      this.props.history.push("benches/".concat(bench.id));
+    }
+  }, {
+    key: "handleClick",
+    value: function handleClick(coords) {
+      this.props.history.push({
+        pathname: 'benches/new',
+        search: "lat=".concat(coords.lat, "&lng=").concat(coords.lng)
+      });
     }
   }, {
     key: "render",
     value: function render() {
-      var _this = this;
-
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        id: "show-map-container",
-        ref: function ref(map) {
-          return _this.mapNode = map;
-        }
-      });
-    }
+        className: "map",
+        ref: "map"
+      }, "Map");
+    } // constructor(props) {
+    //   super(props);
+    // }
+    // componentDidMount() {
+    //   const mapOptions = {
+    //     center: { lat: this.props.car.latitude, lng: this.props.car.longitude },
+    //     zoom: 14
+    //   }
+    //   this.map = new google.maps.Map(this.mapNode, mapOptions);
+    //   // this.MarkerManager = new MarkerManager(this.map, null, true)
+    //   // this.MarkerManager.updateMarkers([this.props.car])
+    // }
+    // render() {
+    //   return (
+    //     <div id='show-map-container' ref={ map => this.mapNode = map } />
+    //   )
+    // }
+
   }]);
 
   return CarMap;
@@ -2470,10 +2651,10 @@ var mDTP = function mDTP(dispatch) {
 
 /***/ }),
 
-/***/ "./frontend/components/splash/splash.jsx":
-/*!***********************************************!*\
-  !*** ./frontend/components/splash/splash.jsx ***!
-  \***********************************************/
+/***/ "./frontend/components/splash/counter.jsx":
+/*!************************************************!*\
+  !*** ./frontend/components/splash/counter.jsx ***!
+  \************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -2482,7 +2663,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
-/* harmony import */ var _footer_footer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../footer/footer */ "./frontend/components/footer/footer.jsx");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -2500,6 +2680,149 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+
+var Counter =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(Counter, _React$Component);
+
+  function Counter() {
+    _classCallCheck(this, Counter);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(Counter).apply(this, arguments));
+  }
+
+  _createClass(Counter, [{
+    key: "render",
+    value: function render() {
+      var counterDisplay = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "counter-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Skip the rental counter"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "counter-grid"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "counter-grid-item"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", null, "The car you want"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Choose from over 800 unique makes and models, from affordable daily drivers to rare specialty cars.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "counter-grid-item"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", null, "Where you want it"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Pick up the car or get it delivered, wherever you need it, up to 35% less than traditional agencies."))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "count-button-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        to: "/cars"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "counter-button"
+      }, "Book the perfect car"))));
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, counterDisplay);
+    }
+  }]);
+
+  return Counter;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["withRouter"])(Counter));
+
+/***/ }),
+
+/***/ "./frontend/components/splash/porsche.jsx":
+/*!************************************************!*\
+  !*** ./frontend/components/splash/porsche.jsx ***!
+  \************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+
+var Porsche =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(Porsche, _React$Component);
+
+  function Porsche() {
+    _classCallCheck(this, Porsche);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(Porsche).apply(this, arguments));
+  }
+
+  _createClass(Porsche, [{
+    key: "render",
+    value: function render() {
+      var porscheDisplay = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "porsche-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "porsche-info"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", null, "Driving at it finest"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Discover the Porsche Host Program"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Turo and Porsche are proud to introduce the Porsche Host Program, a pilot program in San Francisco and Los Angeles that combines curated Porsche vehicles with top Turo hosts to give you the complete Porsche experience."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: ""
+      }, "Explore the program")));
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, porscheDisplay);
+    }
+  }]);
+
+  return Porsche;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["withRouter"])(Porsche));
+
+/***/ }),
+
+/***/ "./frontend/components/splash/splash.jsx":
+/*!***********************************************!*\
+  !*** ./frontend/components/splash/splash.jsx ***!
+  \***********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
+/* harmony import */ var _footer_footer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../footer/footer */ "./frontend/components/footer/footer.jsx");
+/* harmony import */ var _counter__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./counter */ "./frontend/components/splash/counter.jsx");
+/* harmony import */ var _porsche__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./porsche */ "./frontend/components/splash/porsche.jsx");
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
 
 
 
@@ -2537,8 +2860,22 @@ function (_React$Component) {
         to: '/cars'
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "button-search"
-      }))));
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, splash, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_footer_footer__WEBPACK_IMPORTED_MODULE_2__["default"], null));
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "social-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "github"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "https://github.com/le-s"
+      }, "Github")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "linkedin"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "linkedin-align"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "https://www.linkedin.com/in/sle94/"
+      }, "LinkedIn")))));
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "splash-page-container"
+      }, splash, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_counter__WEBPACK_IMPORTED_MODULE_3__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_porsche__WEBPACK_IMPORTED_MODULE_4__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_footer_footer__WEBPACK_IMPORTED_MODULE_2__["default"], null));
     }
   }]);
 

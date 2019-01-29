@@ -1,0 +1,54 @@
+.counter-container {
+  display: flex;
+  // justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 40px 0;
+}
+
+.counter-container h3 {
+  font-family: Freight, HoeflerText-Black, Times New Roman, serif;
+  font-size: 62px;
+}
+
+.counter-grid-item {
+  width: 22%;
+  padding: 45px 25px 0px 25px;
+  text-align: center;
+  color: #231f20;
+}
+
+.counter-grid-item h5 {
+  color: #59d389;
+  text-transform: uppercase;
+  font-size: 24px;
+  font-weight: normal;
+  margin-bottom: 10px;
+}
+
+.counter-grid-item p {
+  font-weight: 600;
+  font-family: BasisGrotesque, Avenir, Helvetica Neue, Helvetica, sans-serif;
+  margin-top: 25px;
+}
+
+.count-button-container {
+  padding-top: 45px;
+}
+
+.counter-grid {
+  display: flex;
+  justify-content: center;
+}
+
+.counter-button {
+  background-color: #59D389;
+  color: #FFFFFF;
+  border: 1px solid #59D389;
+  font-size: 16px;
+  height: 44px;
+  padding: 0 14px;
+  font-family: BasisGrotesque, Avenir, Helvetica Neue, Helvetica, sans-serif;
+  font-weight: 500;  
+  padding: 10px;
+}
