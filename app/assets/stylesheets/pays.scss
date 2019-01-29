@@ -1,0 +1,56 @@
+.pays-container {
+  background-image: image-url("wiggle.png");
+  // width: 100%;
+  // height: -webkit-fill-available;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-y: center;
+  padding-top: 160px;
+  padding-bottom: 35px;
+  margin: 40px 0;
+  width: 100%;
+  height: auto;
+  background-color: #fff;
+  background-position: top;
+  background-size: 2700px 565px;
+}
+
+.pay-items {
+  text-align: center;
+  width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+  color: #231f20;
+  font-family: BasisGrotesque, Avenir, Helvetica Neue, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.pay-items h3 {
+  font-size: 62px;
+  font-family: Freight, HoeflerText-Black, Times New Roman, serif;
+}
+
+.pay-list-items {
+  margin-left: auto;
+  margin-right: auto;
+  width: 65%;
+}
+
+.pay-list-items p {
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.pays-button {
+  margin-top: 30px;
+}
+
+.pays-button button {
+  background-color: #8F63F4;
+  color: #FFFFFF;
+  border: 1px solid #8F63F4;
+  font-size: 16px;
+  height: 44px;
+  padding: 10px 14px;
+}
