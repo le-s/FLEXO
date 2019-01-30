@@ -2946,6 +2946,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _go__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./go */ "./frontend/components/splash/go.jsx");
 /* harmony import */ var _tile__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./tile */ "./frontend/components/splash/tile.jsx");
 /* harmony import */ var _pays__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./pays */ "./frontend/components/splash/pays.jsx");
+/* harmony import */ var _splash_cars_container__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./splash_cars_container */ "./frontend/components/splash/splash_cars_container.jsx");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -2963,6 +2964,7 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
 
 
 
@@ -3019,7 +3021,7 @@ function (_React$Component) {
       }, "LinkedIn")))));
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "splash-page-container"
-      }, splash, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_counter__WEBPACK_IMPORTED_MODULE_2__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_porsche__WEBPACK_IMPORTED_MODULE_3__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_go__WEBPACK_IMPORTED_MODULE_4__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_tile__WEBPACK_IMPORTED_MODULE_5__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_pays__WEBPACK_IMPORTED_MODULE_6__["default"], null));
+      }, splash, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_splash_cars_container__WEBPACK_IMPORTED_MODULE_7__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_counter__WEBPACK_IMPORTED_MODULE_2__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_porsche__WEBPACK_IMPORTED_MODULE_3__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_go__WEBPACK_IMPORTED_MODULE_4__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_tile__WEBPACK_IMPORTED_MODULE_5__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_pays__WEBPACK_IMPORTED_MODULE_6__["default"], null));
     }
   }]);
 
@@ -3027,6 +3029,149 @@ function (_React$Component) {
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["withRouter"])(Splash));
+
+/***/ }),
+
+/***/ "./frontend/components/splash/splash_cars.jsx":
+/*!****************************************************!*\
+  !*** ./frontend/components/splash/splash_cars.jsx ***!
+  \****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
+/* harmony import */ var _map_car_map__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../map/car_map */ "./frontend/components/map/car_map.jsx");
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+
+
+var SplashCars =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(SplashCars, _React$Component);
+
+  function SplashCars(props) {
+    _classCallCheck(this, SplashCars);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(SplashCars).call(this, props));
+  }
+
+  _createClass(SplashCars, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.props.fetchCars();
+      window.scrollTo(0, 0);
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "splash-index-page-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "splash-car-index-container"
+      }, this.props.cars.map(function (car) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          key: car.id,
+          className: "car-card-container"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "car-container"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+          to: "/cars/".concat(car.id),
+          className: "car-hover"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "car-index-image"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+          src: car.photoUrl
+        })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "per-day-card"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "card-price"
+        }, "$", car.price), "/day"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "year-make-model"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+          className: "make-model-card"
+        }, car.make, " ", car.model), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+          className: "year-card"
+        }, car.year)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "star-card"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+          className: "fas fa-star"
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+          className: "fas fa-star"
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+          className: "fas fa-star"
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+          className: "fas fa-star"
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+          className: "fas fa-star"
+        }))))));
+      }))));
+    }
+  }]);
+
+  return SplashCars;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["default"] = (SplashCars);
+
+/***/ }),
+
+/***/ "./frontend/components/splash/splash_cars_container.jsx":
+/*!**************************************************************!*\
+  !*** ./frontend/components/splash/splash_cars_container.jsx ***!
+  \**************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _actions_car_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/car_actions */ "./frontend/actions/car_actions.js");
+/* harmony import */ var _splash_cars__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./splash_cars */ "./frontend/components/splash/splash_cars.jsx");
+
+
+
+
+
+var mSTP = function mSTP(state) {
+  return {
+    cars: Object.values(state.entities.cars)
+  };
+};
+
+var mDTP = function mDTP(dispatch) {
+  return {
+    fetchCars: function fetchCars() {
+      return dispatch(Object(_actions_car_actions__WEBPACK_IMPORTED_MODULE_2__["fetchCars"])());
+    }
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mSTP, mDTP)(_splash_cars__WEBPACK_IMPORTED_MODULE_3__["default"]));
 
 /***/ }),
 
@@ -3042,16 +3187,28 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var _splash__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./splash */ "./frontend/components/splash/splash.jsx");
+/* harmony import */ var _actions_car_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/car_actions */ "./frontend/actions/car_actions.js");
+/* harmony import */ var _splash__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./splash */ "./frontend/components/splash/splash.jsx");
 
 
 
 
-var mSTP = function mSTP() {
-  return {};
+
+var mSTP = function mSTP(state) {
+  return {
+    cars: Object.values(state.entities.cars)
+  };
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mSTP, null)(_splash__WEBPACK_IMPORTED_MODULE_2__["default"]));
+var mDTP = function mDTP(dispatch) {
+  return {
+    fetchCars: function fetchCars() {
+      return dispatch(Object(_actions_car_actions__WEBPACK_IMPORTED_MODULE_2__["fetchCars"])());
+    }
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mSTP, mDTP)(_splash__WEBPACK_IMPORTED_MODULE_3__["default"]));
 
 /***/ }),
 
@@ -3111,7 +3268,7 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         href: ""
       }, "Get an estimate"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "map-container"
+        className: "tile-map-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", null, "Read up on"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "That good-good"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Peruse cool cars and good stories on the Flexo blog."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "tile-button"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {

@@ -13,7 +13,7 @@ class Tile extends React.Component {
           <a href="">Get an estimate</a>
         </div>
       </div>
-      <div className="map-container">
+      <div className="tile-map-container">
         <h5>Read up on</h5>
         <h3>That good-good</h3>
         <p>Peruse cool cars and good stories on the Flexo blog.</p>

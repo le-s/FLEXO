@@ -5,6 +5,7 @@ import Porsche from './porsche';
 import Go from './go';
 import Tile from './tile';
 import Pays from './pays';
+import SplashCars from './splash_cars_container'
 
 class Splash extends React.Component {
 
@@ -39,6 +40,7 @@ class Splash extends React.Component {
     return (
       <div className="splash-page-container">
         {splash}
+        <SplashCars/>
         <Counter/>
         <Porsche/>
         <Go/>

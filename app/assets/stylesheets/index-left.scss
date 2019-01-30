@@ -32,6 +32,16 @@
   justify-content: space-evenly;
 }
 
+.splash-car-index-container {
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 25px;
+  padding-left: 25px;
+  justify-content: space-evenly;
+  max-height: 250px;
+  overflow: hidden;
+}
+
 .car-container {
   /* object-fit: contain; */
   position: relative;
@@ -105,5 +115,9 @@
 
 .index-page-container {
   margin-top: 74px;
+}
+
+.splash-index-page-container {
+  margin-top: 0px;
 }
 
