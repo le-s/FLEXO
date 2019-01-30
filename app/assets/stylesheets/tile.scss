@@ -1,0 +1,69 @@
+.tile-container {
+  max-width: 1480px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 90px;
+  display: flex;
+  justify-content: space-around;
+}
+
+  .tile-container h5 {
+    font-size: 24px;
+    padding: 140px 0 0;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+  }
+
+  .tile-container h3 {
+    font-size: 62px;
+    margin-bottom: 20px;
+    line-height: 1;
+  }
+
+  .tile-container p {
+    font-size: 18px;
+    font-family: BasisGrotesque, Avenir, Helvetica Neue, Helvetica, sans-serif;
+  }
+
+  .tile-container a {
+    background-color: #59D389;
+    color: #FFFFFF;
+    border: 1px solid #59D389;
+    padding: 5px 14px;
+    font-family: BasisGrotesque, Avenir, Helvetica Neue, Helvetica, sans-serif;
+    cursor: no-drop;
+  }
+
+.bimmer-container {
+  background-image: image-url("bimmer.jpg");
+  // width: 100%;
+  // height: -webkit-fill-available;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-y: center;
+  height: 470px;
+  width: 100%;
+  color: white;
+  text-align: center;
+  font-family: Freight, HoeflerText-Black, Times New Roman, serif;
+  // margin-left: 20px;
+}
+
+.map-container {
+  background-image: image-url("map.jpg");
+  // width: 100%;
+  // height: -webkit-fill-available;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-y: center;
+  height: 470px;
+  width: 100%;
+  color: white;
+  text-align: center;
+  margin-left: 20px;
+  font-family: Freight, HoeflerText-Black, Times New Roman, serif;
+}
+
+.tile-button {
+  margin-top: 50px;
+}

@@ -9,7 +9,7 @@ class Pays extends React.Component {
           <h3>The car that pays for itself</h3>
           <div className="pay-list-items">
             <p>
-              Make a dent in your monthly car payments — on average, Turo hosts can cover their payments by sharing their cars just nine days per month.
+              Make a dent in your monthly car payments — on average, Flexo hosts can cover their payments by sharing their cars just nine days per month.
               </p>
             <p>
               You’re covered with up to $1 million in liability insurance, and your car is contractually protected against theft and physical damage. Or bring your own commercial rental insurance and take a bigger piece of the pie.*

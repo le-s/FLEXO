@@ -1807,13 +1807,13 @@ function (_React$Component) {
         href: ""
       }, "Carculator")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         href: ""
-      }, "Turo for business"))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "Flexo for business"))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "items-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "Learn more"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
         className: "footer-items"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         href: ""
-      }, "How Turo works")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+      }, "How Flexo works")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         href: ""
       }, "Policies")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         href: ""
@@ -1891,7 +1891,7 @@ function (_React$Component) {
         className: "about"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
         className: "footer-items about-items"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "\xA92019 Turo"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "\xA92019 Flexo"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         href: ""
       }, "About")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         href: ""
@@ -2542,7 +2542,7 @@ function (_React$Component) {
           onSubmit: this.handleSubmit
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
           className: "header"
-        }, "Welcome to Turo"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        }, "Welcome to Flexo"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
           className: "form-text"
         }, "First name", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
           type: "text",
@@ -2779,7 +2779,7 @@ function (_React$Component) {
         className: "go-image"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "go-info"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Book, unlock, and go!"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Unlock the next level of car sharing convenience with Turo Go \u2013 find, book, and unlock cars on demand, right from the Turo app."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Book, unlock, and go!"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Unlock the next level of car sharing convenience with Flexo Go \u2013 find, book, and unlock cars on demand, right from the Flexo app."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "learn-margin"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         href: ""
@@ -2848,7 +2848,7 @@ function (_React$Component) {
         className: "pay-items"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "The car that pays for itself"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "pay-list-items"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Make a dent in your monthly car payments \u2014 on average, Turo hosts can cover their payments by sharing their cars just nine days per month."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "You\u2019re covered with up to $1 million in liability insurance, and your car is contractually protected against theft and physical damage. Or bring your own commercial rental insurance and take a bigger piece of the pie.*")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Make a dent in your monthly car payments \u2014 on average, Flexo hosts can cover their payments by sharing their cars just nine days per month."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "You\u2019re covered with up to $1 million in liability insurance, and your car is contractually protected against theft and physical damage. Or bring your own commercial rental insurance and take a bigger piece of the pie.*")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "pays-button"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: '/cars/create'
@@ -2915,7 +2915,7 @@ function (_React$Component) {
         className: "porsche-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "porsche-info"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", null, "Driving at it finest"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Discover the Porsche Host Program"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Turo and Porsche are proud to introduce the Porsche Host Program, a pilot program in San Francisco and Los Angeles that combines curated Porsche vehicles with top Turo hosts to give you the complete Porsche experience."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", null, "Driving at it finest"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Discover the Persche Host Program"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Flexo and Persche are proud to introduce the Persche Host Program, a pilot program in San Francisco and Los Angeles that combines curated Persche vehicles with top Flexo hosts to give you the complete Persche experience."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         href: ""
       }, "Explore the program")));
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, porscheDisplay);
@@ -2944,7 +2944,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _counter__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./counter */ "./frontend/components/splash/counter.jsx");
 /* harmony import */ var _porsche__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./porsche */ "./frontend/components/splash/porsche.jsx");
 /* harmony import */ var _go__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./go */ "./frontend/components/splash/go.jsx");
-/* harmony import */ var _pays__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./pays */ "./frontend/components/splash/pays.jsx");
+/* harmony import */ var _tile__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./tile */ "./frontend/components/splash/tile.jsx");
+/* harmony import */ var _pays__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./pays */ "./frontend/components/splash/pays.jsx");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -2962,6 +2963,7 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
 
 
 
@@ -3017,7 +3019,7 @@ function (_React$Component) {
       }, "LinkedIn")))));
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "splash-page-container"
-      }, splash, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_counter__WEBPACK_IMPORTED_MODULE_2__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_porsche__WEBPACK_IMPORTED_MODULE_3__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_go__WEBPACK_IMPORTED_MODULE_4__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_pays__WEBPACK_IMPORTED_MODULE_5__["default"], null));
+      }, splash, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_counter__WEBPACK_IMPORTED_MODULE_2__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_porsche__WEBPACK_IMPORTED_MODULE_3__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_go__WEBPACK_IMPORTED_MODULE_4__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_tile__WEBPACK_IMPORTED_MODULE_5__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_pays__WEBPACK_IMPORTED_MODULE_6__["default"], null));
     }
   }]);
 
@@ -3050,6 +3052,79 @@ var mSTP = function mSTP() {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mSTP, null)(_splash__WEBPACK_IMPORTED_MODULE_2__["default"]));
+
+/***/ }),
+
+/***/ "./frontend/components/splash/tile.jsx":
+/*!*********************************************!*\
+  !*** ./frontend/components/splash/tile.jsx ***!
+  \*********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+
+var Tile =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(Tile, _React$Component);
+
+  function Tile() {
+    _classCallCheck(this, Tile);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(Tile).apply(this, arguments));
+  }
+
+  _createClass(Tile, [{
+    key: "render",
+    value: function render() {
+      var tileDisplay = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "tile-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "bimmer-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", null, "Ask the"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Carculator"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Find out how much your car could earn for you."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "tile-button"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: ""
+      }, "Get an estimate"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "map-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", null, "Read up on"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "That good-good"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Peruse cool cars and good stories on the Flexo blog."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "tile-button"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: ""
+      }, "Check it out"))));
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, tileDisplay);
+    }
+  }]);
+
+  return Tile;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["withRouter"])(Tile));
 
 /***/ }),
 

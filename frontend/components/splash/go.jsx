@@ -8,7 +8,7 @@ class Go extends React.Component {
       <div className="go-image"></div>
       <div className="go-info">
         <h3>Book, unlock, and go!</h3>
-        <p>Unlock the next level of car sharing convenience with Turo Go – find, book, and unlock cars on demand, right from the Turo app.</p>
+        <p>Unlock the next level of car sharing convenience with Flexo Go – find, book, and unlock cars on demand, right from the Flexo app.</p>
         <div className="learn-margin">
           <a href="">Learn more</a>
         </div>

@@ -104,7 +104,7 @@ class SessionForm extends React.Component {
           <form className="signlog-form" onSubmit={this.handleSubmit}>
 
             <h1 className='header'>
-              Welcome to Turo
+              Welcome to Flexo
             </h1>
 
             <br />

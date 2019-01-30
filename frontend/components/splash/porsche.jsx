@@ -7,9 +7,9 @@ class Porsche extends React.Component {
       <div className="porsche-container">
         <div className="porsche-info">
           <h5>Driving at it finest</h5>
-          <h3>Discover the Porsche Host Program</h3>
+          <h3>Discover the Persche Host Program</h3>
           <p>
-            Turo and Porsche are proud to introduce the Porsche Host Program, a pilot program in San Francisco and Los Angeles that combines curated Porsche vehicles with top Turo hosts to give you the complete Porsche experience.
+            Flexo and Persche are proud to introduce the Persche Host Program, a pilot program in San Francisco and Los Angeles that combines curated Persche vehicles with top Flexo hosts to give you the complete Persche experience.
           </p>
           <a href="">Explore the program</a>
         </div>

@@ -26,7 +26,7 @@ class Footer extends React.Component {
                     <a href="">Carculator</a>
                   </li>
                   <li>
-                    <a href="">Turo for business</a>
+                    <a href="">Flexo for business</a>
                   </li>
                 </ul>
               </section>
@@ -36,7 +36,7 @@ class Footer extends React.Component {
                 <h4>Learn more</h4>
                 <ul className="footer-items">
                   <li>
-                    <a href="">How Turo works</a>
+                    <a href="">How Flexo works</a>
                   </li>
                   <li>
                     <a href="">Policies</a>
@@ -140,7 +140,7 @@ class Footer extends React.Component {
           <div className="about-info-container">
             <div className="about">
               <ul className="footer-items about-items">
-                <li>©2019 Turo</li>
+                <li>©2019 Flexo</li>
                 <li>
                   <a href="">About</a>
                 </li>
