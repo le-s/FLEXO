@@ -31,25 +31,46 @@
   margin: 0 auto;
 }
 
+.splash-search-form {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border-radius: 100px;
+  padding: 0 7px;
+}
+
 .input-search-sizing {
-  padding: 0 10px 0 15px;
+  padding: 0 10px 0 0;
   font-size: 18px;
   background-color: #fff;
   border-radius: 5px;
-  height: 58px;
-  margin-right: 10px;
-  width: 366px;
+  // height: 58px;
+  // margin-right: 10px;
+  width: 260px;
   border: 1px solid #fff;
 }
 
+.splash-where {
+  display: flex;
+  flex-direction: column;
+  font-family: BasisGrotesque, Avenir, 
+  Helvetica Neue, Helvetica, sans-serif;
+  padding-left: 20px;
+}
+
+.splash-search-form label {
+  font-size: 12px;
+  font-weight: 600;
+}
+
 .button-search {
-  width: 60px;
-  height: 60px;
+  width: 40px;
+  height: 40px;
   background-image: image-url("search.png");
   background-repeat: no-repeat;
-  background-size: 50px;
+  background-size: 40px;
   background-position: 50%;
-  border-radius: 5px;
+  border-radius: 50%;
   background-color: #59d389;
   border-color: #59d389;
 }

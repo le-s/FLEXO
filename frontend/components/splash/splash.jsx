@@ -18,12 +18,21 @@ class Splash extends React.Component {
           </h2>
         </div>
         <div className="search-container">
-          <div>
-            <input type="text" placeholder="Enter city, airport, or address" className="input-search-sizing"/>
-          </div>
-          <Link to={'/cars'}>
-            <button className="button-search" />
-          </Link>
+          <form className="splash-search-form">
+            <div className="splash-where">
+              <label>Where</label>
+              <input type="text" placeholder="Enter city, airport, or address" className="input-search-sizing" />
+            </div>
+            <div>
+
+            </div>
+            <div>
+              
+            </div>
+            <Link to={'/cars'}>
+              <button className="button-search" />
+            </Link>
+          </form>
         </div>
         <div className="social-container">
           <div className='github'>
