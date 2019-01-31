@@ -26,7 +26,7 @@ class Time extends React.Component {
       <option>9:00 AM</option>
       <option>9:30 AM</option>
       <option>10:00 AM</option>
-      <option selected>10:30 AM</option>
+      <option>10:30 AM</option>
       <option>11:00 AM</option>
       <option>11:30 AM</option>
       <option>Noon</option>
