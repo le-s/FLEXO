@@ -13,6 +13,11 @@
   font-weight: bold;
 }
 
+.splash-date-container {
+  display: flex;
+  flex-direction: column;
+}
+
 .main_splash_container {
   display: flex;
   flex-direction: column;
@@ -24,10 +29,10 @@
   background-color: inherit;
   display: flex;
   border-radius: 5px;
+  justify-content: center;
   flex-direction: row;
   padding: 38px 8px 8px 8px;
-  width: 465px;
-  height: 60px;
+  height: 50px;
   margin: 0 auto;
 }
 
@@ -50,12 +55,45 @@
   border: 1px solid #fff;
 }
 
+.date-search-sizing {
+  padding: 0 10px 0 0;
+  font-size: 18px;
+  background-color: #fff;
+  border-radius: 5px;
+  width:100%;
+  border: 1px solid #fff;
+}
+
+.date-search-sizing input {
+  padding: 0 10px 0 0;
+  font-size: 18px;
+  background-color: #fff;
+  border-radius: 5px;
+  width: 90px;
+  // height: 58px;
+  // margin-right: 10px;
+  border: 1px solid #fff;
+}
+
 .splash-where {
   display: flex;
   flex-direction: column;
   font-family: BasisGrotesque, Avenir, 
   Helvetica Neue, Helvetica, sans-serif;
   padding-left: 20px;
+}
+
+.splash-where input:focus{
+  outline: none;
+  border: 1px solid white;
+  text-decoration: none;
+}
+
+.from-until {
+  padding: 0 10px 0 15px;
+  border-left: 1px solid #c7c7c7;
+  flex-direction: row;
+  align-items: center;
 }
 
 .splash-search-form label {
@@ -92,4 +130,13 @@
   font-family: BasisGrotesque, Avenir, 
   Helvetica Neue, Helvetica, sans-serif;
   font-size: 22px;
+}
+
+.splash-time-dropdown {
+  margin-top: 13px;
+  border: none;
+  background-color: white;
+  font-family: BasisGrotesque, Avenir, Helvetica Neue, Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: 500;
 }
