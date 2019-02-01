@@ -30,6 +30,10 @@
   padding-left: 25px;
   // temporary until I get google maps working
   justify-content: space-evenly;
+  width: 60%;
+  box-sizing: border-box;
+  height: 100%;
+  overflow: scroll;
 }
 
 .splash-car-index-container {
@@ -114,7 +118,8 @@
 }
 
 .index-page-container {
-  margin-top: 74px;
+  display: flex;
+  height: calc(100vh - 120px);
 }
 
 .splash-index-page-container {

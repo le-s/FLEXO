@@ -13,6 +13,10 @@
   height: 60px;
   background-color: #221F1F;
   color: #FEFFFE;
+  // sticky navbar below
+  position: sticky;
+  top: 0;
+  z-index: 2;
 }
 
 .navbar > ul {

@@ -833,12 +833,8 @@ function (_React$Component) {
           className: "fas fa-star"
         }))))));
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "map-container"
-      }, this.props.cars.map(function (car) {
-        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_map_car_map__WEBPACK_IMPORTED_MODULE_2__["default"], {
-          car: car
-        });
-      }))));
+        className: "gmap-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_map_car_map__WEBPACK_IMPORTED_MODULE_2__["default"], null))));
     }
   }]);
 
@@ -1952,6 +1948,22 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
  // import MarkerManager from '../../util/marker_manager';
 
+var getCoordsObj = function getCoordsObj(latLng) {
+  return {
+    lat: latLng.lat(),
+    lng: latLng.lng()
+  };
+};
+
+var mapOptions = {
+  center: {
+    lat: 37.773972,
+    lng: -122.431297
+  },
+  // San Francisco coords
+  zoom: 13
+};
+
 var CarMap =
 /*#__PURE__*/
 function (_React$Component) {
@@ -1967,26 +1979,24 @@ function (_React$Component) {
     key: "componentDidMount",
     value: function componentDidMount() {
       var map = this.refs.map;
-      this.map = new google.maps.Map(map, mapOptions);
-      this.MarkerManager = new MarkerManager(this.map, this.handleMarkerClick.bind(this));
-
-      if (this.props.singleBench) {
-        this.props.fetchBench(this.props.benchId);
-      } else {
-        this.registerListeners();
-        this.MarkerManager.updateMarkers(this.props.benches);
-      }
+      this.map = new google.maps.Map(map, mapOptions); // this.MarkerManager = new MarkerManager(this.map, this.handleMarkerClick.bind(this));
+      // if (this.props.singleBench) {
+      //   this.props.fetchBench(this.props.benchId);
+      // } else {
+      //   this.registerListeners();
+      //   this.MarkerManager.updateMarkers(this.props.benches);
+      // }
     }
   }, {
     key: "componentDidUpdate",
     value: function componentDidUpdate() {
       if (this.props.singleBench) {
-        var targetBenchKey = Object.keys(this.props.benches)[0];
-        var targetBench = this.props.benches[targetBenchKey];
-        this.MarkerManager.updateMarkers([targetBench]); //grabs only that one bench
-      } else {
-        this.MarkerManager.updateMarkers(this.props.benches);
-      }
+        var targetBenchKey = Object.keys(this.props.benches)[0]; // const targetBench = this.props.benches[targetBenchKey];
+        // this.MarkerManager.updateMarkers([targetBench]); //grabs only that one bench
+      } // } else {
+      //   this.MarkerManager.updateMarkers(this.props.benches);
+      // }
+
     }
   }, {
     key: "registerListeners",
@@ -2018,12 +2028,10 @@ function (_React$Component) {
 
         _this.handleClick(coords);
       });
-    }
-  }, {
-    key: "handleMarkerClick",
-    value: function handleMarkerClick(bench) {
-      this.props.history.push("benches/".concat(bench.id));
-    }
+    } // handleMarkerClick(bench) {
+    //   this.props.history.push(`benches/${bench.id}`);
+    // }
+
   }, {
     key: "handleClick",
     value: function handleClick(coords) {

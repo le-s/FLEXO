@@ -1,27 +1,41 @@
 import React from 'react';
 // import MarkerManager from '../../util/marker_manager';
 
+const getCoordsObj = latLng => ({
+  lat: latLng.lat(),
+  lng: latLng.lng()
+});
+
+const mapOptions = {
+  center: {
+    lat: 37.773972,
+    lng: -122.431297
+  }, // San Francisco coords
+  zoom: 13
+};
+
 class CarMap extends React.Component {
   componentDidMount() {
     const map = this.refs.map;
     this.map = new google.maps.Map(map, mapOptions);
-    this.MarkerManager = new MarkerManager(this.map, this.handleMarkerClick.bind(this));
-    if (this.props.singleBench) {
-      this.props.fetchBench(this.props.benchId);
-    } else {
-      this.registerListeners();
-      this.MarkerManager.updateMarkers(this.props.benches);
-    }
+    // this.MarkerManager = new MarkerManager(this.map, this.handleMarkerClick.bind(this));
+    // if (this.props.singleBench) {
+    //   this.props.fetchBench(this.props.benchId);
+    // } else {
+    //   this.registerListeners();
+    //   this.MarkerManager.updateMarkers(this.props.benches);
+    // }
   }
 
   componentDidUpdate() {
     if (this.props.singleBench) {
       const targetBenchKey = Object.keys(this.props.benches)[0];
-      const targetBench = this.props.benches[targetBenchKey];
-      this.MarkerManager.updateMarkers([targetBench]); //grabs only that one bench
-    } else {
-      this.MarkerManager.updateMarkers(this.props.benches);
+      // const targetBench = this.props.benches[targetBenchKey];
+      // this.MarkerManager.updateMarkers([targetBench]); //grabs only that one bench
     }
+    // } else {
+    //   this.MarkerManager.updateMarkers(this.props.benches);
+    // }
   }
 
   registerListeners() {
@@ -39,9 +53,9 @@ class CarMap extends React.Component {
     });
   }
 
-  handleMarkerClick(bench) {
-    this.props.history.push(`benches/${bench.id}`);
-  }
+  // handleMarkerClick(bench) {
+  //   this.props.history.push(`benches/${bench.id}`);
+  // }
 
   handleClick(coords) {
     this.props.history.push({

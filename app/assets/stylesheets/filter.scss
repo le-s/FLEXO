@@ -1,21 +1,23 @@
 .filter-bar {
-  height: 34px;
-  padding: 12px 25px 20px 25px;  
+  height: 60px;
+  padding: 10px 25px;  
   top: 60px;
   background: #fff;
   box-shadow: 0 2px 9px -3px rgba(0,0,0,.12);
   display: flex;
   left: 0;
-  position: absolute;
   right: 0;
-  z-index: 0;
+  z-index: 1;
+  position: sticky;
+  box-sizing: border-box;
+  align-items: center;
 }
 
 .filter-bar button {
   background-color: #fff;
   border: 1px solid #231f20;
   color: #231f20;
-  cursor: pointer;
+  cursor: no-drop;
   display: inline-block;
   font-family: BasisGrotesque,Avenir,Helvetica Neue,Helvetica,sans-serif;
   font-weight: 700;
