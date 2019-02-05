@@ -15,7 +15,6 @@ class Splash extends React.Component {
   constructor(props) {
     super(props);
     this.handleDayClick = this.handleDayClick.bind(this);
-    this.getDate = this.getDate.bind(this);
     this.state = {
       selectedDay: undefined,
     };
@@ -25,21 +24,21 @@ class Splash extends React.Component {
   }
 
 
-  getDate() {
-    let dd = this.date.currentDate.getDate();
-    let mm = this.date.currentDate.getMonth();
-    let yyyy = this.date.currentDate.getFullYear();
+  // getDate() {
+  //   let dd = this.date.currentDate.getDate();
+  //   let mm = this.date.currentDate.getMonth();
+  //   let yyyy = this.date.currentDate.getFullYear();
 
-    if (dd < 10) {
-      dd = '0' + dd;
-    }
+  //   if (dd < 10) {
+  //     dd = '0' + dd;
+  //   }
 
-    if (mm < 10) {
-      mm = "0" + mm;
-    }
+  //   if (mm < 10) {
+  //     mm = "0" + mm;
+  //   }
 
-    this.setState({ currentDate: mm + "/" + dd + "/" + yyyy });
-  }
+  //   this.setState({ currentDate: mm + "/" + dd + "/" + yyyy });
+  // }
 
   handleDayClick(day, {selected}) {
     if (selected) {
@@ -68,7 +67,6 @@ class Splash extends React.Component {
                 <label>From</label>
                 <div className="date-search-sizing">
                   <DayPickerInput onDayClick={this.handleDayClick} selectedDays={this.state.selectedDay} 
-                  placeholder={this.date.currentDatedate}
                   />
                 </div>
               </div>

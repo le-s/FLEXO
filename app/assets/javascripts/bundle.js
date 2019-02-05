@@ -3005,7 +3005,6 @@ function (_React$Component) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(Splash).call(this, props));
     _this.handleDayClick = _this.handleDayClick.bind(_assertThisInitialized(_assertThisInitialized(_this)));
-    _this.getDate = _this.getDate.bind(_assertThisInitialized(_assertThisInitialized(_this)));
     _this.state = {
       selectedDay: undefined
     };
@@ -3013,28 +3012,21 @@ function (_React$Component) {
       currentDate: new Date()
     };
     return _this;
-  }
+  } // getDate() {
+  //   let dd = this.date.currentDate.getDate();
+  //   let mm = this.date.currentDate.getMonth();
+  //   let yyyy = this.date.currentDate.getFullYear();
+  //   if (dd < 10) {
+  //     dd = '0' + dd;
+  //   }
+  //   if (mm < 10) {
+  //     mm = "0" + mm;
+  //   }
+  //   this.setState({ currentDate: mm + "/" + dd + "/" + yyyy });
+  // }
+
 
   _createClass(Splash, [{
-    key: "getDate",
-    value: function getDate() {
-      var dd = this.date.currentDate.getDate();
-      var mm = this.date.currentDate.getMonth();
-      var yyyy = this.date.currentDate.getFullYear();
-
-      if (dd < 10) {
-        dd = '0' + dd;
-      }
-
-      if (mm < 10) {
-        mm = "0" + mm;
-      }
-
-      this.setState({
-        currentDate: mm + "/" + dd + "/" + yyyy
-      });
-    }
-  }, {
     key: "handleDayClick",
     value: function handleDayClick(day, _ref) {
       var selected = _ref.selected;
@@ -3079,8 +3071,7 @@ function (_React$Component) {
         className: "date-search-sizing"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_day_picker_DayPickerInput__WEBPACK_IMPORTED_MODULE_10___default.a, {
         onDayClick: this.handleDayClick,
-        selectedDays: this.state.selectedDay,
-        placeholder: this.date.currentDatedate
+        selectedDays: this.state.selectedDay
       }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_time__WEBPACK_IMPORTED_MODULE_8__["default"], null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "splash-where from-until"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
