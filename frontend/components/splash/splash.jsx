@@ -9,8 +9,7 @@ import SplashCars from './splash_cars_container';
 import Time from './time';
 import DayPicker from 'react-day-picker';
 import DayPickerInput from 'react-day-picker/DayPickerInput';
-// import "react-day-picker/lib/style.css";
-
+import Moment from 'react-moment';
 
 class Splash extends React.Component {
   constructor(props) {
@@ -25,6 +24,7 @@ class Splash extends React.Component {
     };
   }
 
+
   getDate() {
     let dd = this.date.currentDate.getDate();
     let mm = this.date.currentDate.getMonth();
@@ -38,7 +38,7 @@ class Splash extends React.Component {
       mm = "0" + mm;
     }
 
-    this.setState({ date: mm + "/" + dd + "/" + yyyy });
+    this.setState({ currentDate: mm + "/" + dd + "/" + yyyy });
   }
 
   handleDayClick(day, {selected}) {
@@ -50,7 +50,6 @@ class Splash extends React.Component {
   }
 
   render() {
-    let FORMAT = 'M/D/YYYY';
     let splash = <div className="splash">
         <div className="main_splash_container">
           <h1 className="main-text">Way better than a stock car</h1>
@@ -68,7 +67,9 @@ class Splash extends React.Component {
               <div className="splash-date-container">
                 <label>From</label>
                 <div className="date-search-sizing">
-                  <DayPickerInput onDayClick={this.handleDayClick} selectedDays={this.state.selectedDay} />
+                  <DayPickerInput onDayClick={this.handleDayClick} selectedDays={this.state.selectedDay} 
+                  placeholder={this.date.currentDatedate}
+                  />
                 </div>
               </div>
               <Time/>

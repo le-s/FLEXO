@@ -49,7 +49,10 @@
 .car-container {
   /* object-fit: contain; */
   position: relative;
+}
 
+.car-container:hover .make-model-card {
+    text-decoration: underline;
 }
 
 .car-index-image {
@@ -57,6 +60,11 @@
   width: 336px;
   overflow: hidden;
   border-radius: 6px;
+  transition: all .5s ease;
+}
+
+.car-index-image:hover {
+  opacity: .8;
 }
 
 .car-hover {
