@@ -42,7 +42,6 @@ class CarMap extends React.Component {
   }
 
   handleMarkerClick(car) {
-    console.log(car);
     this.props.history.push(`/cars/${car.id}`);
   }
 

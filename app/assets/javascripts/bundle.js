@@ -2020,7 +2020,6 @@ function (_React$Component) {
   }, {
     key: "handleMarkerClick",
     value: function handleMarkerClick(car) {
-      console.log(car);
       this.props.history.push("/cars/".concat(car.id));
     } // handleClick(coords) {
     //   this.props.history.push({
