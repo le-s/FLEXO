@@ -834,7 +834,9 @@ function (_React$Component) {
         }))))));
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "gmap-container"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_map_car_map__WEBPACK_IMPORTED_MODULE_2__["default"], null))));
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_map_car_map__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        cars: this.props.cars
+      }))));
     }
   }]);
 
@@ -1928,6 +1930,7 @@ function (_React$Component) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _util_marker_manager__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../util/marker_manager */ "./frontend/util/marker_manager.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -1946,14 +1949,11 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
- // import MarkerManager from '../../util/marker_manager';
 
-var getCoordsObj = function getCoordsObj(latLng) {
-  return {
-    lat: latLng.lat(),
-    lng: latLng.lng()
-  };
-};
+ // const getCoordsObj = latLng => ({
+//   lat: latLng.lat(),
+//   lng: latLng.lng()
+// });
 
 var mapOptions = {
   center: {
@@ -1979,24 +1979,14 @@ function (_React$Component) {
     key: "componentDidMount",
     value: function componentDidMount() {
       var map = this.refs.map;
-      this.map = new google.maps.Map(map, mapOptions); // this.MarkerManager = new MarkerManager(this.map, this.handleMarkerClick.bind(this));
-      // if (this.props.singleBench) {
-      //   this.props.fetchBench(this.props.benchId);
-      // } else {
-      //   this.registerListeners();
-      //   this.MarkerManager.updateMarkers(this.props.benches);
-      // }
+      this.map = new google.maps.Map(map, mapOptions);
+      this.MarkerManager = new _util_marker_manager__WEBPACK_IMPORTED_MODULE_1__["default"](this.map, this.handleMarkerClick.bind(this));
+      this.MarkerManager.updateMarkers(this.props.cars);
     }
   }, {
     key: "componentDidUpdate",
     value: function componentDidUpdate() {
-      if (this.props.singleBench) {
-        var targetBenchKey = Object.keys(this.props.benches)[0]; // const targetBench = this.props.benches[targetBenchKey];
-        // this.MarkerManager.updateMarkers([targetBench]); //grabs only that one bench
-      } // } else {
-      //   this.MarkerManager.updateMarkers(this.props.benches);
-      // }
-
+      this.MarkerManager.updateMarkers(this.props.cars);
     }
   }, {
     key: "registerListeners",
@@ -2022,24 +2012,23 @@ function (_React$Component) {
         };
 
         _this.props.updateFilter('bounds', bounds);
-      });
-      google.maps.event.addListener(this.map, 'click', function (event) {
-        var coords = getCoordsObj(event.latLng);
-
-        _this.handleClick(coords);
-      });
-    } // handleMarkerClick(bench) {
-    //   this.props.history.push(`benches/${bench.id}`);
+      }); // google.maps.event.addListener(this.map, 'click', (event) => {
+      //   const coords = getCoordsObj(event.latLng);
+      //   this.handleClick(coords);
+      // });
+    }
+  }, {
+    key: "handleMarkerClick",
+    value: function handleMarkerClick(car) {
+      console.log(car);
+      this.props.history.push("/cars/".concat(car.id));
+    } // handleClick(coords) {
+    //   this.props.history.push({
+    //     pathname: 'cars/new',
+    //     search: `lat=${coords.lat}&lng=${coords.lng}`
+    //   });
     // }
 
-  }, {
-    key: "handleClick",
-    value: function handleClick(coords) {
-      this.props.history.push({
-        pathname: 'benches/new',
-        search: "lat=".concat(coords.lat, "&lng=").concat(coords.lng)
-      });
-    }
   }, {
     key: "render",
     value: function render() {
@@ -2047,24 +2036,7 @@ function (_React$Component) {
         className: "map",
         ref: "map"
       }, "Map");
-    } // constructor(props) {
-    //   super(props);
-    // }
-    // componentDidMount() {
-    //   const mapOptions = {
-    //     center: { lat: this.props.car.latitude, lng: this.props.car.longitude },
-    //     zoom: 14
-    //   }
-    //   this.map = new google.maps.Map(this.mapNode, mapOptions);
-    //   // this.MarkerManager = new MarkerManager(this.map, null, true)
-    //   // this.MarkerManager.updateMarkers([this.props.car])
-    // }
-    // render() {
-    //   return (
-    //     <div id='show-map-container' ref={ map => this.mapNode = map } />
-    //   )
-    // }
-
+    }
   }]);
 
   return CarMap;
@@ -3841,6 +3813,83 @@ var editCar = function editCar(car) {
     }
   });
 };
+
+/***/ }),
+
+/***/ "./frontend/util/marker_manager.js":
+/*!*****************************************!*\
+  !*** ./frontend/util/marker_manager.js ***!
+  \*****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var MarkerManager =
+/*#__PURE__*/
+function () {
+  function MarkerManager(map, handleClick) {
+    _classCallCheck(this, MarkerManager);
+
+    this.map = map;
+    this.handleClick = handleClick;
+    this.markers = {};
+  }
+
+  _createClass(MarkerManager, [{
+    key: "updateMarkers",
+    value: function updateMarkers(cars) {
+      var _this = this;
+
+      var carsObj = {};
+      cars.forEach(function (car) {
+        return carsObj[car.id] = car;
+      });
+      cars.filter(function (car) {
+        return !_this.markers[car.id];
+      }).forEach(function (newCar) {
+        return _this.createMarkerFromCar(newCar, _this.handleClick);
+      });
+      Object.keys(this.markers).filter(function (carId) {
+        return !carsObj[carId];
+      }).forEach(function (carId) {
+        return _this.removeMarker(_this.markers[carId]);
+      });
+    }
+  }, {
+    key: "createMarkerFromCar",
+    value: function createMarkerFromCar(car) {
+      var _this2 = this;
+
+      var position = new google.maps.LatLng(car.latitude, car.longitude);
+      var marker = new google.maps.Marker({
+        position: position,
+        map: this.map,
+        carId: car.id
+      });
+      marker.addListener('click', function () {
+        return _this2.handleClick(car);
+      });
+      this.markers[marker.carId] = marker;
+    }
+  }, {
+    key: "removeMarker",
+    value: function removeMarker(marker) {
+      this.markers[marker.carId].setMap(null);
+      delete this.markers[marker.carId];
+    }
+  }]);
+
+  return MarkerManager;
+}();
+
+/* harmony default export */ __webpack_exports__["default"] = (MarkerManager);
 
 /***/ }),
 

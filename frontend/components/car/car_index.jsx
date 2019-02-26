@@ -59,7 +59,7 @@ class CarIndex extends React.Component {
             </div>)}
           </div>
           <div className="gmap-container">
-            <CarMap/>
+            <CarMap cars={this.props.cars}/>
             {/* {this.props.cars.map(car => {
               <CarMap car={car} />
             })} */}
