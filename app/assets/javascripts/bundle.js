@@ -2760,9 +2760,7 @@ function (_React$Component) {
         className: "go-info"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Book, unlock, and go!"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Unlock the next level of car sharing convenience with Flexo Go \u2013 find, book, and unlock cars on demand, right from the Flexo app."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "learn-margin"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: ""
-      }, "Learn more"))));
+      })));
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, goDisplay);
     }
   }]);
@@ -2831,7 +2829,7 @@ function (_React$Component) {
         className: "pays-button"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: '/cars/create'
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "Learn More")))));
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "List your car")))));
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, paysDisplay);
     }
   }]);
@@ -2894,9 +2892,7 @@ function (_React$Component) {
         className: "porsche-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "porsche-info"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", null, "Driving at it finest"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Discover the Persche Host Program"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Flexo and Persche are proud to introduce the Persche Host Program, a pilot program in San Francisco and Los Angeles that combines curated Persche vehicles with top Flexo hosts to give you the complete Persche experience."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: ""
-      }, "Explore the program")));
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", null, "Driving at it finest"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Discover the Persche Host Program"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Flexo and Persche are proud to introduce the Persche Host Program, a pilot program in San Francisco and Los Angeles that combines curated Persche vehicles with top Flexo hosts to give you the complete Persche experience.")));
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, porscheDisplay);
     }
   }]);
@@ -3315,15 +3311,11 @@ function (_React$Component) {
         className: "bimmer-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", null, "Ask the"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Carculator"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Find out how much your car could earn for you."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "tile-button"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: ""
-      }, "Get an estimate"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "tile-map-container"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", null, "Read up on"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "That good-good"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Peruse cool cars and good stories on the Flexo blog."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", null, "Read up on"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "That good-good"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Preuse cool cars and good stories on the Flexo blog."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "tile-button"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: ""
-      }, "Check it out"))));
+      })));
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, tileDisplay);
     }
   }]);

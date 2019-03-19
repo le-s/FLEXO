@@ -10,7 +10,7 @@ class Go extends React.Component {
         <h3>Book, unlock, and go!</h3>
         <p>Unlock the next level of car sharing convenience with Flexo Go – find, book, and unlock cars on demand, right from the Flexo app.</p>
         <div className="learn-margin">
-          <a href="">Learn more</a>
+          {/* <a href="">Learn more</a> */}
         </div>
       </div>
     </div>

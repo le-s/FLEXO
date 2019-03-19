@@ -11,7 +11,7 @@ class Porsche extends React.Component {
           <p>
             Flexo and Persche are proud to introduce the Persche Host Program, a pilot program in San Francisco and Los Angeles that combines curated Persche vehicles with top Flexo hosts to give you the complete Persche experience.
           </p>
-          <a href="">Explore the program</a>
+          {/* <a href="">Explore the program</a> */}
         </div>
       </div>
     

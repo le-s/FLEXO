@@ -17,7 +17,7 @@ class Pays extends React.Component {
           </div>
           <div className="pays-button">
             <Link to={'/cars/create'}>
-              <button>Learn More</button>
+              <button>List your car</button>
             </Link>
           </div>
         </div>
