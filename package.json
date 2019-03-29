@@ -3,8 +3,6 @@
   "private": true,
   "dependencies": {
     "@babel/core": "^7.2.0",
-    "@babel/preset-env": "^7.2.0",
-    "@babel/preset-react": "^7.0.0",
     "@babel/types": "^7.2.0",
     "babel-loader": "^8.0.4",
     "moment": "^2.24.0",
@@ -29,14 +27,21 @@
     "test": "test"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "start": "webpack --watch --mode=development",
     "postinstall": "webpack"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "devDependencies": {},
+  "devDependencies": {
+    "@babel/preset-env": "^7.4.2",
+    "@babel/preset-react": "^7.0.0",
+    "babel-jest": "^24.5.0",
+    "enzyme": "^3.9.0",
+    "jest": "^24.5.0",
+    "react-test-renderer": "^16.8.6"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/le-s/FLEXO.git"
