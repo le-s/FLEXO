@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import CarMap from '../map/car_map';
 
-class SplashCars extends React.Component {
+export class SplashCars extends React.Component {
   constructor(props) {
     super(props);
   }
