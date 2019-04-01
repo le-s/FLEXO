@@ -17,16 +17,19 @@ Enzyme.configure({ adapter: new Adapter() });
 
 const cars = [
   {
+    id: 1,
     name: "test car 1",
     model: "cool car",
     year: 1999
   },
   {
+    id: 2,
     name: "test car 2",
     model: "okay car",
     year: 2000
   },
   {
+    id: 3,
     name: "test car 3",
     model: "cool wagon",
     year: 1960
