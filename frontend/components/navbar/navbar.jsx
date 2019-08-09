@@ -53,9 +53,7 @@ class NavBar extends React.Component {
     ) : (
       <div>
         <ul className='right-nav'>
-          <Link to={'/cars/create'}>
-            <button className='nav-item'>List your car</button>
-          </Link>
+          <button className='nav-item' onClick={() => this.props.openModal('signup')}>List your car</button>
           <button className='nav-button' onClick={() => this.props.openModal('login')}>Login</button>
           <button className='nav-button' onClick={() => this.props.openModal('signup')}>Signup</button>
         </ul>
