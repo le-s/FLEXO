@@ -5,6 +5,8 @@
     "@babel/core": "^7.2.0",
     "@babel/types": "^7.2.0",
     "babel-loader": "^8.0.4",
+    "bootstrap": "^4.3.1",
+    "libphonenumber-js": "^1.7.22",
     "moment": "^2.24.0",
     "react": "^16.8.6",
     "react-day-picker": "^7.2.4",
@@ -16,6 +18,7 @@
     "redux": "^4.0.1",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.3.0",
+    "twilio": "^3.33.4",
     "webpack": "^4.27.1",
     "webpack-cli": "^3.1.2"
   },
@@ -42,6 +45,7 @@
     "enzyme-adapter-react-16": "^1.11.2",
     "jest": "^24.5.0",
     "jest-enzyme": "^7.0.2",
+    "json-loader": "^0.5.7",
     "react-test-renderer": "^16.8.6",
     "redux-mock-store": "^1.5.3"
   },

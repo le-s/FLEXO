@@ -37,6 +37,8 @@ gem 'annotate'
 
 gem 'jquery-rails'
 
+gem 'twilio-ruby'
+
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 

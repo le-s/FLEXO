@@ -36,16 +36,10 @@ class SessionForm extends React.Component {
 
   handleDemoLogin(e) {
     e.preventDefault(e);
-    if (this.props.formType === 'login') {
-      this.props.processForm({
-        email: 'demo@email.com',
-        password: 'password'
-      }).then(this.props.closeModal);
-    }
-
-    if (this.props.formType === 'signup') {
-      
-    }
+    this.props.processForm({
+      email: 'demo@email.com',
+      password: 'password'
+    }).then(this.props.closeModal);
   }
 
   render() {
@@ -146,10 +140,6 @@ class SessionForm extends React.Component {
             <br />
 
             <input className='submit' type="submit" value="Sign up" />
-
-            <br/>
-
-            <input className='demo' onClick={this.handleDemoLogin} type="submit" value='Demo Login' />
 
             <br/>
 
