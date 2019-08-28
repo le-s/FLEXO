@@ -430,11 +430,11 @@ function (_React$Component) {
       for (var key in this.state) {
         if (key != 'photos') {
           if (key === "phoneNumber") {
-            var phone = Object(libphonenumber_js__WEBPACK_IMPORTED_MODULE_2__["parsePhoneNumberFromString"])(this.state["".concat(key)], 'US');
-            formData.append("car[".concat(key, "]"), phone.number);
+            var phone = Object(libphonenumber_js__WEBPACK_IMPORTED_MODULE_2__["parsePhoneNumberFromString"])(this.state["".concat(key)], 'US').number;
+            formData.append("car[".concat(key, "]"), phone);
+          } else {
+            formData.append("car[".concat(key, "]"), this.state["".concat(key)]);
           }
-
-          formData.append("car[".concat(key, "]"), this.state["".concat(key)]);
         }
       }
 
