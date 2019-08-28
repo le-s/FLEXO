@@ -170,3 +170,15 @@
   height: 0;
   display: none;
 }
+
+.number-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.number-style {
+  width: 40%;
+  font-size: smaller;
+  font-weight: 500;
+}

@@ -497,12 +497,6 @@ function (_React$Component) {
         value: this.state.zipcode,
         placeholder: "Zip Code",
         onChange: this.update("zipcode")
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Phone Number", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        className: "create-input-field",
-        type: "text",
-        value: this.state.phoneNumber,
-        placeholder: "Phone",
-        onChange: this.update("phoneNumber")
       })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "create-form-subheading"
       }, "What car do you have?", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -642,7 +636,17 @@ function (_React$Component) {
         placeholder: "The more mods you have the more fun it'll be",
         value: this.state.mods,
         onChange: this.update("mods")
-      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "number-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        className: "number-style"
+      }, "Phone Number", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "create-input-field",
+        type: "text",
+        value: this.state.phoneNumber,
+        placeholder: "Phone",
+        onChange: this.update("phoneNumber")
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "file",
         onChange: function onChange(e) {
           return _this4.setState({
@@ -650,7 +654,7 @@ function (_React$Component) {
           });
         },
         multiple: true
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         className: "button-purple",
         type: "submit",
         value: "Finish"
@@ -4086,6 +4090,8 @@ function _objectWithoutPropertiesLoose(source, excluded) {
 "use strict";
 /* WEBPACK VAR INJECTION */(function(global) {
 
+var objectAssign = __webpack_require__(/*! object-assign */ "./node_modules/object-assign/index.js");
+
 // compare and isBuffer taken from https://github.com/feross/buffer/blob/680e9e5e488f22aac27599a57dc844a6315928dd/index.js
 // original notice:
 
@@ -4127,6 +4133,8 @@ function isBuffer(b) {
 }
 
 // based on node assert, original notice:
+// NB: The URL to the CommonJS spec is kept just for tradition.
+//     node-assert has evolved a lot since then, both in API and behavior.
 
 // http://wiki.commonjs.org/wiki/Unit_Testing/1.0
 //
@@ -4566,6 +4574,18 @@ assert.doesNotThrow = function(block, /*optional*/error, /*optional*/message) {
 };
 
 assert.ifError = function(err) { if (err) throw err; };
+
+// Expose a strict only variant of assert
+function strict(value, message) {
+  if (!value) fail(value, true, message, '==', strict);
+}
+assert.strict = objectAssign(strict, assert, {
+  equal: assert.strictEqual,
+  deepEqual: assert.deepStrictEqual,
+  notEqual: assert.notStrictEqual,
+  notDeepEqual: assert.notDeepStrictEqual
+});
+assert.strict.strict = assert.strict;
 
 var objectKeys = Object.keys || function (obj) {
   var keys = [];
@@ -6162,24 +6182,28 @@ module.exports = hoistNonReactStatics;
 if (typeof Object.create === 'function') {
   // implementation from standard node.js 'util' module
   module.exports = function inherits(ctor, superCtor) {
-    ctor.super_ = superCtor
-    ctor.prototype = Object.create(superCtor.prototype, {
-      constructor: {
-        value: ctor,
-        enumerable: false,
-        writable: true,
-        configurable: true
-      }
-    });
+    if (superCtor) {
+      ctor.super_ = superCtor
+      ctor.prototype = Object.create(superCtor.prototype, {
+        constructor: {
+          value: ctor,
+          enumerable: false,
+          writable: true,
+          configurable: true
+        }
+      })
+    }
   };
 } else {
   // old school shim for old browsers
   module.exports = function inherits(ctor, superCtor) {
-    ctor.super_ = superCtor
-    var TempCtor = function () {}
-    TempCtor.prototype = superCtor.prototype
-    ctor.prototype = new TempCtor()
-    ctor.prototype.constructor = ctor
+    if (superCtor) {
+      ctor.super_ = superCtor
+      var TempCtor = function () {}
+      TempCtor.prototype = superCtor.prototype
+      ctor.prototype = new TempCtor()
+      ctor.prototype.constructor = ctor
+    }
   }
 }
 
@@ -32214,11 +32238,7 @@ var Caption = function (_Component) {
   return Caption;
 }(_react.Component);
 
-Caption.defaultProps = {
-  localeUtils: _LocaleUtils2.default
-};
-exports.default = Caption;
-Caption.propTypes =  true ? {
+Caption.propTypes = {
   date: _propTypes2.default.instanceOf(Date),
   months: _propTypes2.default.arrayOf(_propTypes2.default.string),
   locale: _propTypes2.default.string,
@@ -32227,7 +32247,11 @@ Caption.propTypes =  true ? {
   classNames: _propTypes2.default.shape({
     caption: _propTypes2.default.string.isRequired
   }).isRequired
-} : undefined;
+};
+Caption.defaultProps = {
+  localeUtils: _LocaleUtils2.default
+};
+exports.default = Caption;
 //# sourceMappingURL=Caption.js.map
 
 /***/ }),
@@ -32284,8 +32308,8 @@ function isDate(value) {
  * Return `d` as a new date with `n` months added.
  *
  * @export
- * @param {[type]} d
- * @param {[type]} n
+ * @param {Date} d
+ * @param {number} n
  */
 function addMonths(d, n) {
   var newDate = clone(d);
@@ -32644,16 +32668,7 @@ var Day = function (_Component) {
   return Day;
 }(_react.Component);
 
-Day.defaultProps = {
-  tabIndex: -1
-};
-Day.defaultProps = {
-  modifiers: {},
-  modifiersStyles: {},
-  empty: false
-};
-exports.default = Day;
-Day.propTypes =  true ? {
+Day.propTypes = {
   classNames: _propTypes2.default.shape({
     day: _propTypes2.default.string.isRequired
   }).isRequired,
@@ -32677,7 +32692,16 @@ Day.propTypes =  true ? {
   onTouchStart: _propTypes2.default.func,
   onFocus: _propTypes2.default.func,
   tabIndex: _propTypes2.default.number
-} : undefined;
+};
+Day.defaultProps = {
+  tabIndex: -1
+};
+Day.defaultProps = {
+  modifiers: {},
+  modifiersStyles: {},
+  empty: false
+};
+exports.default = Day;
 //# sourceMappingURL=Day.js.map
 
 /***/ }),
@@ -33227,37 +33251,8 @@ var DayPicker = exports.DayPicker = function (_Component) {
   return DayPicker;
 }(_react.Component);
 
-DayPicker.VERSION = '7.3.0';
-DayPicker.defaultProps = {
-  classNames: _classNames2.default,
-  tabIndex: 0,
-  initialMonth: new Date(),
-  numberOfMonths: 1,
-  labels: {
-    previousMonth: 'Previous Month',
-    nextMonth: 'Next Month'
-  },
-  locale: 'en',
-  localeUtils: LocaleUtils,
-  showOutsideDays: false,
-  enableOutsideDaysClick: true,
-  fixedWeeks: false,
-  canChangeMonth: true,
-  reverseMonths: false,
-  pagedNavigation: false,
-  showWeekNumbers: false,
-  showWeekDays: true,
-  renderDay: function renderDay(day) {
-    return day.getDate();
-  },
-  renderWeek: function renderWeek(weekNumber) {
-    return weekNumber;
-  },
-  weekdayElement: _react2.default.createElement(_Weekday2.default, null),
-  navbarElement: _react2.default.createElement(_Navbar2.default, { classNames: _classNames2.default }),
-  captionElement: _react2.default.createElement(_Caption2.default, { classNames: _classNames2.default })
-};
-DayPicker.propTypes =  true ? {
+DayPicker.VERSION = '7.3.2';
+DayPicker.propTypes = {
   // Rendering months
   initialMonth: _propTypes2.default.instanceOf(Date),
   month: _propTypes2.default.instanceOf(Date),
@@ -33347,7 +33342,36 @@ DayPicker.propTypes =  true ? {
   onCaptionClick: _propTypes2.default.func,
   onWeekClick: _propTypes2.default.func,
   onTodayButtonClick: _propTypes2.default.func
-} : undefined;
+};
+DayPicker.defaultProps = {
+  classNames: _classNames2.default,
+  tabIndex: 0,
+  initialMonth: new Date(),
+  numberOfMonths: 1,
+  labels: {
+    previousMonth: 'Previous Month',
+    nextMonth: 'Next Month'
+  },
+  locale: 'en',
+  localeUtils: LocaleUtils,
+  showOutsideDays: false,
+  enableOutsideDaysClick: true,
+  fixedWeeks: false,
+  canChangeMonth: true,
+  reverseMonths: false,
+  pagedNavigation: false,
+  showWeekNumbers: false,
+  showWeekDays: true,
+  renderDay: function renderDay(day) {
+    return day.getDate();
+  },
+  renderWeek: function renderWeek(weekNumber) {
+    return weekNumber;
+  },
+  weekdayElement: _react2.default.createElement(_Weekday2.default, null),
+  navbarElement: _react2.default.createElement(_Navbar2.default, { classNames: _classNames2.default }),
+  captionElement: _react2.default.createElement(_Caption2.default, { classNames: _classNames2.default })
+};
 
 
 DayPicker.DateUtils = DateUtils;
@@ -33442,13 +33466,13 @@ function OverlayComponent(_ref) {
   );
 }
 
-OverlayComponent.propTypes =  true ? {
+OverlayComponent.propTypes = {
   input: _propTypes2.default.any,
   selectedDay: _propTypes2.default.any,
   month: _propTypes2.default.instanceOf(Date),
   children: _propTypes2.default.node,
   classNames: _propTypes2.default.object
-} : undefined;
+};
 
 /**
  * The default function used to format a Date to String, passed to the `format`
@@ -33487,7 +33511,7 @@ function defaultParse(str) {
     return undefined;
   }
 
-  return new Date(year, month, day);
+  return new Date(year, month, day, 12, 0, 0, 0); // always set noon to avoid time zone issues
 }
 
 var DayPickerInput = function (_React$Component) {
@@ -33988,28 +34012,7 @@ var DayPickerInput = function (_React$Component) {
   return DayPickerInput;
 }(_react2.default.Component);
 
-DayPickerInput.defaultProps = {
-  dayPickerProps: {},
-  value: '',
-  placeholder: 'YYYY-M-D',
-  format: 'L',
-  formatDate: defaultFormat,
-  parseDate: defaultParse,
-  showOverlay: false,
-  hideOnDayClick: true,
-  clickUnselectsDay: false,
-  keepFocus: true,
-  component: 'input',
-  inputProps: {},
-  overlayComponent: OverlayComponent,
-  classNames: {
-    container: 'DayPickerInput',
-    overlayWrapper: 'DayPickerInput-OverlayWrapper',
-    overlay: 'DayPickerInput-Overlay'
-  }
-};
-exports.default = DayPickerInput;
-DayPickerInput.propTypes =  true ? {
+DayPickerInput.propTypes = {
   value: _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.instanceOf(Date)]),
   inputProps: _propTypes2.default.object,
   placeholder: _propTypes2.default.string,
@@ -34042,7 +34045,28 @@ DayPickerInput.propTypes =  true ? {
   onFocus: _propTypes2.default.func,
   onBlur: _propTypes2.default.func,
   onKeyUp: _propTypes2.default.func
-} : undefined;
+};
+DayPickerInput.defaultProps = {
+  dayPickerProps: {},
+  value: '',
+  placeholder: 'YYYY-M-D',
+  format: 'L',
+  formatDate: defaultFormat,
+  parseDate: defaultParse,
+  showOverlay: false,
+  hideOnDayClick: true,
+  clickUnselectsDay: false,
+  keepFocus: true,
+  component: 'input',
+  inputProps: {},
+  overlayComponent: OverlayComponent,
+  classNames: {
+    container: 'DayPickerInput',
+    overlayWrapper: 'DayPickerInput-OverlayWrapper',
+    overlay: 'DayPickerInput-Overlay'
+  }
+};
+exports.default = DayPickerInput;
 //# sourceMappingURL=DayPickerInput.js.map
 
 /***/ }),
@@ -34600,14 +34624,14 @@ var Month = function (_Component) {
   return Month;
 }(_react.Component);
 
-exports.default = Month;
-Month.propTypes =  true ? {
+Month.propTypes = {
   classNames: _propTypes2.default.shape({
     body: _propTypes2.default.string.isRequired,
     month: _propTypes2.default.string.isRequired,
     outside: _propTypes2.default.string.isRequired,
     today: _propTypes2.default.string.isRequired,
-    week: _propTypes2.default.string.isRequired
+    week: _propTypes2.default.string.isRequired,
+    weekNumber: _propTypes2.default.string.isRequired
   }).isRequired,
   tabIndex: _propTypes2.default.number,
 
@@ -34645,7 +34669,8 @@ Month.propTypes =  true ? {
   onDayTouchEnd: _propTypes2.default.func,
   onDayTouchStart: _propTypes2.default.func,
   onWeekClick: _propTypes2.default.func
-} : undefined;
+};
+exports.default = Month;
 //# sourceMappingURL=Month.js.map
 
 /***/ }),
@@ -34800,22 +34825,12 @@ var Navbar = function (_Component) {
   return Navbar;
 }(_react.Component);
 
-Navbar.defaultProps = {
-  classNames: _classNames2.default,
-  dir: 'ltr',
-  labels: {
-    previousMonth: 'Previous Month',
-    nextMonth: 'Next Month'
-  },
-  showPreviousButton: true,
-  showNextButton: true
-};
-exports.default = Navbar;
-Navbar.propTypes =  true ? {
+Navbar.propTypes = {
   classNames: _propTypes2.default.shape({
     navBar: _propTypes2.default.string.isRequired,
     navButtonPrev: _propTypes2.default.string.isRequired,
-    navButtonNext: _propTypes2.default.string.isRequired
+    navButtonNext: _propTypes2.default.string.isRequired,
+    navButtonInteractionDisabled: _propTypes2.default.string.isRequired
   }),
   className: _propTypes2.default.string,
   showPreviousButton: _propTypes2.default.bool,
@@ -34827,7 +34842,18 @@ Navbar.propTypes =  true ? {
     previousMonth: _propTypes2.default.string.isRequired,
     nextMonth: _propTypes2.default.string.isRequired
   })
-} : undefined;
+};
+Navbar.defaultProps = {
+  classNames: _classNames2.default,
+  dir: 'ltr',
+  labels: {
+    previousMonth: 'Previous Month',
+    nextMonth: 'Next Month'
+  },
+  showPreviousButton: true,
+  showNextButton: true
+};
+exports.default = Navbar;
 //# sourceMappingURL=Navbar.js.map
 
 /***/ }),
@@ -34964,8 +34990,7 @@ var Weekday = function (_Component) {
   return Weekday;
 }(_react.Component);
 
-exports.default = Weekday;
-Weekday.propTypes =  true ? {
+Weekday.propTypes = {
   weekday: _propTypes2.default.number,
   className: _propTypes2.default.string,
   locale: _propTypes2.default.string,
@@ -34973,7 +34998,8 @@ Weekday.propTypes =  true ? {
 
   weekdaysLong: _propTypes2.default.arrayOf(_propTypes2.default.string),
   weekdaysShort: _propTypes2.default.arrayOf(_propTypes2.default.string)
-} : undefined;
+};
+exports.default = Weekday;
 //# sourceMappingURL=Weekday.js.map
 
 /***/ }),
@@ -35069,8 +35095,7 @@ var Weekdays = function (_Component) {
   return Weekdays;
 }(_react.Component);
 
-exports.default = Weekdays;
-Weekdays.propTypes =  true ? {
+Weekdays.propTypes = {
   classNames: _propTypes2.default.shape({
     weekday: _propTypes2.default.string.isRequired,
     weekdays: _propTypes2.default.string.isRequired,
@@ -35084,7 +35109,8 @@ Weekdays.propTypes =  true ? {
   locale: _propTypes2.default.string.isRequired,
   localeUtils: _propTypes2.default.object.isRequired,
   weekdayElement: _propTypes2.default.oneOfType([_propTypes2.default.element, _propTypes2.default.func, _propTypes2.default.instanceOf(_react2.default.Component)])
-} : undefined;
+};
+exports.default = Weekdays;
 //# sourceMappingURL=Weekdays.js.map
 
 /***/ }),

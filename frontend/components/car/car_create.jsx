@@ -90,11 +90,6 @@ class CarCreate extends React.Component {
                       <input className="create-input-field" type="text" value={this.state.zipcode} placeholder="Zip Code" onChange={this.update("zipcode")} />
                     </label>
                     
-                    <label>
-                      Phone Number
-                      <br />
-                      <input className="create-input-field" type="text" value={this.state.phoneNumber} placeholder="Phone" onChange={this.update("phoneNumber")} />
-                    </label>
                   </div>
                 </div>
 
@@ -227,7 +222,15 @@ class CarCreate extends React.Component {
 
                 <br/>
 
-                <input type="file" onChange={e => this.setState({ photos: e.target.files })} multiple/>
+                <div className="number-container">
+                  <label className="number-style">
+                    Phone Number
+                    <br />
+                    <input className="create-input-field" type="text" value={this.state.phoneNumber} placeholder="Phone" onChange={this.update("phoneNumber")} />
+                  </label>
+
+                  <input type="file" onChange={e => this.setState({ photos: e.target.files })} multiple/>
+                </div>
 
                 <br/>
 
