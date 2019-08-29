@@ -25,7 +25,8 @@ class CarCreate extends React.Component {
     for (let key in this.state) {
       if (key != 'photos') {
         if (key === "phoneNumber") { 
-          let phone = parsePhoneNumberFromString(this.state[`${key}`], 'US').number;
+          let phone = parsePhoneNumberFromString(this.state[`${key}`], 'US').number; 
+          // "+14081234567"
           formData.append(`car[${key}]`, phone)
         } else {
           formData.append(`car[${key}]`, this.state[`${key}`])

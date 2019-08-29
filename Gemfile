@@ -37,8 +37,13 @@ gem 'annotate'
 
 gem 'jquery-rails'
 
+# Twilio API
 gem 'twilio-ruby'
 
+# SendGrid API
+gem 'sendgrid-ruby'
+
+# Creates a file to hide your API Keys in& gitignore's it
 gem 'figaro'
 
 # Use ActiveStorage variant

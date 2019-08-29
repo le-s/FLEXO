@@ -1,31 +1,4 @@
 class Api::CarsController < ApplicationController
-  # rescue_from StandardError do |exception|
-  #   trigger_sms_alerts(exception)
-  # end
-
-  # def trigger_sms_alerts(e)
-  #   @alert_message = "
-  #     [This is a test] ALERT! 
-  #     It appears the server is having issues. 
-  #     Exception: #{e}. 
-  #     Go to: http://newrelic.com for more details."
-  #   @image_url = "http://howtodocs.s3.amazonaws.com/new-relic-monitor.png"
-
-  #   @admin_list = YAML.load_file('config/administrators.yml')
-  #   @admin_list.each do |admin|
-
-  #     begin
-  #       phone_number = admin['phone_number']
-  #       send_message(phone_number, @alert_message, @image_url)
-  #       flash[:success] = "Exception: #{e}. Administrators will be notified."
-  #     rescue
-  #       flash[:alert] = "Something went wrong."
-  #     end
-
-  #   end
-
-  #   redirect_to '/'
-  # end
 
   def show
     @car = Car.with_attached_photos.find(params[:id])
@@ -36,7 +9,10 @@ class Api::CarsController < ApplicationController
 
     if @car.save
       render 'api/cars/show'
-      send_message(car_params[:phone_number], 'Thank you for signing up')
+      send_message(
+        car_params[:phone_number], 
+        "Thank you for listing your car! 🚗💨 From the only worker here, enjoy a virtual high five! 🖐 Yeah, that's all I can afford 😅"
+      )
     else
       render json: @car.errors.full_messages, status: 422
     end
@@ -73,16 +49,18 @@ class Api::CarsController < ApplicationController
   end
 
   def send_message(phone_number, alert_message)
-      @twilio_number = ENV['twilio_number']
-      @client = Twilio::REST::Client.new(ENV['twilio_sid'], ENV['twilio_api_key'])
-      
-      message = @client.api.account.messages.create(
-        :from => @twilio_number,
-        :to => phone_number,
-        :body => alert_message,
-        # US phone numbers can make use of an image as well.
-        # :media_url => image_url 
-      )
-      puts message.to
-    end
+    @twilio_number = ENV['twilio_number']
+    @client = Twilio::REST::Client.new(ENV['twilio_sid'], ENV['twilio_api_key'])
+    
+    message = @client.api.account.messages.create(
+      # NoMethodError - undefined method `account' for 
+      # <Twilio::REST::Client:0x00007fbf69e33de0> 
+      # Did you mean? accounts:
+      :from => @twilio_number,
+      :to => phone_number,
+      :body => alert_message,
+      :media_url => "https://media2.giphy.com/media/QchsHzrPovJ3G/source.gif" 
+    )
+    puts message.to
+  end
 end
