@@ -4,8 +4,8 @@ class UserNotifierMailer < ApplicationMailer
     @user = user
     mail( 
       :from => ENV['FROM_EMAIL'],
-      # :to => @user.email, # to make it dynamic
-      :to => ENV['TO_EMAIL'], # for demonstrational purposes
+      :to => @user.email, # to make it dynamic
+      # :to => ENV['TO_EMAIL'], # for demonstrational purposes
       :subject => "Welcome to Flexo!",
     )
   end
