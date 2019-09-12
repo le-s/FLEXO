@@ -19,7 +19,13 @@ class Api::CarsController < ApplicationController
   end
 
   def index
-    @cars = Car.all
+    if params[:bounds]
+      @cars = Car.all.select {|car| car.in_bounds(params[:bounds])}
+      render :index
+    else
+      @cars = Car.all
+      render :index
+    end
   end
 
   def destroy
