@@ -102,7 +102,7 @@ ActionMailer::Base.smtp_settings = {
 ### Car Index page
 This page displays an assortment of cars for user's to rent. Each car directs to that specific car's show page with all the details.
 
-<a href="https://imgur.com/a/0ZwHBY1"><img src="https://i.imgur.com/4gu1O2F.png" title="source: imgur.com" /></a>
+<a href="https://imgur.com/a/bney8kE"><img src="https://i.imgur.com/prlkz3z.png" title="source: imgur.com" /></a>
 
 ### Car Show page
 User's can view the details about a given car. If this car belongs to the current user signed in, they can choose to edit or remove their rental listing.
