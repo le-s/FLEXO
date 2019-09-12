@@ -61,7 +61,7 @@ end
 ### SendGrid Email API
 An email is sent to the user when they create an account.
 
-<a href="https://imgur.com/a/GIeIkuH"><img src="https://i.imgur.com/wjRDDHD.png" title="source: imgur.com"/></a>
+<a href="https://imgur.com/a/wgYQ5az"><img src="https://i.imgur.com/rR1IBwn.png" title="source: imgur.com"/></a>
 
 ```rb
 # ./app/controllers/api/users_controller.rb
