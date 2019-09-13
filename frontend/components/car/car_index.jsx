@@ -8,7 +8,7 @@ class CarIndex extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchCars();
+    this.props.fetchCars(this.props.filters);
     window.scrollTo(0,0);
   }
 
@@ -59,7 +59,7 @@ class CarIndex extends React.Component {
             </div>)}
           </div>
           <div className="gmap-container">
-            <CarMap cars={this.props.cars}/>
+            <CarMap cars={this.props.cars} updateFilter={this.props.updateFilter}/>
             {/* {this.props.cars.map(car => {
               <CarMap car={car} />
             })} */}

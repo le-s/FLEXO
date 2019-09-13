@@ -25,8 +25,9 @@ export const receiveErrors = errors => ({
   errors
 });
 
-export const fetchCars = () => dispatch => (
-  CarApiUtil.fetchCars().then(cars => dispatch(receiveCars(cars)))
+export const fetchCars = (filters) => dispatch => (
+  CarApiUtil.fetchCars(filters)
+    .then(cars => dispatch(receiveCars(cars)))
 );
 
 export const fetchCar = (id) => dispatch => (

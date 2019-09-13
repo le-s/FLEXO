@@ -138,9 +138,9 @@ var receiveErrors = function receiveErrors(errors) {
     errors: errors
   };
 };
-var fetchCars = function fetchCars() {
+var fetchCars = function fetchCars(filters) {
   return function (dispatch) {
-    return _util_car_api_util__WEBPACK_IMPORTED_MODULE_0__["fetchCars"]().then(function (cars) {
+    return _util_car_api_util__WEBPACK_IMPORTED_MODULE_0__["fetchCars"](filters).then(function (cars) {
       return dispatch(receiveCars(cars));
     });
   };
@@ -173,6 +173,38 @@ var createCar = function createCar(car) {
     }, function (errors) {
       return dispatch(receiveErrors(errors));
     });
+  };
+};
+
+/***/ }),
+
+/***/ "./frontend/actions/filter_actions.js":
+/*!********************************************!*\
+  !*** ./frontend/actions/filter_actions.js ***!
+  \********************************************/
+/*! exports provided: UPDATE_BOUNDS, updateFilter */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UPDATE_BOUNDS", function() { return UPDATE_BOUNDS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updateFilter", function() { return updateFilter; });
+/* harmony import */ var _car_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./car_actions */ "./frontend/actions/car_actions.js");
+
+var UPDATE_BOUNDS = 'UPDATE_BOUNDS';
+
+var changeFilter = function changeFilter(filter, value) {
+  return {
+    type: UPDATE_BOUNDS,
+    filter: filter,
+    value: value
+  };
+};
+
+var updateFilter = function updateFilter(filter, value) {
+  return function (dispatch, getState) {
+    dispatch(changeFilter(filter, value));
+    return Object(_car_actions__WEBPACK_IMPORTED_MODULE_0__["fetchCars"])(getState().ui.filters)(dispatch);
   };
 };
 
@@ -785,7 +817,7 @@ function (_React$Component) {
   _createClass(CarIndex, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      this.props.fetchCars();
+      this.props.fetchCars(this.props.filters);
       window.scrollTo(0, 0);
     }
   }, {
@@ -836,7 +868,8 @@ function (_React$Component) {
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "gmap-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_map_car_map__WEBPACK_IMPORTED_MODULE_2__["default"], {
-        cars: this.props.cars
+        cars: this.props.cars,
+        updateFilter: this.props.updateFilter
       }))));
     }
   }]);
@@ -861,15 +894,34 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _actions_car_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/car_actions */ "./frontend/actions/car_actions.js");
-/* harmony import */ var _car_index__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./car_index */ "./frontend/components/car/car_index.jsx");
+/* harmony import */ var _actions_filter_actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../actions/filter_actions */ "./frontend/actions/filter_actions.js");
+/* harmony import */ var _car_index__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./car_index */ "./frontend/components/car/car_index.jsx");
+
 
 
 
 
 
 var mSTP = function mSTP(state) {
+  var sf = Object.values(state.entities.cars).filter(function (car) {
+    return car.city === 'San Francisco';
+  }).slice(0, 5);
+  var ny = Object.values(state.entities.cars).filter(function (car) {
+    return car.city === 'New York';
+  }).slice(0, 5);
+  var seattle = Object.values(state.entities.cars).filter(function (car) {
+    return car.city === 'Seattle';
+  }).slice(0, 5);
+  var la = Object.values(state.entities.cars).filter(function (car) {
+    return car.city === 'Los Angeles';
+  }).slice(0, 5);
   return {
-    cars: Object.values(state.entities.cars)
+    cars: Object.values(state.entities.cars),
+    sf: sf,
+    ny: ny,
+    seattle: seattle,
+    la: la,
+    filters: state.ui.filter
   };
 };
 
@@ -877,11 +929,14 @@ var mDTP = function mDTP(dispatch) {
   return {
     fetchCars: function fetchCars() {
       return dispatch(Object(_actions_car_actions__WEBPACK_IMPORTED_MODULE_2__["fetchCars"])());
+    },
+    updateFilter: function updateFilter(filter, value) {
+      return dispatch(Object(_actions_filter_actions__WEBPACK_IMPORTED_MODULE_3__["updateFilter"])(filter, value));
     }
   };
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mSTP, mDTP)(_car_index__WEBPACK_IMPORTED_MODULE_3__["default"]));
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mSTP, mDTP)(_car_index__WEBPACK_IMPORTED_MODULE_4__["default"]));
 
 /***/ }),
 
@@ -1931,7 +1986,8 @@ function (_React$Component) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _util_marker_manager__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../util/marker_manager */ "./frontend/util/marker_manager.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var _util_marker_manager__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../util/marker_manager */ "./frontend/util/marker_manager.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -1951,10 +2007,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
 
- // const getCoordsObj = latLng => ({
-//   lat: latLng.lat(),
-//   lng: latLng.lng()
-// });
+
 
 var mapOptions = {
   center: {
@@ -1981,7 +2034,7 @@ function (_React$Component) {
     value: function componentDidMount() {
       var map = this.refs.map;
       this.map = new google.maps.Map(map, mapOptions);
-      this.MarkerManager = new _util_marker_manager__WEBPACK_IMPORTED_MODULE_1__["default"](this.map, this.handleMarkerClick.bind(this));
+      this.MarkerManager = new _util_marker_manager__WEBPACK_IMPORTED_MODULE_2__["default"](this.map, this.handleMarkerClick.bind(this));
       this.MarkerManager.updateMarkers(this.props.cars);
     }
   }, {
@@ -2021,7 +2074,7 @@ function (_React$Component) {
   }, {
     key: "handleMarkerClick",
     value: function handleMarkerClick(car) {
-      this.props.history.push("/cars/".concat(car.id));
+      this.props.history.push("cars/".concat(car.id));
     } // handleClick(coords) {
     //   this.props.history.push({
     //     pathname: 'cars/new',
@@ -2042,7 +2095,7 @@ function (_React$Component) {
   return CarMap;
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
-/* harmony default export */ __webpack_exports__["default"] = (CarMap);
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["withRouter"])(CarMap));
 
 /***/ }),
 
@@ -2325,6 +2378,244 @@ var Root = function Root(_ref) {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Root);
+
+/***/ }),
+
+/***/ "./frontend/components/search/search_bar.jsx":
+/*!***************************************************!*\
+  !*** ./frontend/components/search/search_bar.jsx ***!
+  \***************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var react_day_picker_DayPickerInput__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-day-picker/DayPickerInput */ "./node_modules/react-day-picker/DayPickerInput.js");
+/* harmony import */ var react_day_picker_DayPickerInput__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_day_picker_DayPickerInput__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _time__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./time */ "./frontend/components/search/time.jsx");
+/* harmony import */ var react_day_picker__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-day-picker */ "./node_modules/react-day-picker/DayPicker.js");
+/* harmony import */ var react_day_picker__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_day_picker__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var react_moment__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-moment */ "./node_modules/react-moment/dist/index.js");
+/* harmony import */ var react_moment__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react_moment__WEBPACK_IMPORTED_MODULE_5__);
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+
+
+
+
+
+var SearchBar =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(SearchBar, _React$Component);
+
+  function SearchBar(props) {
+    var _this;
+
+    _classCallCheck(this, SearchBar);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(SearchBar).call(this, props));
+    _this.state = {
+      address: null // this.handleChange = this.handleChange.bind(this);
+      // this.handleSubmit = this.handleSubmit.bind(this);
+
+    };
+    return _this;
+  } // componentDidMount() {
+  //   let input = document.getElementById('search-bar')
+  //   // let autocomplete = new google.maps.places.Autocomplete(input);
+  //   let address;
+  //   autocomplete.addListener('place_changed', () => {
+  //     if (!autocomplete.getPlace().formatted_address) {
+  //       // use input if cannot convert to formatted address
+  //       address = autocomplete.getPlace().name;
+  //       this.setState({ address: address })
+  //       this.handleSubmit();
+  //     } else {
+  //       // use formatted address if available
+  //       address = autocomplete.getPlace().formatted_address;
+  //       this.setState({ address: address })
+  //       this.handleSubmit();
+  //     }
+  //   })
+  // }
+  // handleSubmit() {
+  //   let lat;
+  //   let lng;
+  //   let coordinates = new google.maps.Geocoder()
+  //   coordinates.geocode({ 'address': this.state.address }, (results, status) => {
+  //     if (status === 'OK') {
+  //       lat = results[0].geometry.location.lat();
+  //       lng = results[0].geometry.location.lng();
+  //       this.props.history.push(`/search?lat=${lat}&lng=${lng}`)
+  //     } else {
+  //       lat = 37.773972;
+  //       lng = -122.431297;
+  //       this.props.history.push(`/search?lat=${lat}&lng=${lng}`)
+  //     }
+  //   })
+  // }
+  // handleChange(e) {
+  //   this.setState({ address: e.target.value })
+  // }
+
+
+  _createClass(SearchBar, [{
+    key: "render",
+    value: function render() {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "search-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+        className: "splash-search-form"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "splash-where"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Where"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "text",
+        placeholder: "Enter city, airport, or address",
+        className: "input-search-sizing"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "splash-where from-until"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "splash-date-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "From"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "date-search-sizing"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_day_picker_DayPickerInput__WEBPACK_IMPORTED_MODULE_2___default.a, {
+        onDayClick: this.handleDayClick,
+        selectedDays: this.state.selectedDay
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_time__WEBPACK_IMPORTED_MODULE_3__["default"], null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "splash-where from-until"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "splash-date-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Until"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "date-search-sizing"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_day_picker_DayPickerInput__WEBPACK_IMPORTED_MODULE_2___default.a, {
+        onDayClick: this.handleDayClick,
+        selectedDays: this.state.selectedDay
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_time__WEBPACK_IMPORTED_MODULE_3__["default"], null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        to: "/cars"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "button-search"
+      })))); // if (this.props.loading === true) {
+      //   if (this.props.location.pathname === '/') {
+      //     return (
+      //       <div className='landing-search-bar'>
+      //         <i className="fas fa-search"></i>
+      //         <input type="text" id='search-bar' className='landing-search-bar-input' placeholder={`Search`} />
+      //       </div>
+      //     )
+      //   }
+      //   return (
+      //     <div className='search-bar'>
+      //       <i className="fas fa-search"></i>
+      //       <input type="text" id='search-bar' className='search-bar-input' onChange={this.handleChange} placeholder={`Search`} />
+      //     </div>
+      //   )
+      // }
+      // const places = ['San Francisco', 'Los Angeles', 'New York', 'Seattle']
+      // if (this.props.location.pathname === '/') {
+      //   return (
+      //     <div className='landing-search-bar'>
+      //       <i className="fas fa-search"></i>
+      //       <input type="text" id='search-bar' className='landing-search-bar-input' placeholder={`Try  \"${places[Math.floor(Math.random() * places.length)]}\"`} />
+      //     </div>
+      //   )
+      // }
+      // return (
+      //   <div className='search-bar'>
+      //     <i className="fas fa-search"></i>
+      //     <input type="text" id='search-bar' className='search-bar-input' onChange={this.handleChange} placeholder={`Try  \"${places[Math.floor(Math.random() * places.length)]}\"`} />
+      //   </div>
+      // )
+    }
+  }]);
+
+  return SearchBar;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["withRouter"])(SearchBar));
+
+/***/ }),
+
+/***/ "./frontend/components/search/time.jsx":
+/*!*********************************************!*\
+  !*** ./frontend/components/search/time.jsx ***!
+  \*********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+
+var Time =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(Time, _React$Component);
+
+  function Time() {
+    _classCallCheck(this, Time);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(Time).apply(this, arguments));
+  }
+
+  _createClass(Time, [{
+    key: "render",
+    value: function render() {
+      var timeSlot = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
+        name: "time",
+        className: "splash-time-dropdown"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", null, "Midnight"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", null, "12:30 AM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", null, "1:00 AM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", null, "1:30 AM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", null, "2:00 AM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", null, "2:30 AM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", null, "3:00 AM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", null, "3:30 AM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", null, "4:00 AM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", null, "4:30 AM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", null, "5:00 AM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", null, "5:30 AM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", null, "6:00 AM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", null, "6:30 AM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", null, "7:00 AM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", null, "7:30 AM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", null, "8:00 AM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", null, "8:30 AM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", null, "9:00 AM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", null, "9:30 AM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", null, "10:00 AM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", null, "10:30 AM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", null, "11:00 AM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", null, "11:30 AM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", null, "Noon"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", null, "12:30 PM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", null, "1:00 PM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", null, "1:30 PM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", null, "2:00 PM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", null, "2:30 PM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", null, "3:00 PM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", null, "3:30 PM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", null, "4:00 PM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", null, "4:30 PM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", null, "5:00 PM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", null, "5:30 PM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", null, "6:00 PM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", null, "6:30 PM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", null, "7:00 PM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", null, "7:30 PM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", null, "8:00 PM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", null, "8:30 PM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", null, "9:00 PM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", null, "9:30 PM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", null, "10:00 PM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", null, "10:30 PM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", null, "11:00 PM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", null, "11:30 PM"));
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, timeSlot);
+    }
+  }]);
+
+  return Time;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["withRouter"])(Time));
 
 /***/ }),
 
@@ -2924,13 +3215,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _tile__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./tile */ "./frontend/components/splash/tile.jsx");
 /* harmony import */ var _pays__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./pays */ "./frontend/components/splash/pays.jsx");
 /* harmony import */ var _splash_cars_container__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./splash_cars_container */ "./frontend/components/splash/splash_cars_container.jsx");
-/* harmony import */ var _time__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./time */ "./frontend/components/splash/time.jsx");
-/* harmony import */ var react_day_picker__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react-day-picker */ "./node_modules/react-day-picker/DayPicker.js");
-/* harmony import */ var react_day_picker__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(react_day_picker__WEBPACK_IMPORTED_MODULE_9__);
-/* harmony import */ var react_day_picker_DayPickerInput__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! react-day-picker/DayPickerInput */ "./node_modules/react-day-picker/DayPickerInput.js");
-/* harmony import */ var react_day_picker_DayPickerInput__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(react_day_picker_DayPickerInput__WEBPACK_IMPORTED_MODULE_10__);
-/* harmony import */ var react_moment__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! react-moment */ "./node_modules/react-moment/dist/index.js");
-/* harmony import */ var react_moment__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(react_moment__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var _search_search_bar__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../search/search_bar */ "./frontend/components/search/search_bar.jsx");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -2948,9 +3233,6 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-
-
 
 
 
@@ -3022,39 +3304,7 @@ function (_React$Component) {
         className: "main-text"
       }, "Way better than a stock car"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
         className: "sub-text"
-      }, "Book extraordinary cars from local enthusiasts around the world")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "search-container"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
-        className: "splash-search-form"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "splash-where"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Where"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        type: "text",
-        placeholder: "Enter city, airport, or address",
-        className: "input-search-sizing"
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "splash-where from-until"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "splash-date-container"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "From"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "date-search-sizing"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_day_picker_DayPickerInput__WEBPACK_IMPORTED_MODULE_10___default.a, {
-        onDayClick: this.handleDayClick,
-        selectedDays: this.state.selectedDay
-      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_time__WEBPACK_IMPORTED_MODULE_8__["default"], null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "splash-where from-until"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "splash-date-container"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Until"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "date-search-sizing"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_day_picker_DayPickerInput__WEBPACK_IMPORTED_MODULE_10___default.a, {
-        onDayClick: this.handleDayClick,
-        selectedDays: this.state.selectedDay
-      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_time__WEBPACK_IMPORTED_MODULE_8__["default"], null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-        to: "/cars"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        className: "button-search"
-      })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "Book extraordinary cars from local enthusiasts around the world")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_search_search_bar__WEBPACK_IMPORTED_MODULE_8__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "social-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "github"
@@ -3328,68 +3578,6 @@ function (_React$Component) {
 
 /***/ }),
 
-/***/ "./frontend/components/splash/time.jsx":
-/*!*********************************************!*\
-  !*** ./frontend/components/splash/time.jsx ***!
-  \*********************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-
-
-
-var Time =
-/*#__PURE__*/
-function (_React$Component) {
-  _inherits(Time, _React$Component);
-
-  function Time() {
-    _classCallCheck(this, Time);
-
-    return _possibleConstructorReturn(this, _getPrototypeOf(Time).apply(this, arguments));
-  }
-
-  _createClass(Time, [{
-    key: "render",
-    value: function render() {
-      var timeSlot = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
-        name: "time",
-        className: "splash-time-dropdown"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", null, "Midnight"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", null, "12:30 AM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", null, "1:00 AM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", null, "1:30 AM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", null, "2:00 AM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", null, "2:30 AM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", null, "3:00 AM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", null, "3:30 AM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", null, "4:00 AM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", null, "4:30 AM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", null, "5:00 AM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", null, "5:30 AM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", null, "6:00 AM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", null, "6:30 AM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", null, "7:00 AM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", null, "7:30 AM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", null, "8:00 AM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", null, "8:30 AM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", null, "9:00 AM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", null, "9:30 AM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", null, "10:00 AM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", null, "10:30 AM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", null, "11:00 AM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", null, "11:30 AM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", null, "Noon"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", null, "12:30 PM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", null, "1:00 PM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", null, "1:30 PM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", null, "2:00 PM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", null, "2:30 PM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", null, "3:00 PM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", null, "3:30 PM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", null, "4:00 PM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", null, "4:30 PM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", null, "5:00 PM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", null, "5:30 PM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", null, "6:00 PM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", null, "6:30 PM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", null, "7:00 PM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", null, "7:30 PM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", null, "8:00 PM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", null, "8:30 PM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", null, "9:00 PM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", null, "9:30 PM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", null, "10:00 PM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", null, "10:30 PM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", null, "11:00 PM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", null, "11:30 PM"));
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, timeSlot);
-    }
-  }]);
-
-  return Time;
-}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
-
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["withRouter"])(Time));
-
-/***/ }),
-
 /***/ "./frontend/flexo.jsx":
 /*!****************************!*\
   !*** ./frontend/flexo.jsx ***!
@@ -3534,6 +3722,41 @@ var errorsReducer = Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers"]
   session: _session_errors_reducer__WEBPACK_IMPORTED_MODULE_1__["default"]
 });
 /* harmony default export */ __webpack_exports__["default"] = (errorsReducer);
+
+/***/ }),
+
+/***/ "./frontend/reducers/filters_reducer.js":
+/*!**********************************************!*\
+  !*** ./frontend/reducers/filters_reducer.js ***!
+  \**********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _actions_filter_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../actions/filter_actions */ "./frontend/actions/filter_actions.js");
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+var defaultFilters = Object.freeze({
+  bounds: {}
+});
+
+var filtersReducer = function filtersReducer() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : defaultFilters;
+  var action = arguments.length > 1 ? arguments[1] : undefined;
+  Object.freeze(state);
+
+  switch (action.type) {
+    case _actions_filter_actions__WEBPACK_IMPORTED_MODULE_0__["UPDATE_BOUNDS"]:
+      return Object.assign({}, state, _defineProperty({}, action.filter, action.value));
+
+    default:
+      return state;
+  }
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (filtersReducer);
 
 /***/ }),
 
@@ -3686,10 +3909,13 @@ var sessionReducer = function sessionReducer() {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! redux */ "./node_modules/redux/es/redux.js");
 /* harmony import */ var _modal_reducer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modal_reducer */ "./frontend/reducers/modal_reducer.js");
+/* harmony import */ var _filters_reducer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./filters_reducer */ "./frontend/reducers/filters_reducer.js");
+
 
 
 var uiReducer = Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers"])({
-  modal: _modal_reducer__WEBPACK_IMPORTED_MODULE_1__["default"]
+  modal: _modal_reducer__WEBPACK_IMPORTED_MODULE_1__["default"],
+  filter: _filters_reducer__WEBPACK_IMPORTED_MODULE_2__["default"]
 });
 /* harmony default export */ __webpack_exports__["default"] = (uiReducer);
 
@@ -3748,7 +3974,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var configureStore = function configureStore() {
   var preloadedState = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-  return Object(redux__WEBPACK_IMPORTED_MODULE_0__["createStore"])(_reducers_root_reducer__WEBPACK_IMPORTED_MODULE_1__["default"], preloadedState, Object(redux__WEBPACK_IMPORTED_MODULE_0__["applyMiddleware"])(redux_thunk__WEBPACK_IMPORTED_MODULE_2__["default"]));
+  return Object(redux__WEBPACK_IMPORTED_MODULE_0__["createStore"])(_reducers_root_reducer__WEBPACK_IMPORTED_MODULE_1__["default"], preloadedState, Object(redux__WEBPACK_IMPORTED_MODULE_0__["applyMiddleware"])(redux_thunk__WEBPACK_IMPORTED_MODULE_2__["default"], redux_logger__WEBPACK_IMPORTED_MODULE_3___default.a));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (configureStore);
@@ -3769,10 +3995,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createCar", function() { return createCar; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deleteCar", function() { return deleteCar; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "editCar", function() { return editCar; });
-var fetchCars = function fetchCars() {
+var fetchCars = function fetchCars(filters) {
   return $.ajax({
     method: 'get',
-    url: '/api/cars'
+    url: '/api/cars',
+    data: filters
   });
 };
 var fetchCar = function fetchCar(id) {
@@ -57431,7 +57658,7 @@ function warning(message) {
 /*!***************************************************************!*\
   !*** ./node_modules/react-router-dom/esm/react-router-dom.js ***!
   \***************************************************************/
-/*! exports provided: BrowserRouter, HashRouter, Link, NavLink, MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, generatePath, matchPath, withRouter, __RouterContext */
+/*! exports provided: MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, generatePath, matchPath, withRouter, __RouterContext, BrowserRouter, HashRouter, Link, NavLink */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

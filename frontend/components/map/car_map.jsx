@@ -1,10 +1,6 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 import MarkerManager from '../../util/marker_manager';
-
-// const getCoordsObj = latLng => ({
-//   lat: latLng.lat(),
-//   lng: latLng.lng()
-// });
 
 const mapOptions = {
   center: {
@@ -42,7 +38,7 @@ class CarMap extends React.Component {
   }
 
   handleMarkerClick(car) {
-    this.props.history.push(`/cars/${car.id}`);
+    this.props.history.push(`cars/${car.id}`);
   }
 
   // handleClick(coords) {
@@ -61,4 +57,4 @@ class CarMap extends React.Component {
   }
 }
 
-export default CarMap;
+export default withRouter(CarMap);

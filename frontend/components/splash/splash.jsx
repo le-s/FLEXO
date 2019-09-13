@@ -6,10 +6,8 @@ import Go from './go';
 import Tile from './tile';
 import Pays from './pays';
 import SplashCars from './splash_cars_container';
-import Time from './time';
-import DayPicker from 'react-day-picker';
-import DayPickerInput from 'react-day-picker/DayPickerInput';
-import Moment from 'react-moment';
+import SearchBar from '../search/search_bar';
+
 
 class Splash extends React.Component {
   constructor(props) {
@@ -56,37 +54,7 @@ class Splash extends React.Component {
             Book extraordinary cars from local enthusiasts around the world
           </h2>
         </div>
-        <div className="search-container">
-          <form className="splash-search-form">
-            <div className="splash-where">
-              <label>Where</label>
-              <input type="text" placeholder="Enter city, airport, or address" className="input-search-sizing" />
-            </div>
-            <div className="splash-where from-until">
-              <div className="splash-date-container">
-                <label>From</label>
-                <div className="date-search-sizing">
-                  <DayPickerInput onDayClick={this.handleDayClick} selectedDays={this.state.selectedDay} 
-                  />
-                </div>
-              </div>
-              <Time/>
-            </div>
-            <div className="splash-where from-until">
-              <div className="splash-date-container">
-                <label>Until</label>
-                <div className="date-search-sizing">
-                  <DayPickerInput onDayClick={this.handleDayClick} selectedDays={this.state.selectedDay} />
-                </div>
-              </div>
-              <Time/>
-            </div>
-            <div />
-            <Link to={"/cars"}>
-              <button className="button-search" />
-            </Link>
-          </form>
-        </div>
+        <SearchBar />
         <div className="social-container">
           <div className="github">
             <a href="https://github.com/le-s">Github</a>
