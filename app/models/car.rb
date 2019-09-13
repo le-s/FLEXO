@@ -43,10 +43,20 @@ class Car < ApplicationRecord
 
   has_many_attached :photos
 
-  # def self.in_bounds(bounds)
-  # self.where("lat < ?", bounds[:northEast][:lat])
-  #   .where("lat > ?", bounds[:southWest][:lat])
-  #   .where("lng > ?", bounds[:southWest][:lng])
-  #   .where("lng < ?", bounds[:northEast][:lng])
+  def self.in_bounds(bounds)
+    self
+      .where("latitude < ?", bounds[:northEast][:lat])
+      .where("latitude > ?", bounds[:southWest][:lat])
+      .where("longitude > ?", bounds[:southWest][:lng])
+      .where("longitude < ?", bounds[:northEast][:lng])
+  end
+
+  # def in_bounds(bounds)
+  #   bounds = bounds.values
+  #   if self.latitude.between?(bounds[1]['lat'].to_f, bounds[0]['lat'].to_f) && self.longitude.between?(bounds[1]['lng'].to_f, bounds[0]['lng'].to_f)
+  #     return true
+  #   end
+
+  #   return false
   # end
 end

@@ -1,0 +1,35 @@
+.pac-icon {
+  color: black;
+  margin-left: 10px;
+  margin-right: 10px;
+  filter: brightness(50%);
+}
+
+.pac-container {
+  font-family: sans-serif;
+  color: #484848;
+}
+
+.pac-item {
+  font-size: 14px;
+  padding: 15px 0;
+  border: none;
+  font-weight: 600;
+  color: #484848;
+}
+
+.pac-matched {
+  font-size: 14px;
+  font-weight: 600;
+  color: #484848;
+}
+
+.pac-item-query {
+  font-size: 14px;
+  font-weight: 600;
+  color: #484848;
+}
+
+.pac-container:after {
+  content: none;
+}

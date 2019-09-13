@@ -8,7 +8,7 @@ class CarIndex extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchCars(this.props.filters);
+    // this.props.fetchCars(this.props.filters);
     window.scrollTo(0,0);
   }
 

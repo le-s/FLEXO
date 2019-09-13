@@ -11,14 +11,63 @@ const mapOptions = {
 };
 
 class CarMap extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      center: {
+        lat: mapOptions.center.lat,
+        lng: mapOptions.center.lng,
+      },
+    };
+  }
+
   componentDidMount() {
     const map = this.refs.map;
     this.map = new google.maps.Map(map, mapOptions);
     this.MarkerManager = new MarkerManager(this.map, this.handleMarkerClick.bind(this));
+
+    if (this.props.car) {
+      this.props.fetchCar(this.props.carId);
+    } else {
+      this.registerListeners();
+    }
+
+    this.search = this.props.location.search;
+    this.newURL = new URLSearchParams(this.search);
+    const newLat = parseFloat(this.newURL.get('lat'));
+    const newLng = parseFloat(this.newURL.get('lng'));
+    const center = { lat: newLat, lng: newLng };
+
+    if (this.props.location.search === '') {
+      this.props.history.push(`/cars?lat=${this.state.center.lat}&lng=${this.state.center.lng}`);
+    } else {
+      this.setState({ center });
+      this.map.setCenter(center);
+    }
+
     this.MarkerManager.updateMarkers(this.props.cars);
   }
 
-  componentDidUpdate() {
+  componentDidUpdate(prevProps) {
+    if (this.props.car) {
+      const targetCarKey = Object.keys(this.props.cars)[0];
+      const targetCar = this.props.cars[targetCarKey];
+      this.MarkerManager.updateMarkers([targetCar]);
+    }
+
+    if (prevProps.location.search !== this.props.location.search) {
+      if (this.props.location.search === '') {
+        this.props.history.push(`/cars?lat=${this.state.center.lat}&lng=${this.state.center.lng}`);
+      }
+
+      this.search = this.props.location.search;
+      this.newURL = new URLSearchParams(this.search);
+      const newLat = parseFloat(this.newURL.get('lat'));
+      const newLng = parseFloat(this.newURL.get('lng'));
+      const center = { lat: newLat, lng: newLng };
+      this.setState({ center });
+      this.map.setCenter(center);
+    }
     this.MarkerManager.updateMarkers(this.props.cars);
   }
 
@@ -29,29 +78,18 @@ class CarMap extends React.Component {
         northEast: { lat: north, lng: east },
         southWest: { lat: south, lng: west }
       };
+
       this.props.updateFilter('bounds', bounds);
     });
-    // google.maps.event.addListener(this.map, 'click', (event) => {
-    //   const coords = getCoordsObj(event.latLng);
-    //   this.handleClick(coords);
-    // });
   }
 
   handleMarkerClick(car) {
     this.props.history.push(`cars/${car.id}`);
   }
 
-  // handleClick(coords) {
-  //   this.props.history.push({
-  //     pathname: 'cars/new',
-  //     search: `lat=${coords.lat}&lng=${coords.lng}`
-  //   });
-  // }
-
   render() {
     return (
       <div className="map" ref="map">
-        Map
       </div>
     );
   }

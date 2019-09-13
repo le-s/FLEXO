@@ -20,7 +20,7 @@ class Api::CarsController < ApplicationController
 
   def index
     if params[:bounds]
-      @cars = Car.all.select {|car| car.in_bounds(params[:bounds])}
+      @cars = Car.in_bounds(params[:bounds])
       render :index
     else
       @cars = Car.all

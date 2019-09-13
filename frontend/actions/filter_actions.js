@@ -11,5 +11,5 @@ const changeFilter = (filter, value) => ({
 
 export const updateFilter = (filter, value) => (dispatch, getState) => {
   dispatch(changeFilter(filter, value));
-  return fetchCars(getState().ui.filters)(dispatch);
+  return fetchCars(getState().ui.filter)(dispatch);
 };
