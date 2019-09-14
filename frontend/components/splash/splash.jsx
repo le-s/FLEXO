@@ -56,6 +56,11 @@ class Splash extends React.Component {
         </div>
         <SearchBar />
         <div className="social-container">
+          <div className="portfolio">
+            <div className="linkedin-align">
+              <a href="https://www.le-steven.com">Portfolio</a>
+            </div>
+          </div>
           <div className="github">
             <a href="https://github.com/le-s">Github</a>
           </div>

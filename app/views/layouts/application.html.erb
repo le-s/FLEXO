@@ -4,6 +4,7 @@
     <title>Flexo</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <%# <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=#{Rails.application.credentials.dig(:google, :secret_access_key)}&libraries=places" %>
     <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=#{ENV['google_api_key']}&libraries=places"%>
     <%= favicon_link_tag asset_path('mini-logo.png'), :rel => 'icon', :type =>  'image/png' %>
     <link rel="stylesheet" type="text/css" charset="UTF-8" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" />

@@ -23,6 +23,22 @@
 
 .linkedin-align {
   margin-top: -3px;
+
+}
+.portfolio {
+  background-image: image-url('portfolio.ico');
+  background-repeat: no-repeat;
+  background-size: 19%;
+}
+
+.portfolio a {
+  padding-left: 32px;
+  color: white;
+  text-decoration: none;
+}
+
+.portfolio a:hover {
+  text-decoration: underline;
 }
 
 .github {

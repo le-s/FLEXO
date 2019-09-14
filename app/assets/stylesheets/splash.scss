@@ -23,6 +23,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  
 }
 
 .search-container {
@@ -51,7 +52,7 @@
   border-radius: 5px;
   // height: 58px;
   // margin-right: 10px;
-  width: 260px;
+  width: 300px;
   border: 1px solid #fff;
 }
 
@@ -60,7 +61,7 @@
   font-size: 18px;
   background-color: #fff;
   border-radius: 5px;
-  width:100%;
+  width: 85px;
   border: 1px solid #fff;
 }
 
@@ -69,7 +70,7 @@
   font-size: 18px;
   background-color: #fff;
   border-radius: 5px;
-  width: 90px;
+  width: 95px;
   // height: 58px;
   // margin-right: 10px;
   border: 1px solid #fff;
@@ -134,7 +135,7 @@
 }
 
 .splash-time-dropdown {
-  margin-top: 13px;
+  margin-top: 16px;
   border: none;
   background-color: white;
   font-family: BasisGrotesque, Avenir, Helvetica Neue, Helvetica, sans-serif;
@@ -142,3 +143,4 @@
   font-weight: 500;
   cursor: pointer;
 }
+
