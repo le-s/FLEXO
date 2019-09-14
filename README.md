@@ -7,13 +7,16 @@
 FLEXO is a full-stack, one page application that utilizes Ruby on Rails for the backend, PostgreSQL for the database, and React/Redux for the frontend. This website features extraordinary cars available to rent to experience the road from a different window. Find the car that will fit the experience for you by viewing the different details each car has.
 
 ## Technologies used
-- Javascript
-- Ruby on Rails
-- React/Redux
-- PostgreSQL
-- HTML/CSS
 
-## APIs used
+### Backend
+- Ruby on Rails
+- PostgreSQL
+
+### Frontend
+- React
+- Redux
+
+### APIs used
 - Twilio SMS API
 - SendGrid Email API
 - Google Maps API
