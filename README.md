@@ -16,17 +16,18 @@ FLEXO is a full-stack, one page application that utilizes Ruby on Rails for the 
 ## Features
 
 - Frontend to backend user authentication
-- User's can view different cars in an organized manner
+- Users can view different cars in an organized manner
 - Each car displays a detailed specs and information about the car
-- User's are able to create their own cars for rent
-- User's receive a text message/email upon signing up for an account or listing their cars
+- Users are able to create their own cars for rent
+- Users receive a text message/email upon signing up for an account or listing their cars
+- Users can search for a car in any location with the Google Maps API
 
 ## Highlights
 
 ### Twilio SMS API
 A text message is sent to the user whenever they list one of their cars. (SMS will only be sent to my personal phone due to Twilio trial account)
 
-<a href="https://imgur.com/a/AkuNe3g"><img src="https://i.imgur.com/AkuNe3g.gif" width="400" height="auto" title="source: imgur.com"/></a>
+<a href="https://imgur.com/a/AkuNe3g"><img src="./app/assets/images/sms.gif" width="400" height="auto" title="source: imgur.com"/></a>
 
 ```rb
 # ./app/controllers/api/cars_controller.rb
@@ -99,10 +100,10 @@ ActionMailer::Base.smtp_settings = {
   :enable_starttls_auto => true
 }
 ```
-### Car Index page
+### Search Feature
 This page displays an assortment of cars for user's to rent. Each car directs to that specific car's show page with all the details.
 
-<a href="https://imgur.com/a/bney8kE"><img src="https://i.imgur.com/prlkz3z.png" title="source: imgur.com" /></a>
+<a href="https://imgur.com/a/bney8kE"><img src="./app/assets/images/search.gif" title="source: imgur.com" /></a>
 
 ### Car Show page
 User's can view the details about a given car. If this car belongs to the current user signed in, they can choose to edit or remove their rental listing.
@@ -174,5 +175,4 @@ HTML
 
 ## Future features
 - Rentals
-- Car search
 - Reviews
