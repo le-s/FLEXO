@@ -13,6 +13,13 @@ FLEXO is a full-stack, one page application that utilizes Ruby on Rails for the 
 - PostgreSQL
 - HTML/CSS
 
+## APIs used
+- Twilio SMS API
+- SendGrid Email API
+- Google Maps API
+- Google Places API
+- Google Geocoding API
+
 ## Features
 
 - Frontend to backend user authentication
@@ -27,7 +34,7 @@ FLEXO is a full-stack, one page application that utilizes Ruby on Rails for the 
 ### Twilio SMS API
 A text message is sent to the user whenever they list one of their cars. (SMS will only be sent to my personal phone due to Twilio trial account)
 
-<a href="https://imgur.com/a/AkuNe3g"><img src="./app/assets/images/sms.gif" width="400" height="auto" title="source: imgur.com"/></a>
+<a href="https://github.com/le-s/FLEXO/blob/master/app/assets/images/sms.gif"><img src="./app/assets/images/sms.gif" width="400" height="auto" title="source: imgur.com"/></a>
 
 ```rb
 # ./app/controllers/api/cars_controller.rb
@@ -101,76 +108,45 @@ ActionMailer::Base.smtp_settings = {
 }
 ```
 ### Search Feature
-This page displays an assortment of cars for user's to rent. Each car directs to that specific car's show page with all the details.
+With Google Places API, as users search for a location the Places API autopopulates suggested locations. The location is then passed to the Google Geocoding API which will return a longitude and latitude. The Northeast and Southwest coordinates were used to filter out any cars outside of the bounds.
 
-<a href="https://imgur.com/a/bney8kE"><img src="./app/assets/images/search.gif" title="source: imgur.com" /></a>
+<a href="https://github.com/le-s/FLEXO/blob/master/app/assets/images/search.gif"><img src="./app/assets/images/search.gif" width="80%" height="auto" title="source: imgur.com" /></a>
 
-### Car Show page
-User's can view the details about a given car. If this car belongs to the current user signed in, they can choose to edit or remove their rental listing.
-
-<a href="https://imgur.com/UcCSqzv"><img src="https://i.imgur.com/UcCSqzv.png" title="source: imgur.com" /></a>
-<a href="https://imgur.com/KTGmCRj"><img src="https://i.imgur.com/KTGmCRj.png" title="source: imgur.com" /></a>
-
-JavaScript
 ```js
-let deleteButton;
-let editButton;
-
-if (details.ownerId === currentUser) {
-  deleteButton = 
-  <div>
-    <button className="remove-car-btn" onClick={remove}>
-      Remove Car
-    </button>
-  </div>
-}
-
-if (details.ownerId === currentUser) {
-  editButton = 
-  <div>
-    <Link to={`/cars/${details.id}/edit`}>
-      <button className="edit-car-btn">
-        Edit Car
-      </button>
-    </Link>
-  </div>
-}
-```
-
-### Create Car form
-Share the experience by listing your car available to rent. User's fill out the details about their car's and upload multiple images at once.
-
-<a href="https://imgur.com/5WMCl4I"><img src="https://i.imgur.com/5WMCl4I.png" title="source: imgur.com" /></a>
-<a href="https://imgur.com/ES5ywsq"><img src="https://i.imgur.com/ES5ywsq.png" title="source: imgur.com" /></a>
-
-JavaScript
-```js
-handleSubmit(e) {
-  e.preventDefault();
-
-  const formData = new FormData();
-
-  for (let key in this.state) {
-    if (key != 'photos') {
-      if (key === "phoneNumber") { 
-        let phone = parsePhoneNumberFromString(this.state[`${key}`], 'US').number; 
-        formData.append(`car[${key}]`, phone)
-      } else {
-        formData.append(`car[${key}]`, this.state[`${key}`])
-      }
+componentDidMount() {
+  let input = document.getElementById('search-bar')
+  let autocomplete = new google.maps.places.Autocomplete(input);
+  let address;
+  google.maps.event.addDomListener(window, 'load', autocomplete);
+  autocomplete.addListener('place_changed',() => {
+    if (!autocomplete.getPlace().formatted_address) {
+      // use input if cannot convert to formatted address
+      address = autocomplete.getPlace().name;
+      this.setState({ address: address })
+    } else {
+      // use formatted address if available
+      address = autocomplete.getPlace().formatted_address;
+      this.setState({ address: address })
     }
-  }
+  })
+}
 
-  for (let i = 0; i < this.state.photos.length; i++) {
-    formData.append('car[photos][]', this.state.photos[i]);
-  }
-
-  this.props.createCar(formData)
-    .then((data) => this.props.history.push(`/cars/${data.car.id}`));
-```
-HTML
-```html
-<input type="file" onChange={e => this.setState({ photos: e.target.files })} multiple/>
+handleSubmit() {
+  let lat;
+  let lng;
+  let coordinates = new google.maps.Geocoder()
+  coordinates.geocode({ 'address': this.state.address }, (results, status) => {
+    if (status === 'OK') {
+      lat = results[0].geometry.location.lat();
+      lng = results[0].geometry.location.lng();
+      this.props.history.push(`/cars?lat=${lat}&lng=${lng}`)
+    } else {
+      lat = 37.773972;
+      lng = -122.431297;
+      this.props.history.push(`/cars?lat=${lat}&lng=${lng}`)
+    }
+  })
+}
 ```
 
 ## Future features
