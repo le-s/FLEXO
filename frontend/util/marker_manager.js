@@ -23,7 +23,7 @@ class MarkerManager {
     const marker = new google.maps.Marker({
       position,
       map: this.map,
-      carId: car.id
+      carId: car.id,
     });
 
     marker.addListener('click', () => this.handleClick(car));

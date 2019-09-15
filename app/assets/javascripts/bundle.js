@@ -791,9 +791,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
@@ -809,16 +809,72 @@ function (_React$Component) {
   _inherits(CarIndex, _React$Component);
 
   function CarIndex(props) {
+    var _this;
+
     _classCallCheck(this, CarIndex);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(CarIndex).call(this, props));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(CarIndex).call(this, props));
+    _this.loadCars = _this.loadCars.bind(_assertThisInitialized(_this));
+    return _this;
   }
 
   _createClass(CarIndex, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      // this.props.fetchCars(this.props.filters);
       window.scrollTo(0, 0);
+    }
+  }, {
+    key: "loadCars",
+    value: function loadCars() {
+      if (this.props.cars.length === 0) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "empty-result-container"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "empty-result-img"
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "empty-result-header"
+        }, "No cars found"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "empty-result-details"
+        }, "Try changing your filters, adjusting your dates, or exploring the map")));
+      } else {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, this.props.cars.map(function (car) {
+          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+            key: car.id,
+            className: "car-card-container"
+          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+            className: "car-container"
+          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+            to: "/cars/".concat(car.id),
+            className: "car-hover"
+          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+            className: "car-index-image"
+          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+            src: car.photoUrl
+          })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+            className: "per-day-card"
+          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+            className: "card-price"
+          }, "$", car.price), "/day"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+            className: "year-make-model"
+          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+            className: "make-model-card"
+          }, car.make, " ", car.model), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+            className: "year-card"
+          }, car.year)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+            className: "star-card"
+          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+            className: "fas fa-star"
+          }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+            className: "fas fa-star"
+          }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+            className: "fas fa-star"
+          }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+            className: "fas fa-star"
+          }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+            className: "fas fa-star"
+          }))))));
+        }));
+      }
     }
   }, {
     key: "render",
@@ -829,43 +885,7 @@ function (_React$Component) {
         className: "index-page-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "car-index-container"
-      }, this.props.cars.map(function (car) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          key: car.id,
-          className: "car-card-container"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "car-container"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-          to: "/cars/".concat(car.id),
-          className: "car-hover"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "car-index-image"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-          src: car.photoUrl
-        })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "per-day-card"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "card-price"
-        }, "$", car.price), "/day"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "year-make-model"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-          className: "make-model-card"
-        }, car.make, " ", car.model), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-          className: "year-card"
-        }, car.year)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "star-card"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-          className: "fas fa-star"
-        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-          className: "fas fa-star"
-        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-          className: "fas fa-star"
-        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-          className: "fas fa-star"
-        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-          className: "fas fa-star"
-        }))))));
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, this.loadCars()), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "gmap-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_map_car_map__WEBPACK_IMPORTED_MODULE_2__["default"], {
         cars: this.props.cars,
@@ -903,25 +923,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mSTP = function mSTP(state) {
-  var sf = Object.values(state.entities.cars).filter(function (car) {
-    return car.city === 'San Francisco';
-  }).slice(0, 5);
-  var ny = Object.values(state.entities.cars).filter(function (car) {
-    return car.city === 'New York';
-  }).slice(0, 5);
-  var seattle = Object.values(state.entities.cars).filter(function (car) {
-    return car.city === 'Seattle';
-  }).slice(0, 5);
-  var la = Object.values(state.entities.cars).filter(function (car) {
-    return car.city === 'Los Angeles';
-  }).slice(0, 5);
   return {
     cars: Object.values(state.entities.cars),
-    sf: sf,
-    ny: ny,
-    seattle: seattle,
-    la: la,
-    filters: state.ui.filter
+    filters: state.ui.filter,
+    bounds: Object.values(state.ui.filter.bounds)
   };
 };
 

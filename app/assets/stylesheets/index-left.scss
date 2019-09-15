@@ -134,3 +134,35 @@
   margin-top: 0px;
 }
 
+.empty-result-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 75px;
+}
+
+.empty-result-header {
+  font-family: Plantin,AmericanTypewriter-Condensed,Times New Roman,serif;
+  font-size: 36px;
+  line-height: 36px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.empty-result-details {
+  font-family: BasisGrotesque, Avenir, Helvetica Neue, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 16px;
+}
+
+.empty-result-img {
+  background-image: image-url("no-result.png");
+  background-position: 0 0;
+  background-size: 122px 122px;
+  display: inline-block;
+  height: 122px;
+  margin-bottom: 30px;
+  text-align: center;
+  width: 122px;
+}
