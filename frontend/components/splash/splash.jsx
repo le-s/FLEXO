@@ -21,23 +21,6 @@ class Splash extends React.Component {
     };
   }
 
-
-  // getDate() {
-  //   let dd = this.date.currentDate.getDate();
-  //   let mm = this.date.currentDate.getMonth();
-  //   let yyyy = this.date.currentDate.getFullYear();
-
-  //   if (dd < 10) {
-  //     dd = '0' + dd;
-  //   }
-
-  //   if (mm < 10) {
-  //     mm = "0" + mm;
-  //   }
-
-  //   this.setState({ currentDate: mm + "/" + dd + "/" + yyyy });
-  // }
-
   handleDayClick(day, {selected}) {
     if (selected) {
       this.setState({ selectedDay: undefined });

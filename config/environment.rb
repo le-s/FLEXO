@@ -8,8 +8,7 @@ Jbuilder.key_format camelize: :lower
 
 ActionMailer::Base.smtp_settings = {
   :user_name => 'apikey',
-  :password => ENV['SENDGRID_API_KEY'],
-  # :password => Rails.application.credentials.sendgrid[:api_key],
+  :password => Rails.application.credentials.sendgrid[:secret_access_key],
   :domain => 'Flexo.com',
   :address => 'smtp.sendgrid.net',
   :port => 587,
