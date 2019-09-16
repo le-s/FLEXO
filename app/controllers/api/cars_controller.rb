@@ -59,9 +59,6 @@ class Api::CarsController < ApplicationController
     @client = Twilio::REST::Client.new(Rails.application.credentials.twilio[:access_key_id], Rails.application.credentials.twilio[:secret_access_key])
     
     message = @client.api.account.messages.create(
-      # NoMethodError - undefined method `account' for 
-      # <Twilio::REST::Client:0x00007fbf69e33de0> 
-      # Did you mean? accounts:
       :from => @twilio_number,
       :to => phone_number,
       :body => alert_message,
