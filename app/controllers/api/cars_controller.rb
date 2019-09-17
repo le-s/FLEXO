@@ -9,10 +9,10 @@ class Api::CarsController < ApplicationController
 
     if @car.save
       render 'api/cars/show'
-      # send_message(
-      #   car_params[:phone_number], 
-      #   "Thank you for listing your car! 🚗💨 From the only worker here, enjoy a virtual high five! 🖐 Yeah, that's all I can afford 😅"
-      # )
+      send_message(
+        car_params[:phone_number], 
+        "Thank you for listing your car! 🚗💨 From the only worker here, enjoy a virtual high five! 🖐 Yeah, that's all I can afford 😅"
+      )
     else
       render json: @car.errors.full_messages, status: 422
     end
