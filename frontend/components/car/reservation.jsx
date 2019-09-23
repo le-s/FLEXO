@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import RentalCreate from '../rental/rental_create';
 
 const ReservationInfo = ({details, remove, currentUser}) => {
   let deleteButton;
@@ -36,6 +37,7 @@ const ReservationInfo = ({details, remove, currentUser}) => {
             </div>
             <span className="per-day">per day</span>
           </div>
+          <RentalCreate />
           <div className="div1">
             <div className="div2a">Distance Included</div>
             <div className="div2">

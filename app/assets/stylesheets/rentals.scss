@@ -1,3 +1,60 @@
-// Place all the styles related to the Rentals controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.reservationBox-section{
+  display: block;
+  width: 100%;
+}
+
+.dateTimeRangePicker-fieldGroup{
+  display: flex;
+  flex-direction: column;
+}
+
+.dateTimeRangePicker-label{
+  color: #231f20;
+  font-size: 13px;
+  font-weight: 700;
+  font-family: BasisGrotesque,Avenir,Helvetica Neue,Helvetica,sans-serif;
+}
+
+.dateTimeRangePicker-dateTime{
+  display: flex;
+  flex-direction: row;
+}
+
+.dateTimeRangePicker-date{
+  display: flex;
+  align-items: center;
+  border: 1px solid #c7c7c7;
+  border-radius: 0;
+  color: #231f20;
+  font-size: 13px;
+  height: 35px;
+  padding-right: 10px;
+  width: 100%;
+}
+
+.dateTimeRangePicker-date:after{
+  background-image: image-url("arrow.png");
+  background-position: -53px -44px;
+  background-size: 74px 68px;
+  content: "";
+  height: 6px;
+  pointer-events: none;
+  right: 10px;
+  top: 14px;
+  width: 16px;
+}
+
+.dateTimeRangePicker-date input {
+  padding: 0 10px 0 0;
+  font-size: 18px;
+  background-color: #fff;
+  border-radius: 5px;
+  width: 99%;
+  height: -webkit-fill-available;
+  border: 1px solid #fff;
+  cursor: pointer;
+}
+
+.dateTimeRangePicker-date:hover input{
+  text-decoration: none;
+}

@@ -96,48 +96,56 @@ class SearchBar extends React.Component {
           <div className="splash-where from-until">
             <div className="splash-date-container">
               <label>From</label>
-              <div className="date-search-sizing InputFromTo">
-                <DayPickerInput 
-                  value={`${formatDate(new Date())}`}
-                  formatDate={formatDate}
-                  parseDate={parseDate}
-                  onDayClick={this.handleDayClick} 
-                  selectedDays={this.state.selectedDay} 
-                  dayPickerProps={{
-                    selectedDays: [from, { from, to }],
-                    disabledDays: { after: to, before: new Date() },
-                    toMonth: to,
-                    modifiers,
-                  }}
-                  onDayChange={this.handleFromChange}
-                />
+              <div className="splash-dateTime-container">
+                <div className="date-search-sizing InputFromTo">
+                  <DayPickerInput 
+                    value={`${formatDate(new Date())}`}
+                    formatDate={formatDate}
+                    parseDate={parseDate}
+                    onDayClick={this.handleDayClick} 
+                    selectedDays={this.state.selectedDay} 
+                    dayPickerProps={{
+                      selectedDays: [from, { from, to }],
+                      disabledDays: { after: to, before: new Date() },
+                      toMonth: to,
+                      modifiers,
+                    }}
+                    onDayChange={this.handleFromChange}
+                  />
+                </div>
+                <div className="splash-time-dropdown-wrapper">
+                  <Time />
+                </div>
               </div>
             </div>
-            <Time />
           </div>
           <div className="splash-where from-until">
             <div className="splash-date-container">
               <label>Until</label>
-              <div className="date-search-sizing InputFromTo">
-                <DayPickerInput 
-                  ref={el => (this.to = el)}
-                  value={`${formatDate(moment().add(7, 'days'))}`}
-                  formatDate={formatDate}
-                  parseDate={parseDate}
-                  onDayClick={this.handleDayClick} 
-                  selectedDays={this.state.selectedDay} 
-                  dayPickerProps={{
-                    selectedDays: [from, { from, to }],
-                    disabledDays: { before: from },
-                    modifiers,
-                    month: from,
-                    fromMonth: from,
-                  }}
-                  onDayChange={this.handleToChange}
-                />
+              <div className="splash-dateTime-container">
+                <div className="date-search-sizing InputFromTo">
+                  <DayPickerInput 
+                    ref={el => (this.to = el)}
+                    value={`${formatDate(moment().add(7, 'days'))}`}
+                    formatDate={formatDate}
+                    parseDate={parseDate}
+                    onDayClick={this.handleDayClick} 
+                    selectedDays={this.state.selectedDay} 
+                    dayPickerProps={{
+                      selectedDays: [from, { from, to }],
+                      disabledDays: { before: from },
+                      modifiers,
+                      month: from,
+                      fromMonth: from,
+                    }}
+                    onDayChange={this.handleToChange}
+                  />
+                </div>
+                <div className="splash-time-dropdown-wrapper">
+                  <Time />
+                </div>
               </div>
             </div>
-            <Time />
           </div>
           <div />
           <button className="button-search" onClick={this.handleSubmit}/>

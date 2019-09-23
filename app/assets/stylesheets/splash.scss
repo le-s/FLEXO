@@ -16,6 +16,8 @@
 .splash-date-container {
   display: flex;
   flex-direction: column;
+  width: 100%;
+  height: 100%;
 }
 
 .main_splash_container {
@@ -57,16 +59,19 @@
 }
 
 .date-search-sizing {
-  padding: 0 10px 0 0;
   font-size: 18px;
   background-color: #fff;
   border-radius: 5px;
   width: 85px;
   border: 1px solid #fff;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  cursor: pointer;
 }
 
 .date-search-sizing input {
-  padding: 0 10px 0 0;
+  padding: 0 5px 0 0;
   font-size: 18px;
   background-color: #fff;
   border-radius: 5px;
@@ -75,6 +80,23 @@
   // margin-right: 10px;
   border: 1px solid #fff;
   cursor: pointer;
+}
+
+.date-search-sizing:hover input {
+  text-decoration: none;
+}
+
+.date-search-sizing:after{
+  background-image: image-url("arrow.png");
+  background-position: -53px -44px;
+  background-size: 74px 68px;
+  content: "";
+  height: 6px;
+  pointer-events: none;
+  cursor: pointer;
+  right: 10px;
+  top: 14px;
+  width: 16px;
 }
 
 .splash-where {
@@ -96,6 +118,8 @@
   border-left: 1px solid #c7c7c7;
   flex-direction: row;
   align-items: center;
+  width: 250px;
+  height: 70%;
 }
 
 .splash-search-form label {
@@ -135,12 +159,52 @@
 }
 
 .splash-time-dropdown {
-  margin-top: 16px;
   border: none;
   background-color: white;
   font-family: BasisGrotesque, Avenir, Helvetica Neue, Helvetica, sans-serif;
   font-size: 18px;
   font-weight: 500;
   cursor: pointer;
+  padding-right: 5px;
+  width: 100%;
+  margin-left: 18px;
+  -o-appearance: none;
+  -ms-appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 
+.splash-time-dropdown-wrapper{
+  display: flex;
+  align-items: center;
+  color: #231f20;
+  font-size: 13px;
+  height: 35px;
+  width: 100%;
+}
+
+.splash-time-dropdown-wrapper:after {
+  background-image: image-url("arrow.png");
+  background-position: -53px -44px;
+  background-size: 74px 68px;
+  content: "";
+  height: 6px;
+  pointer-events: none;
+  right: 10px;
+  // top: 14px;
+  width: 16px;
+  position: relative
+}
+
+.splash-dateTime {
+  display: flex;
+  align-items: flex-end;
+  width: 100%;
+}
+
+.splash-dateTime-container {
+  display: flex;
+  align-items: center;
+  height: 20px;
+}

@@ -4,8 +4,8 @@ class UserNotifierMailer < ApplicationMailer
     @user = user
     mail( 
       :from => 'welcome@flexo.com',
-      # :to => @user.email, # to make it dynamic
-      :to => 'steven.an.le@gmail.com', # for demonstrational purposes
+      :to => @user.email, # to make it dynamic
+      # :to => 'steven.an.le@gmail.com', # for demonstrational purposes
       :subject => "Welcome to Flexo!",
     )
   end

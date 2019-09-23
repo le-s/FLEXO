@@ -1,0 +1,1 @@
+json.extract! rental, :id, :car_id, :renter_id, :reserve_date, :return_date
