@@ -50,13 +50,4 @@ class Car < ApplicationRecord
       .where("longitude > ?", bounds[:southWest][:lng])
       .where("longitude < ?", bounds[:northEast][:lng])
   end
-
-  # def in_bounds(bounds)
-  #   bounds = bounds.values
-  #   if self.latitude.between?(bounds[1]['lat'].to_f, bounds[0]['lat'].to_f) && self.longitude.between?(bounds[1]['lng'].to_f, bounds[0]['lng'].to_f)
-  #     return true
-  #   end
-
-  #   return false
-  # end
 end
