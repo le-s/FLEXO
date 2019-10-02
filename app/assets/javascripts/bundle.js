@@ -2539,6 +2539,8 @@ function (_React$Component) {
       to: undefined
     };
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
+    _this.handleFromChange = _this.handleFromChange.bind(_assertThisInitialized(_this));
+    _this.handleToChange = _this.handleToChange.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -2555,6 +2557,25 @@ function (_React$Component) {
     key: "handleSubmit",
     value: function handleSubmit(e) {
       e.preventDefault();
+      var from = document.getElementById("from-day");
+      var to = document.getElementById("to-day");
+      console.log(from);
+      console.log(to);
+      console.log(this.state);
+    }
+  }, {
+    key: "handleFromChange",
+    value: function handleFromChange(from) {
+      this.setState({
+        from: from
+      });
+    }
+  }, {
+    key: "handleToChange",
+    value: function handleToChange(to) {
+      this.setState({
+        to: to
+      }, this.showFromMonth);
     }
   }, {
     key: "render",
@@ -2597,11 +2618,12 @@ function (_React$Component) {
           toMonth: to,
           modifiers: modifiers
         },
-        onDayChange: this.handleFromChange
+        onDayChange: this.handleFromChange,
+        id: "from-day"
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "dateTimeRangePicker-date"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_search_time__WEBPACK_IMPORTED_MODULE_5__["default"], null)))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "dateTimeRangePicker-fieldGroup"
+        className: "dateTimeRangePicker-fieldGroup trip-end"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
         className: "dateTimeRangePicker-label"
       }, "Trip end"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -2629,10 +2651,16 @@ function (_React$Component) {
           month: from,
           fromMonth: from
         },
-        onDayChange: this.handleToChange
+        onDayChange: this.handleToChange,
+        id: "to-day"
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "dateTimeRangePicker-date"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_search_time__WEBPACK_IMPORTED_MODULE_5__["default"], null))))));
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_search_time__WEBPACK_IMPORTED_MODULE_5__["default"], null)))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "rent-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        onSubmit: this.handleSubmit,
+        className: "rent-button"
+      }, "Book rental"))));
     }
   }]);
 
@@ -58203,7 +58231,7 @@ function warning(message) {
 /*!***************************************************************!*\
   !*** ./node_modules/react-router-dom/esm/react-router-dom.js ***!
   \***************************************************************/
-/*! exports provided: MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, generatePath, matchPath, withRouter, __RouterContext, BrowserRouter, HashRouter, Link, NavLink */
+/*! exports provided: BrowserRouter, HashRouter, Link, NavLink, MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, generatePath, matchPath, withRouter, __RouterContext */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

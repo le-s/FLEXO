@@ -3,8 +3,10 @@ import { connect } from 'react-redux';
 import { createRental } from '../../actions/rental_actions';
 import RentalCreate from './rental_create';
 
-const mSTP = (state) => ({
+const mSTP = (state, ownProps) => ({
   formFields: {
+    carId: state.entities.cars[ownProps.match.params.carId],
+    renterId: state.session.id,
     reserveDate: '',
     returnDate: ''
   },

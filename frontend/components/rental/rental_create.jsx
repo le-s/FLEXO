@@ -15,6 +15,8 @@ class RentalCreate extends React.Component {
     
     }
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleFromChange = this.handleFromChange.bind(this);
+    this.handleToChange = this.handleToChange.bind(this);
   }
 
   update(field) {
@@ -27,8 +29,20 @@ class RentalCreate extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    let from = document.getElementById("from-day")
+    let to = document.getElementById("to-day")
 
-    
+    console.log(from)
+    console.log(to)
+    console.log(this.state)
+  }
+
+  handleFromChange(from) {
+    this.setState({ from });
+  }
+
+  handleToChange(to) {
+    this.setState({ to }, this.showFromMonth);
   }
 
   render() {
@@ -55,6 +69,7 @@ class RentalCreate extends React.Component {
                     modifiers,
                   }}
                   onDayChange={this.handleFromChange}
+                  id="from-day"
                 />
               </div>
               <div className="dateTimeRangePicker-date">
@@ -63,7 +78,7 @@ class RentalCreate extends React.Component {
             </div>
           </div>
 
-          <div className="dateTimeRangePicker-fieldGroup">
+          <div className="dateTimeRangePicker-fieldGroup trip-end">
             <label className="dateTimeRangePicker-label">Trip end</label>
             <div className="dateTimeRangePicker-dateTime">
               <div className="InputFromTo dateTimeRangePicker-date">
@@ -82,12 +97,16 @@ class RentalCreate extends React.Component {
                     fromMonth: from,
                   }}
                   onDayChange={this.handleToChange}
+                  id="to-day"
                 />
               </div>
               <div className="dateTimeRangePicker-date">
                 <Time />
               </div>
             </div>
+          </div>
+          <div className="rent-container">
+            <button onSubmit={this.handleSubmit} className="rent-button">Book rental</button>
           </div>
         </form>
       </>

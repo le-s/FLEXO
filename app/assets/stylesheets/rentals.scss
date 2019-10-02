@@ -13,6 +13,7 @@
   font-size: 13px;
   font-weight: 700;
   font-family: BasisGrotesque,Avenir,Helvetica Neue,Helvetica,sans-serif;
+  margin-bottom: 5px;
 }
 
 .dateTimeRangePicker-dateTime{
@@ -45,7 +46,7 @@
 }
 
 .dateTimeRangePicker-date input {
-  padding: 0 10px 0 0;
+  padding: 0 10px 0 11px;
   font-size: 18px;
   background-color: #fff;
   border-radius: 5px;
@@ -53,8 +54,34 @@
   height: -webkit-fill-available;
   border: 1px solid #fff;
   cursor: pointer;
+  font-size: 13px;
+  font-weight: 400;
 }
 
 .dateTimeRangePicker-date:hover input{
   text-decoration: none;
+}
+
+.dateTimeRangePicker-date > .splash-time-dropdown {
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.trip-end {
+  margin-top: 20px;
+}
+
+.rent-container {
+  margin-top: 20px;
+}
+
+.rent-button {
+  font-size: 16px;
+  height: 44px;
+  line-height: 43px;
+  padding: 0 14px;
+  background-color: #59d389;
+  border: 1px solid #59d389;
+  color: #fff;
+  width: 100%;
 }
