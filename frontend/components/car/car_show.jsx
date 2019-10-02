@@ -35,7 +35,13 @@ class CarShow extends React.Component {
           <SlideShow photo={this.props.car}/>
         </div>
         <div className="details">
-          <Details details={this.props.car} remove={this.handleDelete} currentUser={this.props.currentUserId}/>
+          <Details 
+            details={this.props.car} 
+            remove={this.handleDelete} 
+            currentUser={this.props.currentUserId}
+            formFields={this.props.formFields}
+            createRental={this.props.createRental}
+          />
         </div>
       </div>
     )

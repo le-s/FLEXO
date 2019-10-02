@@ -2,7 +2,7 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import RentalCreate from '../rental/rental_create';
 
-const ReservationInfo = ({details, remove, currentUser}) => {
+const ReservationInfo = ({details, remove, currentUser, formFields, createRental}) => {
   let deleteButton;
   let editButton;
 
@@ -37,7 +37,10 @@ const ReservationInfo = ({details, remove, currentUser}) => {
             </div>
             <span className="per-day">per day</span>
           </div>
-          <RentalCreate />
+          <RentalCreate 
+            formFields={formFields}
+            createRental={createRental}
+          />
           <div className="div1">
             <div className="div2a">Distance Included</div>
             <div className="div2">

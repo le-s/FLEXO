@@ -2,7 +2,7 @@ import React from 'react';
 import ReservationInfo from './reservation';
 import Icon from './icon';
 
-const Details = ({ details, remove, currentUser }) => {
+const Details = ({ details, remove, currentUser, formFields, createRental }) => {
 
   return (
   <div className="detail-side">
@@ -78,7 +78,13 @@ const Details = ({ details, remove, currentUser }) => {
         </div>
       </div>
     </div>
-    <ReservationInfo details={details} remove={remove} currentUser={currentUser}/>
+    <ReservationInfo 
+      details={details} 
+      remove={remove} 
+      currentUser={currentUser}
+      formFields={formFields}
+      createRental={createRental}
+    />
   </div>
   )}
 

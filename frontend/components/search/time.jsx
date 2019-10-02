@@ -4,7 +4,7 @@ import { withRouter } from 'react-router-dom';
 class Time extends React.Component {
   render() {
     let timeSlot = 
-      <select name="time" className="splash-time-dropdown" defaultValue="10:00:00">
+      <select name="time" className="splash-time-dropdown" defaultValue="10:00:00" onChange={this.props.timeChange}>
       <option value='00:00:00'>Midnight</option>
       <option value='00:30:00'>12:30 AM</option>
       <option value='01:00:00'>1:00 AM</option>

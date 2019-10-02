@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import moment from 'moment';
+import "core-js/stable";
+import "regenerator-runtime/runtime";
 import DayPickerInput from 'react-day-picker/DayPickerInput';
 import { formatDate, parseDate } from 'react-day-picker/moment'
 import Time from '../search/time';
@@ -10,39 +12,94 @@ class RentalCreate extends React.Component {
     super(props);
     this.state = {
       formFields: this.props.formFields,
-      from: undefined,
-      to: undefined,
-    
+      from: null,
+      to: null,
+      timeFrom: "10:00:00",
+      timeTo: "10:00:00"
     }
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleFromChange = this.handleFromChange.bind(this);
     this.handleToChange = this.handleToChange.bind(this);
+    this.formatSubmitDate = this.formatSubmitDate.bind(this);
+    this.formatTime = this.formatTime.bind(this);
+    this.timeFromChange = this.timeFromChange.bind(this);
+    this.timeToChange = this.timeToChange.bind(this);
+    this.resetFormField = this.resetFormField.bind(this);
   }
 
-  update(field) {
-    return e => {
-      this.setState({
-        [field]: e.currentTarget.value,
-      });
-    };
-  }
+  // update(field) {
+  //   return e => {
+  //     this.setState({
+  //       [field]: e.currentTarget.value,
+  //     });
+  //   };
+  // }
 
   handleSubmit(e) {
     e.preventDefault();
-    let from = document.getElementById("from-day")
-    let to = document.getElementById("to-day")
 
-    console.log(from)
-    console.log(to)
     console.log(this.state)
+
+    let rental = Object.assign({}, this.state.formFields);
+    this.props.createRental(rental).then(() => {
+      console.log('created!')
+    });
   }
 
-  handleFromChange(from) {
-    this.setState({ from });
+  formatSubmitDate(date) {
+    var d = new Date(date),
+      month = '' + (d.getMonth() + 1),
+      day = '' + d.getDate(),
+      year = d.getFullYear();
+
+    if (month.length < 2)
+      month = '0' + month;
+    if (day.length < 2)
+      day = '0' + day;
+
+    return [year, month, day].join('-');
   }
 
-  handleToChange(to) {
-    this.setState({ to }, this.showFromMonth);
+  formatTime(date) {
+    let hour = date.getHours();
+    let minute = date.getMinutes();
+    let second = date.getSeconds();
+    return `${hour}:${minute}:${second}`;
+  }
+
+  async resetFormField() {
+    let fromDate = this.formatSubmitDate(this.state.from);
+    let toDate = this.formatSubmitDate(this.state.to);
+    let formFields = { ...this.props.formFields };
+
+    formFields.reserveDate = `${fromDate} ${this.state.timeFrom}`;
+    formFields.returnDate = `${toDate} ${this.state.timeTo}`;
+
+    await this.setState({ formFields });
+  }
+
+  async handleFromChange(from) {
+    await this.setState({ from });
+
+    this.resetFormField()
+  }
+
+  async handleToChange(to) {
+    await this.setState({ to });
+
+    this.resetFormField()
+  }
+
+  async timeFromChange(e) {
+    await this.setState({ timeFrom: e.currentTarget.value })
+
+    this.resetFormField()
+  }
+  
+  async timeToChange(e) {
+    await this.setState({ timeTo: e.currentTarget.value })
+
+    this.resetFormField()
   }
 
   render() {
@@ -73,7 +130,7 @@ class RentalCreate extends React.Component {
                 />
               </div>
               <div className="dateTimeRangePicker-date">
-                <Time />
+                <Time timeChange={this.timeFromChange}/>
               </div>
             </div>
           </div>
@@ -101,7 +158,7 @@ class RentalCreate extends React.Component {
                 />
               </div>
               <div className="dateTimeRangePicker-date">
-                <Time />
+                <Time timeChange={this.timeToChange}/>
               </div>
             </div>
           </div>
