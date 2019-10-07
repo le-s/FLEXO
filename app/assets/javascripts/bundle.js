@@ -1141,11 +1141,12 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mSTP = function mSTP(state, ownProps) {
+  console.log(state.entities.cars[ownProps.match.params.id]);
   return {
     car: state.entities.cars[ownProps.match.params.id],
     currentUserId: state.session.id,
     formFields: {
-      carId: 1,
+      carId: null,
       renterId: state.session.id,
       reserveDate: '',
       returnDate: ''
@@ -1790,6 +1791,7 @@ var ReservationInfo = function ReservationInfo(_ref) {
   }, details.price)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "per-day"
   }, "per day")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_rental_rental_create__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    car: details,
     formFields: formFields,
     createRental: createRental
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -2583,14 +2585,7 @@ function (_React$Component) {
     _this.timeToChange = _this.timeToChange.bind(_assertThisInitialized(_this));
     _this.resetFormField = _this.resetFormField.bind(_assertThisInitialized(_this));
     return _this;
-  } // update(field) {
-  //   return e => {
-  //     this.setState({
-  //       [field]: e.currentTarget.value,
-  //     });
-  //   };
-  // }
-
+  }
 
   _createClass(RentalCreate, [{
     key: "handleSubmit",
@@ -2637,12 +2632,13 @@ function (_React$Component) {
                 formFields = _objectSpread({}, this.props.formFields);
                 formFields.reserveDate = "".concat(fromDate, " ").concat(this.state.timeFrom);
                 formFields.returnDate = "".concat(toDate, " ").concat(this.state.timeTo);
-                _context.next = 7;
+                formFields.carId = this.props.car.id;
+                _context.next = 8;
                 return this.setState({
                   formFields: formFields
                 });
 
-              case 7:
+              case 8:
               case "end":
                 return _context.stop();
             }

@@ -17,6 +17,7 @@ class RentalCreate extends React.Component {
       timeFrom: "10:00:00",
       timeTo: "10:00:00"
     }
+
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleFromChange = this.handleFromChange.bind(this);
     this.handleToChange = this.handleToChange.bind(this);
@@ -26,14 +27,6 @@ class RentalCreate extends React.Component {
     this.timeToChange = this.timeToChange.bind(this);
     this.resetFormField = this.resetFormField.bind(this);
   }
-
-  // update(field) {
-  //   return e => {
-  //     this.setState({
-  //       [field]: e.currentTarget.value,
-  //     });
-  //   };
-  // }
 
   handleSubmit(e) {
     e.preventDefault();
@@ -74,6 +67,7 @@ class RentalCreate extends React.Component {
 
     formFields.reserveDate = `${fromDate} ${this.state.timeFrom}`;
     formFields.returnDate = `${toDate} ${this.state.timeTo}`;
+    formFields.carId = this.props.car.id;
 
     await this.setState({ formFields });
   }

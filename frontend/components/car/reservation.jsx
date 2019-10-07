@@ -38,6 +38,7 @@ const ReservationInfo = ({details, remove, currentUser, formFields, createRental
             <span className="per-day">per day</span>
           </div>
           <RentalCreate 
+            car={details}
             formFields={formFields}
             createRental={createRental}
           />
