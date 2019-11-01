@@ -1,10 +1,8 @@
 import React from 'react';
 import { connect } from "react-redux";
-import {fetchCar, deleteCar} from '../../actions/car_actions';
-import { createRental } from '../../actions/rental_actions';
-import CarShow from './car_show';
+import { fetchRentals } from '../../actions/rental_actions';
 
-const mSTP = (state, ownProps)=> {
+const mSTP = (state, ownProps) => {
   return ({
     car: state.entities.cars[ownProps.match.params.id],
     currentUserId: state.session.id,
@@ -18,9 +16,7 @@ const mSTP = (state, ownProps)=> {
 };
 
 const mDTP = dispatch => ({
-  fetchCar: id => dispatch(fetchCar(id)),
-  deleteCar: carId => dispatch(deleteCar(carId)),
-  createRental: rental => dispatch(createRental(rental))
+  fetchRentals: () => dispatch(fetchRentals())
 });
 
 export default connect(mSTP, mDTP)(CarShow);

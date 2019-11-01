@@ -1,5 +1,14 @@
 class Api::RentalsController < ApplicationController
-  
+  def index
+    if params[:id]
+      @rental = User.find(params[:id])
+    else
+      render status: 422
+    end
+
+    render index
+  end
+
   def show
     @rental = Rental.find(params[:id])
   end

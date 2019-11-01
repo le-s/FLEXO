@@ -25,6 +25,7 @@ const App = () => (
       </div>
     </header>
     <Switch>
+      <Route exact path="/trips" />
       <Route exact path="/cars/create" component={CarCreate} />
       <ProtectedRoute exact path="/cars/:id/edit" component={CarUpdate} />
       <Route path="/cars/:id" component={CarShow} />

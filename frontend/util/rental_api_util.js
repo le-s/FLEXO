@@ -13,6 +13,16 @@ export const fetchRental = (id) => (
   })
 )
 
+export const fetchUserRentals = (id) => (
+  $.ajax({
+    method: 'get',
+    url: `/api/rentals`,
+    data: {
+      userId: id
+    }
+  })
+)
+
 export const deleteRental = (id) => (
   $.ajax({
     method: 'delete',
