@@ -11,6 +11,7 @@ import CarShow from './car/car_show_container';
 import CarIndex from './car/car_index_container';
 import CarCreate from './car/car_create_container';
 import CarUpdate from './car/car_update_container';
+import RentalIndex from './rental/rental_index_container';
 import Footer from './footer/footer';
 
 const App = () => (
@@ -25,7 +26,7 @@ const App = () => (
       </div>
     </header>
     <Switch>
-      <Route exact path="/trips" />
+      <Route exact path="/trips" component={RentalIndex}/>
       <Route exact path="/cars/create" component={CarCreate} />
       <ProtectedRoute exact path="/cars/:id/edit" component={CarUpdate} />
       <Route path="/cars/:id" component={CarShow} />

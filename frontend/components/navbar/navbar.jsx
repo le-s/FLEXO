@@ -46,6 +46,9 @@ class NavBar extends React.Component {
               <div 
                 className={this.state.dropDown ? 'dropdown-content active' : 'dropdown-content'}
               >
+              <Link to={'/trips'}>
+                <button className='nav-button'>Trips</button>
+              </Link>
                 <button className='nav-button' onClick={this.props.logout}>Logout</button>
               </div>
           </div>

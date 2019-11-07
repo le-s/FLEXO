@@ -1,7 +1,7 @@
 class Api::RentalsController < ApplicationController
   def index
-    if params[:id]
-      @rentals = User.find(params[:id])
+    if params[:userId]
+      @rentals = User.find(params[:userId]).rentals
     else
       render status: 422
     end
