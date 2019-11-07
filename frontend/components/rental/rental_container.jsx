@@ -1,22 +1,15 @@
 import React from 'react';
 import { connect } from "react-redux";
-import { fetchRentals } from '../../actions/rental_actions';
+import { fetchUserRentals } from '../../actions/rental_actions';
 
-const mSTP = (state, ownProps) => {
+const mSTP = (state) => {
   return ({
-    car: state.entities.cars[ownProps.match.params.id],
-    currentUserId: state.session.id,
-    formFields: {
-      carId: null,
-      renterId: state.session.id,
-      reserveDate: '',
-      returnDate: ''
-    }
+    rentals: Object.values(state.entities.rentals)
   })
 };
 
 const mDTP = dispatch => ({
-  fetchRentals: () => dispatch(fetchRentals())
+  fetchUserRentals: () => dispatch(fetchUserRentals())
 });
 
 export default connect(mSTP, mDTP)(CarShow);

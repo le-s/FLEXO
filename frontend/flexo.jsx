@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
-import {createRental} from './actions/rental_actions';
+import {createRental, fetchUserRentals} from './actions/rental_actions';
 
 document.addEventListener("DOMContentLoaded", () => {
   const root = document.getElementById('root');
@@ -23,6 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
   window.getState = store.getState;
   window.dispatch = store.dispatch;
   window.createRental = createRental;
+  window.fetchUserRentals = fetchUserRentals;
   // test end
 
   ReactDOM.render(<Root store={store}/>, root);
