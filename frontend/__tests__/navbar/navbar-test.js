@@ -20,7 +20,6 @@ Enzyme.configure({ adapter: new Adapter() });
 describe('NavBar component', () => {
   it('renders without errors', () => {
 
-    // console.log(wrapper);
     // const wrapper = component.find("right-nav");
   });
 })

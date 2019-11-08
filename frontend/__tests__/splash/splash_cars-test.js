@@ -46,12 +46,8 @@ describe("Splash page component", () => {
         <SplashCars cars={cars} fetchCars={fetchCars} />
       // </Provider>
     );
-    // console.log('before wrapper')
-    // // console.log(SplashCars.reactComponent);
-    // console.log(<SplashCars.mockDispatch />);
-    // console.log('after wrapper')
+
     const wrapper = component.find(".splash-index-page-container");
-    // // console.log("hello please print");
     expect(wrapper).toHaveLength(1);
 
   });
