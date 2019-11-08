@@ -1,6 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import moment from 'moment';
+import { formatDate } from 'react-day-picker/moment'
+
 class RentalIndex extends React.Component {
   constructor(props) {
     super(props);
@@ -23,16 +26,32 @@ class RentalIndex extends React.Component {
     } else {
       return (
         <>
-          {
-            this.props.rentals.map(rental =>
-              <div key={rental.id}>
-                <h1>{rental.id}</h1>
-                <div className="car-index-image">
-                  <img src={rental.photoUrl} />
-                </div>
+          {this.props.rentals.map(rental =>
+            <div key={rental.id} className="rental-card-container">
+              <div className="car-container">
+                <Link to={`/cars/${rental.carId}`} className="car-hover">
+                  <div className="rental-index-image">
+                    <img src={rental.photoUrl} />
+                  </div>
+                  <div className="ymm-dd">
+                    <div className="rental-details">
+                      <span className="ymm">
+                        {rental.year} {rental.make} {rental.model}
+                      </span>
+                      <span className="reserve-return">
+                        {formatDate(rental.reserveDate)} - {formatDate(rental.returnDate)}
+                      </span>
+                    </div>
+                  </div>
+                  <div className="rental-button-container">
+                    <button className="rental-cancel">
+                      Cancel Rental
+                    </button>
+                  </div>
+                </Link>
               </div>
-            )
-          }
+            </div>
+          )}
         </>
       )
     }
@@ -41,8 +60,13 @@ class RentalIndex extends React.Component {
   render() {
     return (
       <>
-        <div>
-          {this.loadRentals()}
+        <div className="rental-container">
+          <div>
+            <h2>Booked Rentals</h2>
+          </div>
+          <div className="rental-index-container">
+            {this.loadRentals()}
+          </div>
         </div>
       </>
     )

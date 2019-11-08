@@ -34,9 +34,7 @@ class RentalCreate extends React.Component {
     console.log(this.state)
 
     let rental = Object.assign({}, this.state.formFields);
-    this.props.createRental(rental).then(() => {
-      console.log('created!')
-    });
+    this.props.createRental(rental)
   }
 
   formatSubmitDate(date) {

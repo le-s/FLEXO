@@ -424,7 +424,7 @@ var App = function App() {
     className: "navbar-logo"
   })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_navbar_navbar_container__WEBPACK_IMPORTED_MODULE_4__["default"], null))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     exact: true,
-    path: "/trips",
+    path: "/rentals",
     component: _rental_rental_index_container__WEBPACK_IMPORTED_MODULE_12__["default"]
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     exact: true,
@@ -2422,10 +2422,10 @@ function (_React$Component) {
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: this.state.dropDown ? 'dropdown-content active' : 'dropdown-content'
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-        to: '/trips'
+        to: '/rentals'
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "nav-button"
-      }, "Trips")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      }, "Rentals")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "nav-button",
         onClick: this.props.logout
       }, "Logout")))) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
@@ -2592,9 +2592,7 @@ function (_React$Component) {
       e.preventDefault();
       console.log(this.state);
       var rental = Object.assign({}, this.state.formFields);
-      this.props.createRental(rental).then(function () {
-        console.log('created!');
-      });
+      this.props.createRental(rental);
     }
   }, {
     key: "formatSubmitDate",
@@ -2889,6 +2887,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var react_day_picker_moment__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-day-picker/moment */ "./node_modules/react-day-picker/moment.js");
+/* harmony import */ var react_day_picker_moment__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_day_picker_moment__WEBPACK_IMPORTED_MODULE_3__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -2906,6 +2908,8 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
 
 
 
@@ -2941,19 +2945,41 @@ function (_React$Component) {
       } else {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, this.props.rentals.map(function (rental) {
           return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-            key: rental.id
-          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, rental.id), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-            className: "car-index-image"
+            key: rental.id,
+            className: "rental-card-container"
+          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+            className: "car-container"
+          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+            to: "/cars/".concat(rental.carId),
+            className: "car-hover"
+          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+            className: "rental-index-image"
           }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
             src: rental.photoUrl
-          })));
+          })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+            className: "ymm-dd"
+          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+            className: "rental-details"
+          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+            className: "ymm"
+          }, rental.year, " ", rental.make, " ", rental.model), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+            className: "reserve-return"
+          }, Object(react_day_picker_moment__WEBPACK_IMPORTED_MODULE_3__["formatDate"])(rental.reserveDate), " - ", Object(react_day_picker_moment__WEBPACK_IMPORTED_MODULE_3__["formatDate"])(rental.returnDate)))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+            className: "rental-button-container"
+          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+            className: "rental-cancel"
+          }, "Cancel Rental")))));
         }));
       }
     }
   }, {
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, this.loadRentals()));
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "rental-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Booked Rentals")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "rental-index-container"
+      }, this.loadRentals())));
     }
   }]);
 
