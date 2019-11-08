@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import moment from 'moment';
 import "core-js/stable";
 import "regenerator-runtime/runtime";
@@ -30,11 +30,10 @@ class RentalCreate extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-
-    console.log(this.state)
-
     let rental = Object.assign({}, this.state.formFields);
-    this.props.createRental(rental)
+    this.props.createRental(rental).then(() => {
+      this.props.history.push('/rentals');
+    })
   }
 
   formatSubmitDate(date) {
@@ -163,4 +162,4 @@ class RentalCreate extends React.Component {
   }
 }
 
-export default RentalCreate;
+export default withRouter(RentalCreate);

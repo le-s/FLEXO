@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import RentalIndexItem from './rental_index_item';
+
 import moment from 'moment';
 import { formatDate } from 'react-day-picker/moment'
 
@@ -8,20 +10,11 @@ class RentalIndex extends React.Component {
   constructor(props) {
     super(props);
     this.loadRentals = this.loadRentals.bind(this);
-    this.handleDelete = this.handleDelete.bind(this);
   }
 
   componentDidMount() {
     const userId = this.props.currentUserId;
     this.props.fetchUserRentals(userId);
-  }
-
-  handleDelete(e) {
-    e.preventDefault(e);
-    console.log(this.props);
-    // this.props.deleteRental(this.props.rentals.id).then(() => {
-    //   this.props.history.push('/rentals')
-    // });
   }
 
   loadRentals() {
@@ -35,30 +28,9 @@ class RentalIndex extends React.Component {
     } else {
       return (
         <>
-          {this.props.rentals.map(rental =>
+          {this.props.rentals.map(rental => 
             <div key={rental.id} className="rental-card-container">
-              <div className="car-container">
-                <Link to={`/cars/${rental.carId}`} className="car-hover">
-                  <div className="rental-index-image">
-                    <img src={rental.photoUrl} />
-                  </div>
-                  <div className="ymm-dd">
-                    <div className="rental-details">
-                      <span className="ymm">
-                        {rental.year} {rental.make} {rental.model}
-                      </span>
-                      <span className="reserve-return">
-                        {formatDate(rental.reserveDate)} - {formatDate(rental.returnDate)}
-                      </span>
-                    </div>
-                  </div>
-                </Link>
-                  <div className="rental-button-container">
-                    <button className="rental-cancel" onClick={this.handleDelete}>
-                      Cancel Rental
-                    </button>
-                  </div>
-              </div>
+              <RentalIndexItem deleteRental={this.props.deleteRental} rental={rental}/>
             </div>
           )}
         </>

@@ -1,5 +1,5 @@
 import React from "react";
-import {Route, Link, Redirect, Switch} from 'react-router-dom';
+import {Route, Link, Redirect, Switch, withRouter} from 'react-router-dom';
 import SignupFormContainer from './session_form/signup_form_container';
 import LoginFormContainer from './session_form/login_form_container';
 import NavBar from './navbar/navbar_container';
@@ -26,7 +26,7 @@ const App = () => (
       </div>
     </header>
     <Switch>
-      <Route exact path="/rentals" component={RentalIndex}/>
+      <Route path="/rentals" component={RentalIndex}/>
       <Route exact path="/cars/create" component={CarCreate} />
       <ProtectedRoute exact path="/cars/:id/edit" component={CarUpdate} />
       <Route path="/cars/:id" component={CarShow} />
@@ -38,4 +38,4 @@ const App = () => (
   </div>
 );
 
-export default App;
+export default withRouter(App);
