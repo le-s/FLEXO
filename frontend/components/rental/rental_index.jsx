@@ -8,11 +8,20 @@ class RentalIndex extends React.Component {
   constructor(props) {
     super(props);
     this.loadRentals = this.loadRentals.bind(this);
+    this.handleDelete = this.handleDelete.bind(this);
   }
 
   componentDidMount() {
     const userId = this.props.currentUserId;
     this.props.fetchUserRentals(userId);
+  }
+
+  handleDelete(e) {
+    e.preventDefault(e);
+    console.log(this.props);
+    // this.props.deleteRental(this.props.rentals.id).then(() => {
+    //   this.props.history.push('/rentals')
+    // });
   }
 
   loadRentals() {
@@ -43,12 +52,12 @@ class RentalIndex extends React.Component {
                       </span>
                     </div>
                   </div>
+                </Link>
                   <div className="rental-button-container">
-                    <button className="rental-cancel">
+                    <button className="rental-cancel" onClick={this.handleDelete}>
                       Cancel Rental
                     </button>
                   </div>
-                </Link>
               </div>
             </div>
           )}
@@ -61,8 +70,8 @@ class RentalIndex extends React.Component {
     return (
       <>
         <div className="rental-container">
-          <div>
-            <h2>Booked Rentals</h2>
+          <div className="rental-header">
+            Booked Rentals
           </div>
           <div className="rental-index-container">
             {this.loadRentals()}

@@ -243,23 +243,27 @@ var closeModal = function closeModal() {
 /*!********************************************!*\
   !*** ./frontend/actions/rental_actions.js ***!
   \********************************************/
-/*! exports provided: RECEIVE_RENTALS, RECEIVE_RENTAL, RECEIVE_ERRORS, receiveRentals, receiveRental, receiveErrors, fetchUserRentals, createRental */
+/*! exports provided: RECEIVE_RENTALS, RECEIVE_RENTAL, DELETE_RENTAL, RECEIVE_ERRORS, receiveRentals, receiveRental, removeRental, receiveErrors, fetchUserRentals, createRental, deleteRental */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_RENTALS", function() { return RECEIVE_RENTALS; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_RENTAL", function() { return RECEIVE_RENTAL; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DELETE_RENTAL", function() { return DELETE_RENTAL; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_ERRORS", function() { return RECEIVE_ERRORS; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "receiveRentals", function() { return receiveRentals; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "receiveRental", function() { return receiveRental; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "removeRental", function() { return removeRental; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "receiveErrors", function() { return receiveErrors; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchUserRentals", function() { return fetchUserRentals; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createRental", function() { return createRental; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deleteRental", function() { return deleteRental; });
 /* harmony import */ var _util_rental_api_util__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../util/rental_api_util */ "./frontend/util/rental_api_util.js");
 
 var RECEIVE_RENTALS = 'RECEIVE_RENTALS';
 var RECEIVE_RENTAL = 'RECEIVE_RENTAL';
+var DELETE_RENTAL = 'DELETE_RENTAL';
 var RECEIVE_ERRORS = 'RECEIVE_ERRORS';
 var receiveRentals = function receiveRentals(rentals) {
   return {
@@ -271,6 +275,12 @@ var receiveRental = function receiveRental(rental) {
   return {
     type: RECEIVE_RENTAL,
     rental: rental
+  };
+};
+var removeRental = function removeRental(rentalId) {
+  return {
+    type: DELETE_RENTAL,
+    rentalId: rentalId
   };
 };
 var receiveErrors = function receiveErrors(errors) {
@@ -292,6 +302,13 @@ var createRental = function createRental(rental) {
       return dispatch(receiveRental(rental));
     } // errors => dispatch(receiveErrors(errors))
     );
+  };
+};
+var deleteRental = function deleteRental(id) {
+  return function (dispatch) {
+    return _util_rental_api_util__WEBPACK_IMPORTED_MODULE_0__["deleteRental"](id).then(function (rental) {
+      return dispatch(removeRental(rental));
+    });
   };
 };
 
@@ -2926,6 +2943,7 @@ function (_React$Component) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(RentalIndex).call(this, props));
     _this.loadRentals = _this.loadRentals.bind(_assertThisInitialized(_this));
+    _this.handleDelete = _this.handleDelete.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -2936,8 +2954,18 @@ function (_React$Component) {
       this.props.fetchUserRentals(userId);
     }
   }, {
+    key: "handleDelete",
+    value: function handleDelete(e) {
+      e.preventDefault(e);
+      console.log(this.props); // this.props.deleteRental(this.props.rentals.id).then(() => {
+      //   this.props.history.push('/rentals')
+      // });
+    }
+  }, {
     key: "loadRentals",
     value: function loadRentals() {
+      var _this2 = this;
+
       if (this.props.rentals.length === 0) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "empty-result-details"
@@ -2964,11 +2992,12 @@ function (_React$Component) {
             className: "ymm"
           }, rental.year, " ", rental.make, " ", rental.model), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
             className: "reserve-return"
-          }, Object(react_day_picker_moment__WEBPACK_IMPORTED_MODULE_3__["formatDate"])(rental.reserveDate), " - ", Object(react_day_picker_moment__WEBPACK_IMPORTED_MODULE_3__["formatDate"])(rental.returnDate)))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          }, Object(react_day_picker_moment__WEBPACK_IMPORTED_MODULE_3__["formatDate"])(rental.reserveDate), " - ", Object(react_day_picker_moment__WEBPACK_IMPORTED_MODULE_3__["formatDate"])(rental.returnDate))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
             className: "rental-button-container"
           }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-            className: "rental-cancel"
-          }, "Cancel Rental")))));
+            className: "rental-cancel",
+            onClick: _this2.handleDelete
+          }, "Cancel Rental"))));
         }));
       }
     }
@@ -2977,7 +3006,9 @@ function (_React$Component) {
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "rental-container"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Booked Rentals")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "rental-header"
+      }, "Booked Rentals"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "rental-index-container"
       }, this.loadRentals())));
     }
@@ -3020,6 +3051,9 @@ var mDTP = function mDTP(dispatch) {
   return {
     fetchUserRentals: function fetchUserRentals(userId) {
       return dispatch(Object(_actions_rental_actions__WEBPACK_IMPORTED_MODULE_2__["fetchUserRentals"])(userId));
+    },
+    deleteRental: function deleteRental(rentalId) {
+      return dispatch(Object(_actions_rental_actions__WEBPACK_IMPORTED_MODULE_2__["deleteRental"])(rentalId));
     }
   };
 };
@@ -4651,6 +4685,7 @@ var rentalsReducer = function rentalsReducer() {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
   var action = arguments.length > 1 ? arguments[1] : undefined;
   Object.freeze(state);
+  var newState;
 
   switch (action.type) {
     case _actions_rental_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_RENTALS"]:
@@ -4658,6 +4693,11 @@ var rentalsReducer = function rentalsReducer() {
 
     case _actions_rental_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_RENTAL"]:
       return Object.assign({}, state, _defineProperty({}, action.rental.id, action.rental));
+
+    case _actions_rental_actions__WEBPACK_IMPORTED_MODULE_0__["DELETE_RENTAL"]:
+      newState = Object.assign({}, state);
+      delete newState[action.rentalId];
+      return newState;
 
     default:
       return state;

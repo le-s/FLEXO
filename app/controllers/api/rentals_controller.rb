@@ -27,7 +27,7 @@ class Api::RentalsController < ApplicationController
     @rental = Rental.find(params[:id])
 
     if @rental.delete
-      render 'api/rentals/show'
+      render 'api/rentals'
     else
       render json: @rental.errors.full_messages, status: 422
     end

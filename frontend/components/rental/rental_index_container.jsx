@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from "react-redux";
-import { fetchUserRentals } from '../../actions/rental_actions';
+import { fetchUserRentals, deleteRental } from '../../actions/rental_actions';
 import RentalIndex from './rental_index';
 
 const mSTP = (state) => {
@@ -11,7 +11,8 @@ const mSTP = (state) => {
 };
 
 const mDTP = dispatch => ({
-  fetchUserRentals: userId => dispatch(fetchUserRentals(userId))
+  fetchUserRentals: userId => dispatch(fetchUserRentals(userId)),
+  deleteRental: rentalId => dispatch(deleteRental(rentalId))
 });
 
 export default connect(mSTP, mDTP)(RentalIndex);

@@ -90,6 +90,12 @@
   margin: 50px 70px;
 }
 
+.rental-header {
+  font-size: 45px;
+  border-bottom: 1px solid lightgray;
+  font-family: BasisGrotesque,Avenir,Helvetica Neue,Helvetica,sans-serif;
+}
+
 .rental-index-container {
   display: flex;
   flex-wrap: wrap;
@@ -98,8 +104,7 @@
 
 .rental-card-container {
   position: relative;
-  margin-top: 40px;
-  margin-right: 50px;
+  margin-top: 50px;
   width: 336px;
   min-height: 450px;
   border-radius: 6px;
