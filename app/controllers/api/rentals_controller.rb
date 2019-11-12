@@ -18,6 +18,9 @@ class Api::RentalsController < ApplicationController
 
     if @rental.save
       render 'api/rentals/show'
+      send_message(
+        "Thank you for using Flexo. We hope you enjoy your sweet ride!"
+      )
     else
       render json: @rental.errors.full_messages, status: 422
     end
@@ -28,6 +31,9 @@ class Api::RentalsController < ApplicationController
 
     if @rental.delete
       render :show
+      send_message(
+        "Sorry this rental didn't work out. Feel free to check our catalog for other cars!"
+      )
     else
       render json: @rental.errors.full_messages, status: 422
     end
@@ -50,4 +56,15 @@ class Api::RentalsController < ApplicationController
     )
   end
   
+  def send_message(alert_message)
+    @twilio_number = Rails.application.credentials.twilio[:number]
+    @client = Twilio::REST::Client.new(Rails.application.credentials.twilio[:access_key_id], Rails.application.credentials.twilio[:secret_access_key])
+    
+    message = @client.api.account.messages.create(
+      :from => @twilio_number,
+      :to => '+14086058817',
+      :body => alert_message,
+    )
+    puts message.to
+  end
 end
