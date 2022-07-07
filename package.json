@@ -9,7 +9,7 @@
     "core-js": "^3.2.1",
     "libphonenumber-js": "^1.7.22",
     "lodash": "^4.17.15",
-    "moment": "^2.24.0",
+    "moment": "^2.29.4",
     "react": "^16.8.6",
     "react-day-picker": "^7.3.2",
     "react-dom": "^16.6.3",
